@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+<?php session_start();
+    if (!isset($_SESSION["nom_per"] ) ){
+        header("Location:login.php");
+    }         
+?>
     <head>
         <meta charset="utf-8" />
         <title>Adminox - Responsive Web App Kit</title>
@@ -164,11 +169,16 @@
                             </li>
 
                             <li>
-                                <a href="Admi-header.php"><i class="fi-paper"></i><span> Contratos </span></a>
+                                <a href="Comercial-contratos.php"><i class="fi-paper"></i><span> Contratos </span></a>
                             </li>
-
+                            
                             <li>
-                                <a href="Admi-header.php"><i class="fi-disc"></i><span> Subir Tours </span></a>
+                                <a href="javascript: void(0);"><i class="fi-disc"></i><span> Subir Tours <span class="menu-arrow"></span></a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="Comercial-subirtours.php">Subir Tour</a></li>
+                                    <li><a href="Comercial-actualizartours.php">Actualizar Tour</a></li>
+                                    <li><a href="Comercial-eliminartours.php">Eliminar Tour</a></li>
+                                </ul>
                             </li>
 
                         </ul>

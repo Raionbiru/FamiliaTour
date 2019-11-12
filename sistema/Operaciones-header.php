@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+<?php session_start();
+    if (!isset($_SESSION["nom_per"] ) ){
+        header("Location:login.php");
+    }         
+?>
     <head>
         <meta charset="utf-8" />
         <title>Adminox - Responsive Web App Kit</title>

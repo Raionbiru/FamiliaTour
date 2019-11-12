@@ -1,4 +1,4 @@
-<?php require_once("Admi-header.php");?>
+<?php require_once("Operaciones-header.php");?>
 <!-- ============================================================== -->
 <!-- Start right Content here -->
 <!-- ============================================================== -->
@@ -135,4 +135,4 @@
 <!-- ============================================================== -->
 <!-- End Right content here -->
 <!-- ============================================================== -->
-<?php require_once("Admi-footer.php");?>
+<?php require_once("Operaciones-footer.php");?>

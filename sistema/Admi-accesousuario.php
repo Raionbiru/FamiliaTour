@@ -3,10 +3,9 @@ require_once("funciones.php");
 
 $xc = conectar();
 
-
-$sql = "SELECT p.id_per, p.nom_per, p.ape_per, p.cargo_per, p.estado_per, a.nom_area
+$sql = "SELECT p.id_per, p.nom_per, p.ape_per, p.cargo_per, p.estado_per
         FROM persona p
-        INNER JOIN area a ON p.id_area = a.id_area";
+        WHERE id_tipo_per = 2";
 $res = mysqli_query($xc,$sql);
 desconectar($xc);
 ?>
@@ -25,7 +24,7 @@ desconectar($xc);
                         <ol class="breadcrumb float-right">
                             <li class="breadcrumb-item"><a href="#">Familia Tour</a></li>
                             <li class="breadcrumb-item"><a href="#">Administrador</a></li>
-                            <li class="breadcrumb-item active">Solicitud de registro</li>
+                            <li class="breadcrumb-item active">Acceso a usuarios</li>
                         </ol>
 
                         <div class="clearfix"></div>
@@ -37,9 +36,9 @@ desconectar($xc);
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card-box">
-                        <h4 class="m-t-0 header-title">Solicitud de Registro</h4>
+                        <h4 class="m-t-0 header-title">Acceso a usuarios</h4>
                         <p class="text-muted m-b-30 font-13">
-                            El personal quiere ingresar al sistema.
+                            Un usuario externo quiere ingresar al sistema.
                         </p>
 
                         <table id="demo-foo-addrow" class="table table-striped table-bordered m-b-0 toggle-circle" data-page-size="7">
@@ -49,7 +48,6 @@ desconectar($xc);
                                 <th data-sort-initial="true" data-toggle="true">Nombre</th>
                                 <th>Apellido</th>
                                 <th data-hide="phone">Cargo</th>
-                                <th data-hide="phone, tablet">Area</th>
                                 <th data-hide="phone, tablet">Estado</th>
                             </tr>
                             </thead>
@@ -74,7 +72,6 @@ desconectar($xc);
                                     $xnom_per = $fila["nom_per"];
                                     $xape_per = $fila["ape_per"];
                                     $xcargo_per = $fila["cargo_per"];
-                                    $xnom_area = $fila["nom_area"];
                                     $xestado_per = $fila["estado_per"];
 
                                         echo "
@@ -106,7 +103,6 @@ desconectar($xc);
                                             <td>$xnom_per</td>
                                             <td>$xape_per</td>
                                             <td>$xcargo_per</td>
-                                            <td>$xnom_area</td>
                                             
                                             <td>";
                                                 if ($xestado_per == 0){

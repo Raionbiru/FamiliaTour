@@ -2,10 +2,31 @@
       require_once("funciones.php");
 
 $xc = conectar();
-$sql = "SELECT p.nom_per,p.ape_per, j.hor_tra_jor, a.nom_area, j.viat_jor,j.sueldo_jor 
-        FROM jornal j
-        INNER JOIN persona p ON j.id_per = p.id_per 
-        INNER JOIN area a ON j.id_area = a.id_area";
+//Código de contrato    (Contrato)
+//Fecha de venta        (Venta)
+//Nombre                (Nombre de venta)
+//Producto              (Nombre de producto/tour)
+//Monto                 (Precio de producto/tour)
+
+//SQL con producto
+/*$sql = "SELECT c.cod_contr,v.fec_vet,v.nom_vet, p.nom_produc, p.prec_produc 
+        FROM venta v
+        INNER JOIN producto p ON v.id_produc = p.id_produc
+        INNER JOIN contrato c ON v.id_contr = c.id_contr";*/
+
+//SQL con tour
+/*$sql = "SELECT c.cod_contr,h.fec_hist_tour,v.nom_vet, t.nom_tour, t.prec_tour
+        FROM venta v
+        INNER JOIN historial_tour h ON v.id_hist_tour = h.id_hist_tour
+        INNER JOIN tour t ON h.id_tour = t.id_tour
+        INNER JOIN contrato c ON v.id_contr = c.id_contr";*/
+
+$sql = "SELECT h.fec_hist_tour, t.nom_tour,t.prec_tour
+        FROM historial_tour h
+        INNER JOIN tour t ON h.id_tour = t.id_tour ";
+
+
+
 $res = mysqli_query($xc,$sql);
 desconectar($xc);
 
@@ -24,40 +45,47 @@ desconectar($xc);
                 <div class="col-sm-12">
                     <div class="card-box">
 
-                        <h4 class="m-t-0 header-title"><b>Sortable Table</b></h4>
+                        <h4 class="m-t-0 header-title"><b>Tabla - Resumen de ventas</b></h4>
                         <p class="text-muted font-14">
-                            Default appearance (with optional sortable-switch)
+                            Resumen de todas las ventas de productos o tour.
                         </p>
 
                         <table class="tablesaw table m-b-0" data-tablesaw-sortable data-tablesaw-sortable-switch>
                             <thead>
                             <tr>
-                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="persist">Persona</th>
-                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-sortable-default-col data-tablesaw-priority="3">Horas</th>
-                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="2">Area </th>
-                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1">Viaticos</th>
-                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="4">Pago</th>
+                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="persist">Cod Contrato</th>
+                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-sortable-default-col data-tablesaw-priority="3">Fecha Venta</th>
+                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="2">Nombre Venta</th>
+                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1">Producto</th>
+                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="4">Monto</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?PHP while($fila=mysqli_fetch_array($res)){
-                                    $xnom_per = $fila["nom_per"];
-                                    $xape_per = $fila["ape_per"];
-                                    $xhor_tra_jor = $fila["hor_tra_jor"];
-                                    $xnom_area = $fila["nom_area"];
-                                    $xviat_jor = $fila["viat_jor"];
-                                    $xsueldo_jor = $fila["sueldo_jor"];
-
+                                    //$xcod_contr = $fila["cod_contr"];
+                                    //$xfec_vet = $fila["fec_vet"];
+                                    $xfec_hist_tour = $fila["fec_hist_tour"];
+                                    //$xnom_vet = $fila["nom_vet"];
+                                    $xnom_tour = $fila["nom_tour"];
+                                    $xprec_tour = $fila["prec_tour"];
+                                    $xtotal += $fila["prec_tour"];
                                         echo "
                                             <tr>
-                                            <td>$xnom_per $xape_per</td>
-                                            <td>$xhor_tra_jor</td>
-                                            <td>$xnom_area</td>
-                                            <td>$xviat_jor</td>
-                                            <td>$xsueldo_jor</td>
+                                            <td>000001</td>
+                                            <td>$xfec_hist_tour</td>
+                                            <td>$xnom_tour</td>
+                                            <td>$xnom_tour</td>
+                                            <td>$xprec_tour</td>
                                             </tr>
                                         ";
                                 }
+                                echo "<tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>TOTAL: $xtotal</td>
+                                    </tr>";
                             ?>
                             </tbody>
                         </table>
