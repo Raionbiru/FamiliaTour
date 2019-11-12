@@ -24,8 +24,8 @@ if ($xaccion=="desactivar") {
 
 <h1>
     Estado
-    <?php 
-        if($xaccion == "desactivar"){
+     <?php 
+      /*  if($xaccion == "desactivar"){
             echo"<small>Se desactivo la cuenta</small>";
         }
         if($xaccion == "activar"){
@@ -41,6 +41,6 @@ if ($xaccion=="desactivar") {
             mail($to,$subject,$message, $headers);
             echo "Se envio un correo.";
 
-        }
+        }*/
     ?>
 </h1>

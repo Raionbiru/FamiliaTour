@@ -173,11 +173,11 @@
                             </li>
 
                             <li>
-                                <a href="Admi-header.php"><i class="fi-paper"></i><span> Resumen de Ventas </span></a>
+                                <a href="Admi-ventas.php"><i class="fi-paper"></i><span> Resumen de Ventas </span></a>
                             </li>
 
                             <li>
-                                <a href="Admi-header.php"><i class="fi-disc"></i><span> Resumen de Ventas </span></a>
+                                <a href="Admi-personal.php"><i class="fi-disc"></i><span> Personal </span></a>
                             </li>
 
                         </ul>

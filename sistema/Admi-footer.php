@@ -1,6 +1,6 @@
     </div>
         <!-- END wrapper -->
-
+        
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/tether.min.js"></script><!-- Tether for Bootstrap -->
@@ -8,6 +8,7 @@
         <script src="assets/js/metisMenu.min.js"></script>
         <script src="assets/js/waves.js"></script>
         <script src="assets/js/jquery.slimscroll.js"></script>
+
 
         <!-- Counter js  -->
         <script src="../plugins/waypoints/jquery.waypoints.min.js"></script>
@@ -26,6 +27,7 @@
         <!-- App js -->
         <script src="assets/js/jquery.core.js"></script>
         <script src="assets/js/jquery.app.js"></script>
+
 
     </body>
 </html>

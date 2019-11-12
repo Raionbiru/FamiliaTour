@@ -2,9 +2,12 @@
 require_once("funciones.php");
 
 $xc = conectar();
-$sql = "SELECT p.id_per, p.nom_per, p.ape_per, p.cargo_per, p.estado_per, a.id_area, a.nom_area
+/*$sql = "SELECT p.id_per, p.nom_per, p.ape_per, p.cargo_per, p.estado_per, a.id_area, a.nom_area
         FROM persona p, area a
         WHERE p.id_per = a.id_area";
+*/
+$sql = "SELECT p.id_per, p.nom_per, p.ape_per, p.cargo_per, p.estado_per
+        FROM persona p";
 $res = mysqli_query($xc,$sql);
 desconectar($xc);
 ?>
@@ -72,7 +75,7 @@ desconectar($xc);
                                     $xnom_per = $fila["nom_per"];
                                     $xape_per = $fila["ape_per"];
                                     $xcargo_per = $fila["cargo_per"];
-                                    $xnom_area = $fila["nom_area"];
+                                    // $xnom_area = $fila["nom_area"];
                                     $xestado_per = $fila["estado_per"];
 
                                         echo "
@@ -104,7 +107,7 @@ desconectar($xc);
                                             <td>$xnom_per</td>
                                             <td>$xape_per</td>
                                             <td>$xcargo_per</td>
-                                            <td>$xnom_area</td>
+                                            
                                             <td>";
                                                 if ($xestado_per == 0){
                                                     echo"<span class='label label-table label-danger'>Desactivado</span>";

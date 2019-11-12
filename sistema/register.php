@@ -1,4 +1,17 @@
-<?php require_once("funciones.php");?>
+<?php require_once("funciones.php");
+
+$xc = conectar();
+/*$sql = "SELECT * FROM sector";
+$res = mysqli_query($xc,$sql);
+
+$sql2 = "SELECT * FROM tipo_persona";
+$res2 = mysqli_query($xc,$sql2);*/
+
+$sql3 = "SELECT * FROM area";
+$res3 = mysqli_query($xc,$sql3);
+desconectar($xc);
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -94,54 +107,75 @@
                                         </form>
                                     </div>-->
                                     <div class="account-content" id="uno" style="display:none">
-                                        <form class="form-horizontal" action="#">
+
+                                        <form class="form-horizontal" method="POST" action="registro-grabar.php">
+
+                                        <input hidden="YES" name="accion" value="crear">
+                                        <input hidden="YES" name="id_sector" id="id_sector" value="2">
+                                        <input hidden="YES" name="id_tipo_per" id="id_tipo_per" value="2">
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
                                                     <label for="username">Empresa</label>
-                                                    <input class="form-control" type="text" id="" required="" placeholder="">
+                                                    <input class="form-control" type="text" id="" required=""  name="" id="" placeholder="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
                                                     <label for="emailaddress">RUC</label>
-                                                    <input class="form-control" type="text" id="" required="" placeholder="">
+                                                    <input class="form-control" type="text" name="" id="" required="" placeholder="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
-                                                    <label for="emailaddress">Nombres Completos</label>
-                                                    <input class="form-control" type="text" id="" required="" placeholder="">
+                                                    <label for="emailaddress">Nombre</label>
+                                                    <input class="form-control" type="text" name="nom_per" id="nom_per" required="" placeholder="">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row m-b-20">
+                                                <div class="col-12">
+                                                    <label for="emailaddress">Apellidos</label>
+                                                    <input class="form-control" type="text" name="ape_per" id="ape_per" required="" placeholder="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
                                                     <label for="emailaddress">Dirección</label>
-                                                    <input class="form-control" type="text" id="" required="" placeholder="">
+                                                    <input class="form-control" type="text" name="direc_per" id="direc_per" required="" placeholder="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
                                                     <label for="emailaddress">Email</label>
-                                                    <input class="form-control" type="email" id="" required="" placeholder="">
+                                                    <input class="form-control" type="email" name="email_per_per" id="email_per_per" required="" placeholder="">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row m-b-20">
+                                                <div class="col-12">
+                                                    <label for="emailaddress">Usuario</label>
+                                                    <input class="form-control" type="text" name="log_per" id="log_per" required="" placeholder="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
                                                     <label for="emailaddress">Contraseña</label>
-                                                    <input class="form-control" type="password" id="" required="" placeholder="">
+                                                    <input class="form-control" type="password" name="pass_per" id="pass_per" required="pass_per" placeholder="">
                                                 </div>
                                             </div>
+
+                                            <input hidden="YES" name="estado_per" id="estado_per" value="0">
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
                                                     <label for="emailaddress">Celular</label>
-                                                    <input class="form-control" type="text" id="" required="" placeholder="">
+                                                    <input class="form-control" type="text" name="cel_per_per" id="cel_per_per" required="" placeholder="">
                                                 </div>
                                             </div>
 
@@ -174,31 +208,39 @@
                                         </form>
                                     </div>
 
-
+<!-- Segundo Formulario -->
                                     <div class="account-content" id="dos" style="display:none">
-                                        <form class="form-horizontal" action="#">
+
+                                        <form class="form-horizontal" method="POST" action="registro-grabar.php">
+
+                                            <input hidden="YES" name="accion" value="crear">
+                                            <input hidden="YES" name="id_sector" id="id_sector" value="1">
+                                            <input hidden="YES" name="id_tipo_per" id="id_tipo_per" value="2">
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
                                                     <label for="username">Empresa</label>
-                                                    <input class="form-control" type="text" id="" required="" placeholder="">
+                                                    <input class="form-control" type="text" name="" id="" required="" placeholder="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
                                                     <label for="emailaddress">RUC</label>
-                                                    <input class="form-control" type="text" id="" required="" placeholder="">
+                                                    <input class="form-control" type="text" name="" id="" required="" placeholder="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
                                                     <label for="password">Area</label>
-                                                    <select name="select">
-                                                        <option value="value1" selected>Select</option> 
-                                                        <option value="value2">Comercial</option>
-                                                        <option value="value3">Operación</option>
+                                                    <select name="id_area">
+                                                        <option value="" selected>Select</option> 
+                                                        <?php while ($fila=mysqli_fetch_array($res3)){
+                                                            $xid_area = $fila["id_area"];
+                                                            $xnom_area = $fila["nom_area"];
+                                                            echo "<option value='$xid_area'>$xnom_area</option>";
+                                                        } ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -206,69 +248,90 @@
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
                                                     <label for="emailaddress">Cargo</label>
-                                                    <input class="form-control" type="text" id="" required="" placeholder="">
+                                                    <input class="form-control" type="text" name="cargo_per" id="cargo_per" required="" placeholder="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
-                                                    <label for="emailaddress">NAC</label>
-                                                    <input class="form-control" type="number" id="" required="" placeholder="">
+                                                    <label for="emailaddress">Nacionalidad</label>
+                                                    <input class="form-control" type="text" name="nac_per" id="nac_per" required="" placeholder="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
                                                     <label for="emailaddress">DNI</label>
-                                                    <input class="form-control" type="number" id="" required="" placeholder="">
+                                                    <input class="form-control" type="number" name="dni_per" id="dni_per" required="" placeholder="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
-                                                    <label for="emailaddress">Nombres Completos</label>
-                                                    <input class="form-control" type="text" id="" required="" placeholder="">
+                                                    <label for="emailaddress">Nombre</label>
+                                                    <input class="form-control" type="text" name="nom_per" id="nom_per" required="" placeholder="">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row m-b-20">
+                                                <div class="col-12">
+                                                    <label for="emailaddress">Apellido</label>
+                                                    <input class="form-control" type="text" name="ape_per" id="ape_per" required="" placeholder="">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row m-b-20">
+                                                <div class="col-12">
+                                                    <label for="emailaddress">Usuario</label>
+                                                    <input class="form-control" type="text" name="log_per" id="log_per" required="" placeholder="">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row m-b-20">
+                                                <div class="col-12">
+                                                    <label for="emailaddress">Contraseña</label>
+                                                    <input class="form-control" type="password" name="pass_per" id="pass_per" required="" placeholder="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
                                                     <label for="emailaddress">Dirección</label>
-                                                    <input class="form-control" type="text" id="" required="" placeholder="">
+                                                    <input class="form-control" type="text" name="direc_per" id="direc_per" required="" placeholder="">
                                                 </div>
                                             </div>
                                             
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
                                                     <label for="emailaddress">Email Corporativo</label>
-                                                    <input class="form-control" type="email" id="" required="" placeholder="">
+                                                    <input class="form-control" type="email" name="email_corp_per" id="email_corp_per" required="" placeholder="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
                                                     <label for="emailaddress">Email Personal</label>
-                                                    <input class="form-control" type="email" id="" required="" placeholder="">
+                                                    <input class="form-control" type="email" name="email_per_per" id="email_per_per" required="" placeholder="">
                                                 </div>
                                             </div>
                                             
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
                                                     <label for="emailaddress">Celular Corporativo</label>
-                                                    <input class="form-control" type="number" id="" required="" placeholder="">
+                                                    <input class="form-control" type="number" name="cel_corp_per" id="cel_corp_per" required="" placeholder="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
                                                     <label for="emailaddress">Celular Personal</label>
-                                                    <input class="form-control" type="number" id="" required="" placeholder="">
+                                                    <input class="form-control" type="number" name="cel_per_per" id="cel_per_per" required="" placeholder="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
-                                                    <label for="emailaddress">Celular Personal</label>
+                                                    <label for="emailaddress">Adjuntar CV</label>
                                                     <input class="form-control" type="file" id="" required="" name="archivo">
                                                 </div>
                                             </div>
