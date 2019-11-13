@@ -155,21 +155,21 @@
                     <div id="sidebar-menu">
                         <!-- Left Menu Start -->
                         <ul class="metismenu" id="side-menu">
-                            <li class="menu-title">Navigation</li>
+                            <li class="menu-title">Navegación</li>
                             <li>
-                                <a href="Admi-header.php"><i class="fi-target"></i> <span> Lista Proveedores </span></a>
+                                <a href="Operaciones-listaproveedores.php"><i class="fi-target"></i> <span> Lista Proveedores </span></a>
                             </li>
 
                             <li>
-                                <a href="Admi-header.php"><i class="fi-briefcase"></i> <span> Cotizador </span></a>
+                                <a href="Operaciones-header.php"><i class="fi-briefcase"></i> <span> Cotizador </span></a>
                             </li>
 
                             <li>
-                                <a href="Admi-header.php"><i class="fi-bar-graph-2"></i><span> Adm. Carpetas </span></a>
+                                <a href="Operaciones-administrarcarpeta.php"><i class="fi-bar-graph-2"></i><span> Adm. Carpetas </span></a>
                             </li>
 
                             <li>
-                                <a href="Admi-header.php"><i class="fi-mail"></i><span> Fichas Opera </span></a>
+                                <a href="Operaciones-fichaopera.php"><i class="fi-mail"></i><span> Fichas Opera </span></a>
                             </li>
 
                         </ul>

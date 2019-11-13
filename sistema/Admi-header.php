@@ -169,7 +169,7 @@
                             </li>
 
                             <li>
-                                <a href="Admi-header.php"><i class="fi-mail"></i><span> Proveedores </span></a>
+                                <a href="Admi-proveedores.php"><i class="fi-mail"></i><span> Proveedores </span></a>
                             </li>
 
                             <li>

@@ -24,41 +24,29 @@ desconectar($xc);
                 <div class="col-sm-12">
                     <div class="card-box">
 
-                        <h4 class="m-t-0 header-title"><b>Personal</b></h4>
+                        <h4 class="m-t-0 header-title"><b>Proveedores</b></h4>
                         <p class="text-muted font-14">
-                            Personal de la empresa
+                            Proveedores de la Empresa
                         </p>
 
                         <table class="tablesaw table m-b-0" data-tablesaw-sortable data-tablesaw-sortable-switch>
                             <thead>
                             <tr>
-                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="persist">Persona</th>
-                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-sortable-default-col data-tablesaw-priority="3">Horas</th>
-                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="2">Area </th>
-                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1">Viaticos</th>
-                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="4">Pago</th>
+                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="persist">Nombre</th>
+                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-sortable-default-col data-tablesaw-priority="3">Servicio</th>
+                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="2">Stand</th>
+                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1">Sup</th>
+                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="4">Lujo</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?PHP while($fila=mysqli_fetch_array($res)){
-                                    $xnom_per = $fila["nom_per"];
-                                    $xape_per = $fila["ape_per"];
-                                    $xhor_tra_jor = $fila["hor_tra_jor"];
-                                    $xnom_area = $fila["nom_area"];
-                                    $xviat_jor = $fila["viat_jor"];
-                                    $xsueldo_jor = $fila["sueldo_jor"];
-
-                                        echo "
-                                            <tr>
-                                            <td>$xnom_per $xape_per</td>
-                                            <td>$xhor_tra_jor</td>
-                                            <td>$xnom_area</td>
-                                            <td>$xviat_jor</td>
-                                            <td>$xsueldo_jor</td>
-                                            </tr>
-                                        ";
-                                }
-                            ?>
+                                <tr>
+                                    <td>Hoteles</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
