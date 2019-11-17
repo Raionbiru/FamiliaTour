@@ -68,24 +68,18 @@ desconectar($xc);
                                     //$xnom_vet = $fila["nom_vet"];
                                     $xnom_tour = $fila["nom_tour"];
                                     $xprec_tour = $fila["prec_tour"];
-                                    $xtotal += $fila["prec_tour"];
+                                    //$xtotal += $fila["prec_tour"];
                                         echo "
                                             <tr>
                                             <td>000001</td>
                                             <td>$xfec_hist_tour</td>
-                                            <td>$xnom_tour</td>
+                                            <td>Cliente</td>
                                             <td>$xnom_tour</td>
                                             <td>$xprec_tour</td>
                                             </tr>
                                         ";
                                 }
-                                echo "<tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>TOTAL: $xtotal</td>
-                                    </tr>";
+                                //echo "<tr> <td></td><td></td><td></td><td></td><td>TOTAL: $xtotal</td></tr>";
                             ?>
                             </tbody>
                         </table>

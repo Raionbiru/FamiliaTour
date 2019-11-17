@@ -40,7 +40,6 @@ desconectar($xc);
                         <div class="row">
                             <div class="col-12">
                                 <div class="card-box">
-                                <button onclick="window.location.href='Comercial-inserttour.php'" type="button" class="btn btn-sm btn-primary btn-rounded w-md waves-effect waves-light pull-right">Guardar</button>
                                     <h4 class="m-t-0 header-title"><b>Ingrese Tour</b></h4>
                                     <p class="text-muted m-b-30 font-14">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ut modi deleniti quibusdam commodi maxime, obcaecati officiis iste eos nemo corporis suscipit quae expedita earum repellat, eum natus nesciunt, tempore nam quas minima optio similique quia. Quas quae, aliquid eius voluptates repudiandae ad officia, ullam repellat tenetur neque, deserunt totam!
@@ -49,18 +48,30 @@ desconectar($xc);
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="p-20">
-                                                <form class="form-horizontal" role="form">
+
+
+                                                <form class="form-horizontal" method="POST" action="Comercial-grabartour.php">
+
+                                                    <input hidden="YES" name="accion" value="crear">
+
                                                     <div class="form-group row">
                                                         <label class="col-2 col-form-label">Tour</label>
                                                         <div class="col-10">
-                                                            <input type="text" class="form-control" placeholder="Nombre de Tour">
+                                                            <input type="text"  name="nom_tour" id="nom_tour" class="form-control" placeholder="Nombre de Tour">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label class="col-2 col-form-label">Precio</label>
+                                                        <div class="col-10">
+                                                            <input type="number"  name="prec_tour" id="prec_tour" class="form-control" placeholder="Precio de Tour">
                                                         </div>
                                                     </div>
                                                     
                                                     <div class="form-group row">
                                                         <label class="col-2 col-form-label">Descripción Tour</label>
                                                         <div class="col-10">
-                                                            <textarea class="form-control" rows="5" placeholder="Descripción del Tour"></textarea>
+                                                            <textarea class="form-control" name="descp_tour" id="descp_tour"  rows="5" placeholder="Descripción del Tour"></textarea>
                                                         </div>
                                                     </div>
 
@@ -76,7 +87,7 @@ desconectar($xc);
                                                                 
                                                                 <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
                                                                 <div>
-                                                                    <button type="button" class="btn btn-secondary btn-file">
+                                                                    <button type="submit" class="btn btn-secondary btn-file">
                                                                         <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Select image</span>
                                                                         <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
                                                                         <input type="file" class="btn-secondary" />
@@ -89,9 +100,10 @@ desconectar($xc);
                                                         </div>
                                                     </div>
 
-                                                    
-
+                                                    <button type="submit" class="btn btn-sm btn-primary btn-rounded w-md waves-effect waves-light pull-right">Guardar</button>
                                                 </form>
+
+
                                             </div>
                                         </div>
 

@@ -161,7 +161,7 @@
                             </li>
 
                             <li>
-                                <a href="Operaciones-header.php"><i class="fi-briefcase"></i> <span> Cotizador </span></a>
+                                <a href="Operaciones-cotizador.php"><i class="fi-briefcase"></i> <span> Cotizador </span></a>
                             </li>
 
                             <li>
