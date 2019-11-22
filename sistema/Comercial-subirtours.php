@@ -72,7 +72,7 @@ desconectar($xc);
     </div> <!-- content -->
 
     <footer class="footer text-right">
-        2019 © FimiaTour. - Coderthemes.com
+        2019 © Insizio. - Coderthemes.com
     </footer>
 
 </div>

@@ -32,65 +32,25 @@
                             <div class="col-12">
 
                                 <center><h1>Formulario</h1></center>
+
                                 <p class="text-muted">En referencia al N° de contrato <select><option value="" selected>00001</option> <option value="">00002</option> </select>
                                     
                                 modifica las siguientes clausulas.</p>
 
                                 <div class="clearfix"></div>
 
-                                <h2>This is a Heading 2</h2>
-                                <p class="text-muted">In nec rhoncus eros. Vestibulum eu mattis nisl.
-                                    Quisque viverra viverra magna
-                                    nec pulvinar. Maecenas pellentesque porta augue, consectetur
-                                    facilisis diam
-                                    porttitor sed. Suspendisse tempor est sodales augue rutrum
-                                    tincidunt.
-                                    Quisque a malesuada purus.</p>
+                                <h2 style="text-align: center;">CONTRATO DE FAMILIA TOUR</h2>
+                                <p style="text-align: justify, font: 14px/1.8 arial, helvetica, sans-serif;  " class="m-b-0">
+                                Conste por el presente documento el contrato de <strong>FAMILIA TOUR</strong>, que celebran de una parte AAA, identificada con R.U.C. N° <input type="number" name="" id=""> inscrita en la partida electrónica N° <input type="number" name="" id=""> del Registro de Personas Jurídicas de <input type="text" name="" id="">, con domicio en <input type="text" name="" id=" ">, debidamente representada por su gerente general don <input type="text" name="" id="">, identificado con el D.N.I. N° <input type="number" name="" id="">, con poderes inscritos en el asiento <input type="number" name="" id=""> de la referida partida electrónica, a quien en lo sucesivo se denominará <strong>EL COMITENTE</strong>; y, de otra parte BBB, identificada con R.U.C. N° <input type="number" name="" id="">, inscrita en la partida electrónica N° <input type="number" name="" id=""> del Registrode Personas Jurídicas de <input type="text" name="" id="">, con domicilio en <input type="text" name="" id="">, identificado con D.N.I. N° <input type="number" name="" id="">              , con poderes inscritos en el asiento <input type="text" name="" id=""> de la referida partida electrónica, a quien en lo sucesivo se denominará <strong>LA LOCADORA</strong>; en los términos contenidos en las cláusulas siguientes:
+                                .</p>
 
                                 <div class="clearfix"></div>
 
-                                <h3>This is a Heading 3</h3>
-                                <p class="text-muted">Vestibulum auctor tincidunt semper. Phasellus ut
-                                    vulputate lacus. Suspendisse
-                                    ultricies mi eros, sit amet tempor nulla varius sed. Proin nisl
-                                    nisi,
-                                    feugiat quis bibendum vitae, dapibus in tellus.</p>
-
-                                <div class="clearfix"></div>
-
-                                <h4>This is a Heading 4</h4>
-                                <p class="text-muted">Nulla et mattis nunc. Curabitur scelerisque
-                                    commodo condimentum. Mauris
-                                    blandit, velit a consectetur egestas, diam arcu fermentum justo,
-                                    eget
-                                    ultrices arcu eros vel erat.</p>
-
-                                <div class="clearfix"></div>
-
-                                <h5>This is a Heading 5</h5>
-                                <p class="text-muted">Quisque nec turpis at urna dictum luctus.
-                                    Suspendisse convallis dignissim
-                                    eros at volutpat. In egestas mattis dui. Aliquam mattis dictum
-                                    aliquet.
-                                    Nulla sapien mauris, eleifend et sem ac, commodo dapibus odio.
-                                    Vivamus
-                                    pretium nec odio cursus elementum. Suspendisse molestie ullamcorper
-                                    ornare.</p>
-
-                                <div class="clearfix"></div>
-
-                                <h6>This is a Heading 6</h6>
-                                <p class="text-muted">Donec ultricies, lacus id tempor condimentum, orci
-                                    leo faucibus sem, a
-                                    molestie libero lectus ac justo. ultricies mi eros, sit amet tempor
-                                    nulla
-                                    varius sed. Proin nisl nisi, feugiat quis bibendum vitae, dapibus in
-                                    tellus.</p>
                             </div>
-
-                            <button type="button" class="btn btn-sm btn-primary btn-rounded w-md waves-effect waves-light pull-right">Generar Adjunto de Contrato</button>
-
                         </div>
+
+                        <button type="button" class="btn btn-sm btn-primary btn-rounded w-md waves-effect waves-light pull-right">Generar Adjunto de Contrato</button>
+
                     </div>
                 </div>
 

@@ -1,14 +1,43 @@
-<?php require_once("Admi-header.php");
-require_once("funciones.php");
-
-$xc = conectar();
-
-$sql = "SELECT p.id_per, p.nom_per, p.ape_per, p.cargo_per, p.estado_per
-        FROM persona p
-        WHERE id_tipo_per = 2";
-$res = mysqli_query($xc,$sql);
-desconectar($xc);
+<!DOCTYPE html>
+<html>
+<?php session_start();
+    if (!isset($_SESSION["nom_per"] ) ){
+        header("Location:login.php");
+    }         
+    require_once("funciones.php");
+    $xc = conectar();
+    $sql = "SELECT p.id_per, p.nom_per, p.ape_per, p.cargo_per, p.estado_per
+            FROM persona p
+            WHERE id_tipo_per = 2";
+    $res = mysqli_query($xc,$sql);
+    desconectar($xc);
 ?>
+    <head>
+        <meta charset="utf-8" />
+        <title>Familia</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!--Footable-->
+        <link href="../plugins/footable/css/footable.core.css" rel="stylesheet">
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+
+        <script src="assets/js/modernizr.min.js"></script>
+
+    </head>
+
+    <?php require_once("Admi-nav.php");?>
+
 <!-- ============================================================== -->
 <!-- Start right Content here -->
 <!-- ============================================================== -->
@@ -137,11 +166,33 @@ desconectar($xc);
     </div> <!-- content -->
 
     <footer class="footer text-right">
-        2017 © Adminox. - Coderthemes.com
+        2019 © Insizio
     </footer>
 
 </div>
 <!-- ============================================================== -->
 <!-- End Right content here -->
 <!-- ============================================================== -->
-<?php require_once("Admi-footer.php");?>
+</div>
+    <!-- END wrapper -->
+
+    <!-- jQuery  -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/tether.min.js"></script><!-- Tether for Bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/waves.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+
+    <!--FooTable-->
+    <script src="../plugins/footable/js/footable.all.min.js"></script>
+
+    <!--FooTable Example-->
+    <script src="assets/pages/jquery.footable.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/jquery.core.js"></script>
+    <script src="assets/js/jquery.app.js"></script>
+
+</body>
+</html>

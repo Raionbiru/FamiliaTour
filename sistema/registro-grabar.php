@@ -1,9 +1,10 @@
 <?php require_once("funciones.php");
 
 $xaccion=leerParam("accion","");
+$xtipo=leerParam("tipo","");
 $xid_sector=leerParam("id_sector","");
 
-if ($xid_sector == "1"){
+if ($xtipo == "1"){
 
     if ($xaccion=="crear") {
 
@@ -59,24 +60,26 @@ if ($xid_sector == "1"){
         desconectar($xc);
     }
 
-}elseif ($xid_sector == "2"){
+
+
+
+}elseif ($xtipo == "agencia"){
 
     if ($xaccion=="crear") {
 
-        $xnom_per=leerParam("nom_per","");
-        $xape_per=leerParam("ape_per","");
-        $xdirec_per=leerParam("direc_per","");
-        $xemail_per_per=leerParam("email_per_per","");
-        $xcel_per_per=leerParam("cel_per_per","");
-        $xlog_per=leerParam("log_per","");
-        $xpass_per=leerParam("pass_per","");
-        $xestado_per=leerParam("estado_per","");
-        
-        $xid_sector=leerParam("id_sector","");
-        $xid_tipo_per=leerParam("id_tipo_per","");
-    
+        $xempr_cliente=leerParam("empr_cliente","");
+        $xruc_empr_cliente=leerParam("ruc_empr_cliente","");
+        $xdirec_cliente=leerParam("direc_cliente","");
+        $xweb_empr_cliente=leerParam("web_empr_cliente","");
+        $xape_cliente=leerParam("ape_cliente","");
+        $xnom_cliente=leerParam("nom_cliente","");
+        $xcel_cliente=leerParam("cel_cliente","");
+        $xemail_cliente=leerParam("email_cliente","");
+        $xpas_cliente=leerParam("pas_cliente","");
+        $xestado_cliente=leerParam("estado_cliente","");
+         
         $xc = conectar();
-        $sql = "INSERT INTO persona (nom_per,ape_per,direc_per,email_per_per,cel_per_per,log_per,pass_per,estado_per,id_sector,id_tipo_per) VALUES ('$xnom_per','$xape_per','$xdirec_per','$xemail_per_per','$xcel_per_per','$xlog_per','$xpass_per','$xestado_per','$xid_sector','$xid_tipo_per')";
+        $sql = "INSERT INTO cliente (empr_cliente,ruc_empr_cliente,direc_cliente,web_empr_cliente,ape_cliente,nom_cliente,cel_cliente,email_cliente,pas_cliente,estado_cliente) VALUES ('$xempr_cliente','$xruc_empr_cliente','$xdirec_cliente','$xweb_empr_cliente','$xape_cliente','$xnom_cliente','$xcel_cliente','$xemail_cliente','$xpas_cliente','0')";
     
         mysqli_query($xc,$sql);
         desconectar($xc);
@@ -111,16 +114,18 @@ if ($xid_sector == "1"){
 }
 
 ?>
- <div class="container-fluid">
+
+<div class="container-fluid">
 
     <!-- Page Heading -->
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
-                Usuario
                 <?php 
                     if($xaccion == "crear"){
-                        echo"<small>Registro Creado Correctamente</small>";
+                        echo"<small>Registro Creado Correctamente</small>
+                        $xtipo - $xaccion
+                        ";
                     }
                     if($xaccion == "editar"){
                         echo"<small>Registro Editado Correctamente</small>";
@@ -130,11 +135,6 @@ if ($xid_sector == "1"){
                     }
                 ?>
             </h1>
-            <ol class="breadcrumb">
-                <li>
-                    <i class="fa fa-dashboard"></i>  <a href="alumnos.php">Ver Alumnos</a>
-                </li>
-            </ol>
         </div>
     </div>
     <!-- /.row -->

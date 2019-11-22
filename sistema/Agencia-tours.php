@@ -1,13 +1,29 @@
+<?php 
+require_once("funciones.php");
+$xc = conectar();
+
+
+$sql = "SELECT t.nom_tour, t.descp_tour, t.prec_tour
+        FROM tour t";
+
+$sql2 = "SELECT count(*)
+        FROM tour";
+
+$sql3 = "SELECT *
+        FROM cliente
+        Where id_cliente = 1";
+
+$res = mysqli_query($xc,$sql);        
+$res2 = mysqli_query($xc,$sql2);
+$res3 = mysqli_query($xc,$sql3);
+desconectar($xc);
+?>
+
 <!DOCTYPE html>
 <html>
-<?php session_start();
-    if (!isset($_SESSION["nom_per"] ) ){
-        header("Location:login.php");
-    }         
-?>
     <head>
         <meta charset="utf-8" />
-        <title> Familia </title>
+        <title>Adminox - Responsive Web App Kit</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -16,8 +32,8 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-        <!-- X editable -->
-        <link href="../plugins/bootstrap-xeditable/css/bootstrap-editable.css" rel="stylesheet" />
+        <!-- C3 charts css -->
+        <link href="../plugins/c3/c3.min.css" rel="stylesheet" type="text/css"  />
 
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -118,7 +134,7 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="login.php" class="dropdown-item notify-item">
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <i class="zmdi zmdi-power"></i> <span>Logout</span>
                                 </a>
 
@@ -133,12 +149,12 @@
                                 <i class="dripicons-menu"></i>
                             </button>
                         </li>
-                        <!--li class="hide-phone app-search">
+                        <li class="hide-phone app-search">
                             <form role="search" class="">
                                 <input type="text" placeholder="Search..." class="form-control">
                                 <a href=""><i class="fa fa-search"></i></a>
                             </form>
-                        </li-->
+                        </li>
                     </ul>
 
                 </nav>
@@ -155,36 +171,26 @@
                     <div id="sidebar-menu">
                         <!-- Left Menu Start -->
                         <ul class="metismenu" id="side-menu">
-                            <li class="menu-title">Navigation</li>
+                        <li class="menu-title">Navigation</li>
                             <li>
-                                <a href="Admi-header.php"><i class="fi-briefcase"></i> <span> CRM </span></a>
+                                <a href="Agencia-datos.php"><i class="fi-target"></i> <span> Datos </span></a>
                             </li>
 
                             <li>
-                                <a href="Admi-header.php"><i class="fi-bar-graph-2"></i><span> Cotizador </span></a>
+                                <a href="Agencia-tours.php"><i class="fi-briefcase"></i> <span> Tours Arequipa </span></a>
                             </li>
 
                             <li>
-                                <a href="Admi-header.php"><i class="fi-mail"></i><span> Programas </span></a>
+                                <a href="Agencia-historial.php"><i class="fi-bar-graph-2"></i><span> Historial </span></a>
                             </li>
 
                             <li>
-                            <a href="javascript: void(0);"><i class="fi-disc"></i><span> Contrato <span class="menu-arrow"></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="Comercial-contratos.php">Plantilla Contrato</a></li>
-                                    <li><a href="Comercial-adjuntar.php">Adjuntar Contrato</a></li>
-                                </ul>
-                            </li>
-                            
-                            <li>
-                                <a href="javascript: void(0);"><i class="fi-disc"></i><span> Subir Tours <span class="menu-arrow"></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="Comercial-subirtours.php">Subir Tour</a></li>
-                                    <li><a href="Comercial-actualizartours.php">Actualizar Tour</a></li>
-                                    <li><a href="Comercial-eliminartours.php">Eliminar Tour</a></li>
-                                </ul>
+                                <a href="Agencia-reserva.php"><i class="fi-mail"></i><span> Reserva </span></a>
                             </li>
 
+                            <li>
+                                <a href="Agencia-cotizador.php"><i class="fi-paper"></i><span> Cotizador </span></a>
+                            </li>
                         </ul>
 
                     </div>
@@ -197,10 +203,6 @@
             </div>
             <!-- Left Sidebar End -->
 
-
-
-
-
 <!-- ============================================================== -->
 <!-- Start right Content here -->
 <!-- ============================================================== -->
@@ -212,12 +214,20 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box">
-                        <h4 class="page-title float-left">Contratos</h4>
+
+                    <?php
+                        while($fila=mysqli_fetch_array($res3)){
+                            $xempr_cliente = $fila["empr_cliente"];
+                            $xcod_cliente = $fila["cod_cliente"];
+
+                        echo "<h4 class='page-title float-left'>Bienvenido $xempr_cliente - $xcod_cliente</h4>";
+                        }
+                    ?>
 
                         <ol class="breadcrumb float-right">
                             <li class="breadcrumb-item"><a href="#">Familia Tour</a></li>
-                            <li class="breadcrumb-item"><a href="#">Comercial</a></li>
-                            <li class="breadcrumb-item active">Contratos</li>
+                            <li class="breadcrumb-item"><a href="#">Agencias</a></li>
+                            <li class="breadcrumb-item active">Tours</li>
                         </ol>
 
                         <div class="clearfix"></div>
@@ -229,64 +239,43 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card-box">
-                        <button onclick="window.location.href='Comercial-inserttour.php'" type="button" class="btn btn-sm btn-primary btn-rounded w-md waves-effect waves-light pull-right">Agregar Contrato</button>
-                        <h4 class="m-b-30 m-t-0 header-title"><b>Demo Contrato</b></h4>
-                    </div>
-                </div>
-            </div>
-            <!-- end row -->
+                    <!--    
+                    <button onclick="window.location.href='Comercial-inserttour.php'" type="button" class="btn btn-sm btn-primary btn-rounded w-md waves-effect waves-light pull-right">Agregar Tours</button>-->
+                        <h4 class="header-title m-b-30"><?PHP
+  // Obteniendo la fecha actual del sistema con PHP
+  $fechaActual = date('d-m-Y');
+   
+  echo $fechaActual;
 
-            <div class="row">
-                <div class="col-12">
-                    <div class="card-box">
-                        <h4 class="m-t-0 m-b-30"> <b> CONTRATO </b> </h4>
-                        <p>
-                        Conste por el presente documento el contrato de FAMILIA TOUR, que celebran de una parte AAA, identificada con R.U.C. N° <a href="#" id="inline-username" data-type="text" data-pk="1" data-title="Enter username">superuser</a> inscrita en la partida electrónica N° <input type="number" name="" id=""> del Registro de Personas Jurídicas de <input type="text" name="" id="">, con domicio en <input type="text" name="" id=" ">, debidamente representada por su gerente general don <input type="text" name="" id="">, identificado con el D.N.I. N° <input type="number" name="" id="">, con poderes inscritos en el asiento <input type="number" name="" id=""> de la referida partida electrónica, a quien en lo sucesivo se denominará <strong>EL COMITENTE</strong>; y, de otra parte BBB, identificada con R.U.C. N° <input type="number" name="" id="">, inscrita en la partida electrónica N° <input type="number" name="" id=""> del Registrode Personas Jurídicas de <input type="text" name="" id="">, con domicilio en <input type="text" name="" id="">, identificado con D.N.I. N° <input type="number" name="" id="">              , con poderes inscritos en el asiento <input type="text" name="" id=""> de la referida partida electrónica, a quien en lo sucesivo se denominará <strong>LA LOCADORA</strong>; en los términos contenidos en las cláusulas siguientes:
-                        </p>
-                        <table class="table table-bordered table-striped">
-                            <tbody>
-                            <tr>
-                                <td width="35%">Simple text field</td>
-                                <td width="65%"><a href="#" id="inline-username" data-type="text" data-pk="1" data-title="Enter username">superuser</a></td>
-                            </tr>
-                            <tr>
-                                <td>Empty text field, required</td>
-                                <td><a href="#" id="inline-firstname" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Enter your firstname"></a></td>
-                            </tr>
-                            <tr>
-                                <td>Select, local array, custom display</td>
-                                <td><a href="#" id="inline-sex" data-type="select" data-pk="1" data-value="" data-title="Select sex"></a></td>
-                            </tr>
-                            <tr>
-                                <td>Select, remote array, no buttons</td>
-                                <td><a href="#" id="inline-group" data-type="select" data-pk="1" data-value="5" data-source="/groups" data-title="Select group">Admin</a></td>
-                            </tr>
-                            <tr>
-                                <td>Select, error while loading</td>
-                                <td><a href="#" id="inline-status" data-type="select" data-pk="1" data-value="0" data-source="/status" data-title="Select status">Active</a></td>
-                            </tr>
+  while($fila=mysqli_fetch_array($res2)){
+    $xnom_tour = $fila[0];
 
-                            <tr>
-                                <td>Combodate (date)</td>
-                                <td><a href="#" id="inline-dob" data-type="combodate" data-value="1984-05-15" data-format="YYYY-MM-DD" data-viewformat="DD/MM/YYYY" data-template="D / MMM / YYYY" data-pk="1"  data-title="Select Date of birth"></a></td>
-                            </tr>
-                            <tr>
-                                <td>Combodate (datetime)</td>
-                                <td><a href="#" id="inline-event" data-type="combodate" data-template="D MMM YYYY  HH:mm" data-format="YYYY-MM-DD HH:mm" data-viewformat="MMM D, YYYY, HH:mm" data-pk="1"  data-title="Setup event date and time"></a></td>
-                            </tr>
+    echo " - Tours $xnom_tour";
+}
+?></h4>
 
-                            <tr>
-                                <td>Textarea, buttons below. Submit by <i>ctrl+enter</i></td>
-                                <td><a href="#" id="inline-comments" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-title="Enter comments">awesome user!</a></td>
-                            </tr>
+                        <div class="row">
+                        <?PHP  while($fila=mysqli_fetch_array($res)){
+                                    $xnom_tour = $fila["nom_tour"];
+                                    $xdescp_tour = $fila["descp_tour"];
+                                    $xprec_tour = $fila["prec_tour"];
 
-                            <tr>
-                                <td>Checklist</td>
-                                <td><a href="#" id="inline-fruits" data-type="checklist" data-value="2,3" data-title="Select fruits"></a></td>
-                            </tr>
+                                    echo "
+                                        <div class='col-sm-4 col-lg-3 col-xs-12'>
+                                        <div class='card m-b-20'>
+                                            <img class='card-img-top img-fluid' src='assets/images/small/img-1.jpg' alt='Card image cap'>
+                                            <div class='card-block'>
+                                                <h4 class='card-title'>$xnom_tour</h4>
+                                                <p class='card-text'>$xdescp_tour</p>
+                                                <a href='Agencia-reserva.php' class='btn btn-primary'>Reservar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ";
+                                }
+                        ?>
+                        </div>
 
-                            </tbody>
-                        </table>
                     </div>
                 </div><!-- end col -->
             </div>
@@ -294,6 +283,7 @@
 
 
         </div> <!-- container -->
+
     </div> <!-- content -->
 
     <footer class="footer text-right">
@@ -317,10 +307,19 @@
         <script src="assets/js/waves.js"></script>
         <script src="assets/js/jquery.slimscroll.js"></script>
 
-        <!-- Xeditable -->
-        <script src="../plugins/moment/moment.js" type="text/javascript"></script>
-        <script src="../plugins/bootstrap-xeditable/js/bootstrap-editable.min.js" type="text/javascript"></script>
-        <script src="assets/pages/jquery.xeditable.init.js" type="text/javascript"></script>
+        <!-- Counter js  -->
+        <script src="../plugins/waypoints/jquery.waypoints.min.js"></script>
+        <script src="../plugins/counterup/jquery.counterup.min.js"></script>
+
+        <!--C3 Chart-->
+        <script type="text/javascript" src="../plugins/d3/d3.min.js"></script>
+        <script type="text/javascript" src="../plugins/c3/c3.min.js"></script>
+
+        <!--Echart Chart-->
+        <script src="../plugins/echart/echarts-all.js"></script>
+
+        <!-- Dashboard init -->
+        <script src="assets/pages/jquery.dashboard.js"></script>
 
         <!-- App js -->
         <script src="assets/js/jquery.core.js"></script>
@@ -328,4 +327,3 @@
 
     </body>
 </html>
-

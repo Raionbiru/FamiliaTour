@@ -73,160 +73,10 @@
                         <div class="tab-content">
                             <div class="tab-pane fade" id="home1">
                         
-                            
-                                <!-- Basic Form Wizard -->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="card-box">
-                                            <form id="default-wizard">
-                                                <fieldset title="1">
-                                                    <legend>Información Basica</legend>
-
-                                                    <div class="row m-t-20">
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="firstname">First Name</label>
-                                                                <input type="text" class="form-control" id="firstname" placeholder="">
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label for="username">User Name</label>
-                                                                <input type="text" class="form-control" id="username" placeholder="">
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label for="password">Password</label>
-                                                                <input type="password" class="form-control" id="password" placeholder="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="lastname">Last Name</label>
-                                                                <input type="text" class="form-control" id="lastname" placeholder="">
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label for="emailaddress">Email Address</label>
-                                                                <input type="email" class="form-control" id="emailaddress" placeholder="">
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label for="password1">Confirm Password</label>
-                                                                <input type="password" class="form-control" id="password1" placeholder="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </fieldset>
-
-                                                <fieldset title="2">
-                                                    <legend>About you</legend>
-
-                                                    <div class="row m-t-20">
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="phonenumber">Phone Number</label>
-                                                                <input type="text" class="form-control" id="phonenumber" placeholder="">
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label for="address">Address</label>
-                                                                <input type="text" class="form-control" id="address" placeholder="">
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label for="aboutme">About Me</label>
-                                                                <textarea class="form-control" rows="5" id="aboutme"></textarea>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="currentlocation">Current Location</label>
-                                                                <input type="text" class="form-control" id="currentlocation" placeholder="">
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label for="username">Freelance</label>
-                                                                <select class="form-control">
-                                                                    <option>Available</option>
-                                                                    <option>Unavailable</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </fieldset>
-
-                                                <fieldset title="3">
-                                                    <legend>Social Profiles</legend>
-
-                                                    <div class="row m-t-20">
-                                                        <div class="col-sm-6">
-
-                                                            <div class="form-group">
-                                                                <label>Facebook</label>
-                                                                <div class="input-group">
-                                                                    <span class="input-group-addon"><i class="mdi mdi-facebook"></i></span>
-                                                                    <input type="text" class="form-control" placeholder="Facebook url">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label>Linkdin</label>
-                                                                <div class="input-group">
-                                                                    <span class="input-group-addon"><i class="mdi mdi-linkedin"></i></span>
-                                                                    <input type="text" class="form-control" placeholder="Linkdin url">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label>Instagram</label>
-                                                                <div class="input-group">
-                                                                    <span class="input-group-addon"><i class="mdi mdi-instagram"></i></span>
-                                                                    <input type="text" class="form-control" placeholder="Instagram url">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group">
-                                                                <label>Twitter</label>
-                                                                <div class="input-group">
-                                                                    <span class="input-group-addon"><i class="mdi mdi-twitter"></i></span>
-                                                                    <input type="text" class="form-control" placeholder="Twitter url">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label>Skype</label>
-                                                                <div class="input-group">
-                                                                    <span class="input-group-addon"><i class="mdi mdi-skype"></i></span>
-                                                                    <input type="text" class="form-control" placeholder="Skype url">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label>Pinterest</label>
-                                                                <div class="input-group">
-                                                                    <span class="input-group-addon"><i class="mdi mdi-pinterest"></i></span>
-                                                                    <input type="text" class="form-control" placeholder="Pinterest url">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </fieldset>
-
-                                                <button type="submit" class="btn btn-primary stepy-finish">Submit</button>
-                                            </form>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- End row -->
-
-
                             </div>
+
                             <div class="tab-pane fade show active" id="profile1">
-                            <div class="form-group row">
+                                <div class="form-group row">
                                     
                                     <div class="col-2 col-form-label">
                                         <label class="col-2 col-form-label">
@@ -271,10 +121,10 @@
 
                                 </div>
                             </div>
+
                             <div class="tab-pane fade" id="messages1">
                                 
                                 <div class="form-group row">
-
                                     <div class="col-2 col-form-label">
                                     <label class="col-2 col-form-label">
                                         Tour
@@ -296,15 +146,13 @@
 
 
                                         <select class="form-control" name="select2" onchange="this.nextElementSibling.style.display='block'" style="display: none">
-                                            <option value=""></option>
-                                            
-                                            <?php while ($fila=mysqli_fetch_array($res2)){
-                                                            $xprec_tour = $fila["prec_tour"];
-                                                            $xid_tour = $fila["id_tour"];
-                                                            echo "<option>$xprec_tour</option>";
-                                                        } 
-                                            ?>
-                                            <option value="">3</option>
+                                            <option>Seleccione número de personas</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
                                         </select>
 
                                         <select class="form-control" name="selectN" onchange="this.nextElementSibling.style.display='block'" style="display: none">
@@ -320,8 +168,66 @@
 
                             </div>
                             <div class="tab-pane fade" id="settings1">
-                                <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                                <form class="form-horizontal" method="POST" action="#">
+
+                                    <input hidden="YES" name="accion" value="crear">
+
+                                    <div class="row m-t-20">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-2 col-form-label">Nombres</label>
+                                                <input type="text" name="nom_tour" id="nom_tour" class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-2 col-form-label">Email</label>
+                                                <input type="email"  name="nom_tour" id="nom_tour" class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-2 col-form-label">Celular</label>
+                                                <input type="text"  name="nom_tour" id="nom_tour" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-2 col-form-label">País</label>
+                                                <select name="" id="" class="form-control">
+                                                    <option value="">Perú</option>
+                                                    <option value="">Argentina</option>
+                                                    <option value="">Brazil</option>
+                                                    <option value="">Paraguay</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-form-label">Fecha de Viaje</label>
+                                                <input type="text"  name="daterange" id="" class="form-control input-daterange-datepicker">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-2 col-form-label">N° Persona</label>
+                                                <input type="text"  name="nom_tour" id="nom_tour" class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-form-label">Categotia Hotel</label>
+                                                <select name="" id="" class="form-control">
+                                                        <option value="">Hotel Una Estrella</option>
+                                                        <option value="">Hotel Dos Estrella</option>
+                                                        <option value="">Hotel Tres Estrella</option>
+                                                        <option value="">Hotel Cuatro Estrella</option>
+                                                        <option value="">Hotel Cinco Estrella</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-2 col-form-label">Colsulta</label>
+                                                <textarea class="form-control" name="descp_tour" id="descp_tour"  rows="6"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-sm btn-primary btn-rounded w-md waves-effect waves-light pull-right">Enviar Consulta</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -331,14 +237,39 @@
 
         </div> <!-- container -->
     </div> <!-- content -->
-    <footer class="footer text-right">2019 © Insizio. - FamiliaTour.com</footer>
+    <footer class="footer text-right">2019 © Insizio</footer>
 </div>
 <!-- ============================================================== -->
 <!-- End Right content here -->
 <!-- ============================================================== -->
-<?php require_once("Operaciones-footer.php");?>
 
-        <!--Form Wizard-->
-        <script src="../plugins/jquery.stepy/jquery.stepy.min.js" type="text/javascript"></script>
-        <!--wizard initialization-->
-        <script src="assets/pages/jquery.wizard-init.js" type="text/javascript"></script>
+</div>
+        <!-- END wrapper -->
+
+
+
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/tether.min.js"></script><!-- Tether for Bootstrap -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/metisMenu.min.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
+
+        <!-- plugin js -->
+        <script src="../plugins/moment/moment.js"></script>
+        <script src="../plugins/timepicker/bootstrap-timepicker.js"></script>
+        <script src="../plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+        <script src="../plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+        <script src="../plugins/clockpicker/js/bootstrap-clockpicker.min.js"></script>
+        <script src="../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+        <!-- Init js -->
+        <script src="assets/pages/jquery.form-pickers.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
+
+    </body>
+</html>

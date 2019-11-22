@@ -29,26 +29,27 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-
             <div class="wrapper-page">
-
                 <div class="account-pages">
                     <div class="account-box">
                         <div class="account-logo-box">
                             <h2 class="text-uppercase text-center">
                                 <a href="index.html" class="text-success">
-                                    <span><img src="assets/images/logo_temporal.png" alt="" height="80"></span>
+                                    <span><img src="assets/images/Familia.png" alt="" height="150"></span>
                                 </a>
                             </h2>
                             <center><h3 class="text-uppercase font-bold m-b-5 m-t-50">Iniciar Sesion</h3>
                             <p class="m-b-0">¡Los mejores tours a los mejores precios!</p></center>
                         </div>
                         <div class="account-content">
+                            <!--
                             <form class="form-horizontal" method="POST" action="validar.php">
+                            -->
+                            <form class="form-horizontal" method="POST" action="prueba.php">
 
                                 <div class="form-group m-b-20 row">
                                     <div class="col-12">
-                                        <label for="emailaddress">Email address</label>
+                                        <label for="emailaddress">Email</label>
                                         <input class="form-control" type="text" id="emailaddress" required="" name="log_per" placeholder="Usuario / Email">
                                     </div>
                                 </div>
@@ -65,9 +66,9 @@
                                     <div class="col-12">
 
                                         <div class="checkbox checkbox-success">
-                                            <input id="remember" type="checkbox" checked="">
+                                            <input id="remember" type="checkbox">
                                             <label for="remember">
-                                                Remember me
+                                                Recordar usuario
                                             </label>
                                         </div>
 

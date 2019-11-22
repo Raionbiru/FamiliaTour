@@ -14,6 +14,6 @@
   }
   function desconectar($xc) {
      mysqli_close( $xc );
-     echo "¡Ups!";
+     
   }
 ?>
