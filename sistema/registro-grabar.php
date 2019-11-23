@@ -83,6 +83,16 @@ if ($xtipo == "1"){
     
         mysqli_query($xc,$sql);
         desconectar($xc);
+
+        ini_set( 'display_errors', 1 );
+        error_reporting( E_ALL );
+        $from = "johnnbill123@hotmial.com";
+        $to = "johnn.condori@tecsup.edu.pe";
+        $subject = "Familia Viajera Tour";
+        $message = "Se esta evaluando la solicitud de su cuenta, Señor: $xnom_cliente $xape_cliente";
+        $headers = "From:" . $from;
+        mail($to,$subject,$message, $headers);
+        echo "Se envio un correo.";
     
     }elseif ($xaccion=="editar") {
         $xid_per= leerParam("id_per","");

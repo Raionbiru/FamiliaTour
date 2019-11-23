@@ -3,7 +3,7 @@
 <?php session_start();
     if (!isset($_SESSION["nom_per"] ) ){
         header("Location:login.php");
-    }         
+    }
     require_once("funciones.php");?>
     <head>
         <meta charset="utf-8" />

@@ -2,86 +2,77 @@
   require_once("funciones.php");
   $xlog_per = leerParam('log_per','' );
   $xpass_per  = leerParam('pass_per','' );
+
   $xc = conectar();
-  //$sql = "SELECT count(*)  FROM persona p, cliente c WHERE (p.log_per='$xlog_per' AND p.pass_per='$xpass_per') OR (c.email_cliente='$xlog_per' AND c.pas_cliente='$xpass_per')";
-	$sql = "SELECT count(*)  FROM persona p WHERE p.log_per='$xlog_per' AND p.pass_per='$xpass_per'";
-  $res = mysqli_query($xc, $sql );    
-  $fila = mysqli_fetch_array($res);
-  $xcan = $fila[0];
 
-	
- 	$sql2 = "SELECT t.nom_tipo_per, p.nom_per, p.ape_per, p.estado_per, a.nom_area
-	 		FROM persona p
-			INNER JOIN tipo_persona t ON p.id_tipo_per = t.id_tipo_per 
-			INNER JOIN area a ON p.id_area = a.id_area
-			WHERE p.log_per = '$xlog_per'";
-
-	$res2 = mysqli_query($xc, $sql2 );    
-	$fila2 = mysqli_fetch_array($res2);
-
-	$xnom_tipo_per = $fila2[0];
-	$xestado_per = $fila2[3];
-	$xnom_area = $fila2[4];
+  $sqlPersona = "SELECT count(*)  FROM persona WHERE log_per='$xlog_per' AND pass_per='$xpass_per'";
+    $resPersona = mysqli_query($xc, $sqlPersona );    
+    $filaPersona = mysqli_fetch_array($resPersona);
+    $xcanPersona = $filaPersona[0];
 
 
-	/*	$sql3 = "SELECT c.nom_cliente, c.ape_cliente, c.id_cliente, c.estado_cliente 
-		FROM cliente c
-		Where c.email_cliente='$xlog_per' AND c.pas_cliente='$xpass_per'";
-	
-		$res3 = mysqli_query($xc, $sql3);
-		$fila3 = mysqli_fetch_array($res3);
-	
-			$xnom_cliente = $fila3[0];
-			$xape_cliente = $fila3[1];
-			$xid_cliente = $fila3[2];
-			$xestado_cliente = $fila3[3];
+ $sqlCliente = "SELECT count(*)  FROM cliente WHERE email_cliente='$xlog_per' AND pas_cliente='$xpass_per'";
+    $resCliente = mysqli_query($xc, $sqlCliente );    
+    $filaCliente = mysqli_fetch_array($resCliente);
+    $xcanCliente = $filaCliente[0];
 
-			if ( $xcan > 0 ) {
-				session_start();
-				$_SESSION["nom_cliente"]=$fila3[0];
-				$_SESSION["ape_cliente"]=$fila3[1];
-		
-				if($xestado_cliente == "0"){
-					header("Location: Agencia.php");
-				}else{
-					header("Location: register.php");
-				}
-				desconectar($xc);
-				echo "Entro y salio";
-			}
-	
-*/
-	if($xestado_per == 0){
-		$xcan = 0;
-		desconectar($xc);
-	}
+if ( $xcanPersona > 0 ) {
 
-	if ( $xcan > 0 ) {
-		session_start();
-		$_SESSION["nom_per"]=$fila2[1];
-		$_SESSION["ape_per"]=$fila2[2];
+    $sqlPersonaConsulta = "SELECT * FROM persona WHERE log_per='$xlog_per' AND pass_per='$xpass_per'";
+    $resPersonaConsulta = mysqli_query($xc, $sqlPersonaConsulta);
+    $filaPersonaConsulta = mysqli_fetch_array($resPersonaConsulta);
 
-		if($xnom_tipo_per == "Administrador"){
-			if($xnom_area == "Administracion"){
-				header("Location: Admi.php");
-			}else if($xnom_area == "Operaciones"){
-				header("Location: Operaciones.php");
-			}else if($xnom_area == "Comercial"){
-				header("Location: Comercial.php");
-			}
-		}else if ($xnom_tipo_per == "Usuario"){
-			header("Location: Agencia-header.php");
-		}
+    $xid_area = $filaPersonaConsulta["id_area"];
 
+    session_start();
+    $_SESSION["nom_per"]=$filaPersonaConsulta["nom_per"];
+    $_SESSION["ape_per"]=$filaPersonaConsulta["ape_per"];
 
-		desconectar($xc);
-		echo "Entro y salio";
-  	}
+    if($xid_area > 0){
+        switch ($xid_area) {
+            case '1':
+                header("Location: Comercial.php");
+                desconectar($xc);
+                break;
+            
+            case '2':
+                header("Location: Operaciones.php");
+                desconectar($xc);
+                break;
+            
+            case '3':
+                header("Location: Admi.php");
+                desconectar($xc);
+                break;
+            
+            default:
+                desconectar($xc);
+                header("Location: register.php");
+                break;
+        }
+    }else{
+        desconectar($xc);
+    header("Location: login.php");
+    }
 
-  
-  else
-  {
-  	desconectar($xc);
-    header("Location: register.php");
-  }
-?>
+}else if( $xcanCliente > 0){
+
+    $sqlClienteConsulta = "SELECT * FROM cliente WHERE email_cliente='$xlog_per' AND pas_cliente='$xpass_per'";
+    $resClienteConsulta = mysqli_query($xc, $sqlClienteConsulta);
+    $filaClienteConsulta = mysqli_fetch_array($resClienteConsulta);
+
+    $xestadoCliente = $filaClienteConsulta["estado_cliente"];
+
+    if($xestadoCliente == 0){
+        header("Location: register.php");
+        desconectar($xc);	
+    }else{
+        header("Location: Agencia.php");
+        desconectar($xc);
+    }
+    
+}else {
+    desconectar($xc);
+    header("Location: login.php");
+}
+

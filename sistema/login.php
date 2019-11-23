@@ -45,7 +45,7 @@
                             <!--
                             <form class="form-horizontal" method="POST" action="validar.php">
                             -->
-                            <form class="form-horizontal" method="POST" action="prueba.php">
+                            <form class="form-horizontal" method="POST" action="validar.php">
 
                                 <div class="form-group m-b-20 row">
                                     <div class="col-12">

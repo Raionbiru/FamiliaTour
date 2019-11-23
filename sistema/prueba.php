@@ -3,10 +3,8 @@
   $xlog_per = leerParam('log_per','' );
   $xpass_per  = leerParam('pass_per','' );
   $xc = conectar();
-  $sql = "SELECT count(*)  FROM persona p, cliente c WHERE (p.log_per='$xlog_per' AND p.pass_per='$xpass_per') OR (c.email_cliente='$xlog_per' AND c.pas_cliente='$xpass_per')";
-
-
-  $sql = "SELECT count(*)  FROM persona p WHERE p.log_per='$xlog_per' AND p.pass_per='$xpass_per'";
+  //$sql = "SELECT count(*)  FROM persona p, cliente c WHERE (p.log_per='$xlog_per' AND p.pass_per='$xpass_per') OR (c.email_cliente='$xlog_per' AND c.pas_cliente='$xpass_per')";
+	$sql = "SELECT count(*)  FROM persona p WHERE p.log_per='$xlog_per' AND p.pass_per='$xpass_per'";
   $res = mysqli_query($xc, $sql );    
   $fila = mysqli_fetch_array($res);
   $xcan = $fila[0];
