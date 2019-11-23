@@ -35,7 +35,7 @@
                         <div class="account-logo-box">
                             <h2 class="text-uppercase text-center">
                                 <a href="index.html" class="text-success">
-                                    <span><img src="assets/images/Familia.png" alt="" height="150"></span>
+                                    <span><img src="assets/images/transparent-logo2019.png" alt="" height="150"></span>
                                 </a>
                             </h2>
                             <center><h3 class="text-uppercase font-bold m-b-5 m-t-50">Iniciar Sesion</h3>

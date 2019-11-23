@@ -42,11 +42,6 @@ desconectar($xc);
             <div class="container">
                 <div class="row">
 
-       
-
-
-
-
 
                     <div class="col-sm-12">
 
@@ -57,7 +52,7 @@ desconectar($xc);
                                     <div class="account-logo-box">
                                         <h2 class="text-uppercase text-center">
                                             <a href="index.html" class="text-success">
-                                                <span><img src="assets/images/logo_dark.png" alt="" height="30"></span>
+                                                <span><img src="assets/images/transparent-logo2019.png" alt="" height="100"></span>
                                             </a>
                                         </h2>
                                         <center>

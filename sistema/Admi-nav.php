@@ -10,10 +10,10 @@
         <div class="topbar-left">
             <a href="index.html" class="logo">
                         <span>
-                            <img src="assets/images/logo.png" alt="" height="25">
+                            <img src="assets/images/transparent-logo2019.png" alt="" height="60">
                         </span>
                 <i>
-                    <img src="assets/images/logo_sm.png" alt="" height="28">
+                    <img src="assets/images/sm-logo2019.png" alt="" height="28">
                 </i>
             </a>
         </div>
@@ -123,7 +123,7 @@
             <div id="sidebar-menu">
                 <!-- Left Menu Start -->
                 <ul class="metismenu" id="side-menu">
-                    <li class="menu-title">Navigation</li>
+                    <li class="menu-title">Menú</li>
                     <li>
                         <a href="Admi-pago-mensual.php"><i class="fi-target"></i> <span> Pagos Mensuales </span></a>
                     </li>
