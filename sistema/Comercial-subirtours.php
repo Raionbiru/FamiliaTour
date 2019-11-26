@@ -3,7 +3,7 @@ require_once("funciones.php");
 $xc = conectar();
 
 
-$sql = "SELECT t.nom_tour, t.descp_tour, t.prec_tour
+$sql = "SELECT t.nom_tour, t.descp_tour, t.prec_tour, t.id_tour
         FROM tour t";
 $res = mysqli_query($xc,$sql);
 desconectar($xc);
@@ -40,15 +40,21 @@ desconectar($xc);
                         <h4 class="header-title m-b-30">Mis Contratos</h4>
 
                         <div class="row">
-                        <?PHP  while($fila=mysqli_fetch_array($res)){
+                        <?PHP                  
+                                while($fila=mysqli_fetch_array($res)){
                                     $xnom_tour = $fila["nom_tour"];
                                     $xdescp_tour = $fila["descp_tour"];
                                     $xprec_tour = $fila["prec_tour"];
+                                    $xid_tour = $fila["id_tour"];
+
+                                    $path = "assets/images/".$xid_tour;
+                                    $directorio = opendir($path);
+                                    $archivo = readdir($directorio);
 
                                     echo "
                                         <div class='col-sm-4 col-lg-3 col-xs-12'>
                                         <div class='card m-b-20'>
-                                            <img class='card-img-top img-fluid' src='assets/images/small/img-1.jpg' alt='Card image cap'>
+                                            <img class='card-img-top img-fluid' src='assets/images/$xid_tour/$archivo' alt='Card image cap'>
                                             <div class='card-block'>
                                                 <h4 class='card-title'>$xnom_tour</h4>
                                                 <p class='card-text'>$xdescp_tour</p>

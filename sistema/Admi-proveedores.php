@@ -23,7 +23,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/ico.png">
 
         <!-- Plugin Css-->
         <link rel="stylesheet" href="../plugins/magnific-popup/css/magnific-popup.css" />

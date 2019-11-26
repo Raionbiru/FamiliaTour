@@ -9,7 +9,7 @@
                     <!--img src="assets/images/logo.png" alt="" height="25"-->
                 </span>
         <i>
-            <img src="assets/images/logo_sm.png" alt="" height="28">
+            <img src="assets/images/ico.png" alt="" height="28">
         </i>
     </a>
 </div>

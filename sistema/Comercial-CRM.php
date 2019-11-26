@@ -32,7 +32,7 @@
     </div> <!-- content -->
 
     <footer class="footer text-right">
-        2019 © INSIZIO. - FamiliaTour.com
+        2019 © INSIZIO
     </footer>
 
 </div>

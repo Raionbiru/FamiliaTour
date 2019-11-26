@@ -6,9 +6,8 @@
     }         
     require_once("funciones.php");
     $xc = conectar();
-    $sql = "SELECT p.id_per, p.nom_per, p.ape_per, p.cargo_per, p.estado_per
-            FROM persona p
-            WHERE id_tipo_per = 2";
+    $sql = "SELECT *
+            FROM cliente";
     $res = mysqli_query($xc,$sql);
     desconectar($xc);
 ?>
@@ -21,7 +20,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/ico.png">
 
         <!--Footable-->
         <link href="../plugins/footable/css/footable.core.css" rel="stylesheet">
@@ -74,10 +73,11 @@
                             <thead>
                             <tr>
                                 <th data-sort-ignore="true" class="min-width"></th>
-                                <th data-sort-initial="true" data-toggle="true">Nombre</th>
-                                <th>Apellido</th>
-                                <th data-hide="phone">Cargo</th>
-                                <th data-hide="phone, tablet">Estado</th>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Empresa</th>
+                                <th>Web</th>
+                                <th>Estado</th>
                             </tr>
                             </thead>
                             <!-- Añadir y Buscar  -->
@@ -97,11 +97,13 @@
                             </div>-->
                             <tbody>
                             <?PHP while($fila=mysqli_fetch_array($res)){
-                                    $xid_per = $fila["id_per"];
-                                    $xnom_per = $fila["nom_per"];
-                                    $xape_per = $fila["ape_per"];
-                                    $xcargo_per = $fila["cargo_per"];
-                                    $xestado_per = $fila["estado_per"];
+                                    $xid_cliente = $fila["id_cliente"];
+                                    $xnom_cliente = $fila["nom_cliente"];
+                                    $xape_cliente = $fila["ape_cliente"];
+                                    $xemail_cliente = $fila["email_cliente"];
+                                    $xempr_cliente = $fila["empr_cliente"];
+                                    $xweb_empr_cliente = $fila["web_empr_cliente"];
+                                    $xestado_cliente = $fila["estado_cliente"];
 
                                         echo "
                                             <tr>
@@ -112,7 +114,8 @@
                                                 <form method='POST' action='activar-usuario.php'>
 
                                                 <input hidden='YES' name='accion' value='desactivar'>
-                                                <input hidden='YES' name='id_per' value=$xid_per>
+                                                <input hidden='YES' name='tipo' value='cliente'>
+                                                <input hidden='YES' name='id_cliente' value= '$xid_cliente'>
 
                                                 <button class='demo-delete-row btn btn-danger btn-xs btn-icon'><i class='fa fa-times'></i></button>
 
@@ -121,7 +124,8 @@
                                                 <form method='POST' action='activar-usuario.php'>
 
                                                 <input hidden='YES' name='accion' value='activar'>
-                                                <input hidden='YES' name='id_per' value=$xid_per>
+                                                <input hidden='YES' name='tipo' value='cliente'>
+                                                <input hidden='YES' name='id_cliente' value= '$xid_cliente'>
 
                                                 <button class='demo-delete-row btn btn-danger btn-xs btn-icon'><i class='fa fa-check'></i></button>
 
@@ -129,15 +133,16 @@
 
                                                 </div>
                                             </td>
-                                            <td>$xnom_per</td>
-                                            <td>$xape_per</td>
-                                            <td>$xcargo_per</td>
+                                            <td>$xnom_cliente $xape_cliente</td>
+                                            <td>$xemail_cliente</td>
+                                            <td>$xempr_cliente</td>
+                                            <td>$xweb_empr_cliente</td>
                                             
                                             <td>";
-                                                if ($xestado_per == 0){
+                                                if ($xestado_cliente == 0){
                                                     echo"<span class='label label-table label-danger'>Desactivado</span>";
                                                 }
-                                                elseif($xestado_per == 1){
+                                                elseif($xestado_cliente == 1){
                                                     echo"<span class='label label-table label-success'>Activado</span>";
                                                 }
                                             echo "</td>
@@ -185,7 +190,7 @@
     <script src="assets/js/jquery.slimscroll.js"></script>
 
     <!--FooTable-->
-    <script src="../plugins/footable/js/footable.all.min.js"></script>
+    
 
     <!--FooTable Example-->
     <script src="assets/pages/jquery.footable.js"></script>

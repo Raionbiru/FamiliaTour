@@ -21,7 +21,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/ico.png">
 
         <!--Footable-->
         <link href="../plugins/footable/css/footable.core.css" rel="stylesheet">
@@ -187,8 +187,8 @@
     <script src="assets/js/waves.js"></script>
     <script src="assets/js/jquery.slimscroll.js"></script>
 
-    <!--FooTable-->
-    <script src="../plugins/footable/js/footable.all.min.js"></script>
+    <!--FooTable
+    <script src="../plugins/footable/js/footable.all.min.js"></script>-->
 
     <!--FooTable Example-->
     <script src="assets/pages/jquery.footable.js"></script>

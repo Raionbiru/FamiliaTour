@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
-<?php session_start();
-    if (!isset($_SESSION["nom_per"] ) ){
-        header("Location:login.php");
-    }         
-    
-    require_once("funciones.php");
-    $xc = conectar();
-    $sql = "SELECT p.nom_per,p.ape_per, j.hor_tra_jor, a.nom_area, j.viat_jor,j.sueldo_jor 
-        FROM jornal j
-        INNER JOIN persona p ON j.id_per = p.id_per 
-        INNER JOIN area a ON j.id_area = a.id_area";
+    <?php session_start();
+        if (!isset($_SESSION["nom_per"] ) ){
+            header("Location:login.php");
+        }         
         
-    $res = mysqli_query($xc,$sql);
-    desconectar($xc);
-?>
+        require_once("funciones.php");
+        $xc = conectar();
+        $sql = "SELECT p.nom_per,p.ape_per, j.hor_tra_jor, a.nom_area, j.viat_jor,j.sueldo_jor 
+            FROM jornal j
+            INNER JOIN persona p ON j.id_per = p.id_per 
+            INNER JOIN area a ON j.id_area = a.id_area";
+            
+        $res = mysqli_query($xc,$sql);
+        desconectar($xc);
+    ?>
     <head>
         <meta charset="utf-8" />
         <title>Familia</title>
@@ -24,7 +24,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/ico.png">
 
         <!-- Plugin Css-->
         <link rel="stylesheet" href="../plugins/magnific-popup/css/magnific-popup.css" />
@@ -72,22 +72,25 @@
                         <!--
                         <button onclick="window.location.href='Admi-personal-añadir.php'" type="button" class="btn btn-sm btn-primary btn-rounded w-md waves-effect waves-light pull-right">Agregar Personal</button>
                         -->
-                        <h4 class="m-t-0 header-title"><b>Personal</b></h4>
-                        <p class="text-muted font-14">
-                            Personal de la empresa
-                        </p>
-                        <div class="form-group row">
-                            <label class="col-2 col-form-label">Buscar</label>
-                            <div class="col-10">
+                        <h4 class="m-t-0 header-title"><b>Busqueda por fecha</b></h4>
+                        <p class="text-muted font-14"></p>
+                        <!-- Buscador -->
+                        <form class="row justify-content-center" method="post" action="Admi-buscador.php">
+                            <label class="col-1 col-form-label">Desde: </label>
+                            <div class="col-3">
                                 <div class="input-group">
-                                    <input type="date" class="form-control">
-                                    <span class="input-group-btn">
-                                        <button class="btn waves-effect waves-light btn-primary" type="button"> Buscar</button>
-                                    </span>
+                                    <input type="date"  name="fec_ini" id="fec_ini" class="form-control">
                                 </div>
-
                             </div>
-                        </div>
+                            <label class="col-1 col-form-label">Hasta: </label>
+                            <div class="col-4">
+                                <div class="input-group">
+                                    <input type="date" name="fec_fin" id="fec_fin" class="form-control">
+                                    <button class="btn waves-effect waves-light btn-primary" type="submit"> Buscar</button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- end: Buscador -->
 
                     </div>
                 </div>
@@ -148,36 +151,6 @@
                                             ";
                                     }
                                 ?>
-
-
-                                <tr class="gradeX">
-                                    <td>Persona 1</td>
-                                    <td>Operaciones</td>
-                                    <td>50</td>
-                                    <td>50.00</td>
-                                    <td>900.00</td>
-                                    <td>950.00</td>
-                                    <td class="actions">
-                                        <a href="#" class="on-default edit-row" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="on-default remove-row" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash-o"></i></a>
-                                        <a href="#" class="hidden on-editing save-row" data-toggle="tooltip" data-placement="top" title="" data-original-title="Save"><i class="fa fa-save"></i></a>
-                                        <a href="#" class="hidden on-editing cancel-row" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancel"><i class="fa fa-times"></i></a>
-                                    </td>
-                                </tr>
-                                <tr class="gradeU">
-                                    <td>Persona 2</td>
-                                    <td>Comercial</td>
-                                    <td>200</td>
-                                    <td>70.00</td>
-                                    <td>1000.00</td>
-                                    <td>1070.00</td>
-                                    <td class="actions">
-                                        <a href="#" class="on-default edit-row" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="on-default remove-row" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash-o"></i></a>
-                                        <a href="#" class="hidden on-editing save-row" data-toggle="tooltip" data-placement="top" title="" data-original-title="Save"><i class="fa fa-save"></i></a>
-                                        <a href="#" class="hidden on-editing cancel-row" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancel"><i class="fa fa-times"></i></a>
-                                    </td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -196,7 +169,33 @@
 <!-- End Right content here -->
 <!-- ============================================================== -->
 </div>
-<!-- end Modal -->
+        <!-- END wrapper -->
+
+
+        <!-- MODAL -->
+        <div id="dialog" class="modal-block mfp-hide">
+            <section class="card p-20">
+                <header class="panel-heading">
+                    <h4 class="panel-title mt-0">Are you sure?</h4>
+                </header>
+                <div class="panel-body">
+                    <div class="modal-wrapper">
+                        <div class="modal-text">
+                            <p>Are you sure that you want to delete this row?</p>
+                        </div>
+                    </div>
+
+                    <div class="row m-t-20">
+                        <div class="col-md-12 text-right">
+                            <button id="dialogConfirm" class="btn btn-success waves-effect waves-light">Confirm</button>
+                            <button id="dialogCancel" class="btn btn-danger waves-effect">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+        <!-- end Modal -->
 
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>

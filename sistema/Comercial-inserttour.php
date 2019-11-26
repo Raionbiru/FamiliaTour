@@ -50,7 +50,7 @@ desconectar($xc);
                                             <div class="p-20">
 
 
-                                                <form class="form-horizontal" method="POST" action="Comercial-grabartour.php">
+                                                <form enctype="multipart/form-data" class="form-horizontal" method="POST" action="Comercial-grabartour.php">
 
                                                     <input hidden="YES" name="accion" value="crear">
 
@@ -78,7 +78,7 @@ desconectar($xc);
                                                     <div class="form-group row">
                                                         <label class="col-3 col-form-label">Imagen</label>
                                                         <div class="col-9">
-                                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                            <div class="fileupload fileupload-new">
 
                                                                 
                                                                 <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
@@ -87,12 +87,14 @@ desconectar($xc);
                                                                 
                                                                 <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
                                                                 <div>
-                                                                    <button type="submit" class="btn btn-secondary btn-file">
+                                                                    <div class="btn btn-secondary btn-file">
+                                                                    
                                                                         <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Select image</span>
                                                                         <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
-                                                                        <input type="file" class="btn-secondary" />
-                                                                    </button>
-                                                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> Remove</a>
+                                                                        <input type="file" id="archivo" name="archivo" class="btn-secondary" accept="image/*" />
+                                                                    
+                                                                    </div>
+                                                                    <a href="#" class="btn btn-danger fileupload-exists"><i class="fa fa-trash"></i> Remove</a>
                                                                 </div>
 
 
@@ -130,4 +132,30 @@ desconectar($xc);
             <!-- ============================================================== -->
             <!-- End Right content here -->
             <!-- ============================================================== -->
-<?php require_once("Comercial-footer.php");?>
+            </div>
+        <!-- END wrapper -->
+
+
+
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/tether.min.js"></script><!-- Tether for Bootstrap -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/metisMenu.min.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
+
+        <!-- Jquery filer js -->
+        <script src="../plugins/jquery.filer/js/jquery.filer.min.js"></script>
+
+        <!-- Bootstrap fileupload js -->
+        <script src="../plugins/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+        <!-- page specific js -->
+        <script src="assets/pages/jquery.fileuploads.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
+
+    </body>
+</html>

@@ -80,12 +80,16 @@ desconectar($xc);
                                         <div class="tab-content">
 
                                             <div class="tab-pane fade" id="home1">
-                                            <form class="form-horizontal" method="POST" action="registro-grabar.php">
+                                                
+                                                <!-- ===================== -->
+                                                <!-- FORMULARIO DE PERSONAL -->
+                                                <!-- ===================== -->
 
-                                                <input hidden="YES" name="accion" value="crear">
-                                                <input hidden="YES" name="id_sector" id="id_sector" value="2">
-                                                <input hidden="YES" name="id_tipo_per" id="id_tipo_per" value="2">
+                                                <form class="form-horizontal" method="POST" action="registro-grabar.php">
 
+                                                    <input hidden="YES" name="accion" value="crear">
+                                                    <input hidden="YES" name="tipo" value="persona">
+                                                    
                                                     <div class="form-group row m-b-20">
                                                         <div class="col-12">
                                                             <label for="emailaddress">Apellidos</label>
@@ -125,13 +129,15 @@ desconectar($xc);
 
                                                     <div class="form-group row m-b-20">
                                                         <div class="col-12">
-                                                            <label>Area</label>
+                                                            <label>Área</label>
                                                                 <select class="form-control" name="id_area">
-                                                                    <option value="" selected>Select</option> 
+                                                                    <option value="" selected>Seleccioné Área</option> 
                                                                     <?php while ($fila=mysqli_fetch_array($res3)){
                                                                         $xid_area = $fila["id_area"];
                                                                         $xnom_area = $fila["nom_area"];
-                                                                        echo "<option value='$xid_area'>$xnom_area</option>";
+                                                                        if ($xnom_area !== "Administracion") {
+                                                                            echo "<option value='$xid_area'>$xnom_area</option>";
+                                                                        }
                                                                     } ?>
                                                                 </select>
                                                         </div>
@@ -189,7 +195,7 @@ desconectar($xc);
 
 
                                             <div class="tab-pane fade show active" id="profile">
-                                                
+
                                                 <!-- ===================== -->
                                                 <!-- FORMULARIO DE AGENCIA -->
                                                 <!-- ===================== -->
@@ -281,6 +287,7 @@ desconectar($xc);
                                                     </div>
 
                                                 </form>
+                                                
                                             </div>
 
 
@@ -306,7 +313,9 @@ desconectar($xc);
         <script src="assets/js/metisMenu.min.js"></script>
         <script src="assets/js/waves.js"></script>
         <script src="assets/js/jquery.slimscroll.js"></script>
-
+        <!-- Toastr js -->
+        <script src="../plugins/jquery-toastr/jquery.toast.min.js" type="text/javascript"></script>
+        <script src="assets/pages/jquery.toastr.js" type="text/javascript"></script>
         <!-- App js -->
         <script src="assets/js/jquery.core.js"></script>
         <script src="assets/js/jquery.app.js"></script>

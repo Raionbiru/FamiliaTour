@@ -157,11 +157,11 @@
                         <ul class="metismenu" id="side-menu">
                             <li class="menu-title">Navigation</li>
                             <li>
-                                <a href="Admi-header.php"><i class="fi-briefcase"></i> <span> CRM </span></a>
+                                <a href="Comercial-CRM.php"><i class="fi-briefcase"></i> <span> CRM </span></a>
                             </li>
 
                             <li>
-                                <a href="Admi-header.php"><i class="fi-bar-graph-2"></i><span> Cotizador </span></a>
+                                <a href="Comercial-cotizador.php"><i class="fi-bar-graph-2"></i><span> Cotizador </span></a>
                             </li>
 
                             <li>

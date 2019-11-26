@@ -4,10 +4,8 @@ $xaccion=leerParam("accion","");
 $xtipo=leerParam("tipo","");
 $xid_sector=leerParam("id_sector","");
 
-if ($xtipo == "1"){
-
+if ($xtipo == "persona") {
     if ($xaccion=="crear") {
-
         $xnom_per=leerParam("nom_per","");
         $xape_per=leerParam("ape_per","");
         $xdirec_per=leerParam("direc_per","");
@@ -32,6 +30,16 @@ if ($xtipo == "1"){
     
         mysqli_query($xc,$sql);
         desconectar($xc);
+
+        ini_set( 'display_errors', 1 );
+        error_reporting( E_ALL );
+        $from = "johnnbill123@hotmial.com";
+        $to = "johnn.condori@tecsup.edu.pe";
+        $subject = "Familia Viajera Tour";
+        $message = "Se esta evaluando la solicitud de su cuenta para la empresa, Señor: $xnom_cliente $xape_cliente";
+        $headers = "From:" . $from;
+        mail($to,$subject,$message, $headers);
+        echo "Se envio un correo.";
     
     }elseif ($xaccion=="editar") {
         $xid_per= leerParam("id_per","");
@@ -59,11 +67,8 @@ if ($xtipo == "1"){
         mysqli_query($xc,$sql);
         desconectar($xc);
     }
-
-
-
-
-}elseif ($xtipo == "agencia"){
+}
+elseif ($xtipo == "agencia"){
 
     if ($xaccion=="crear") {
 
@@ -89,7 +94,7 @@ if ($xtipo == "1"){
         $from = "johnnbill123@hotmial.com";
         $to = "johnn.condori@tecsup.edu.pe";
         $subject = "Familia Viajera Tour";
-        $message = "Se esta evaluando la solicitud de su cuenta, Señor: $xnom_cliente $xape_cliente";
+        $message = "Se esta evaluando la solicitud de su cuenta - Agencia, Señor: $xnom_cliente $xape_cliente";
         $headers = "From:" . $from;
         mail($to,$subject,$message, $headers);
         echo "Se envio un correo.";

@@ -1,5 +1,4 @@
 <body>
-
 <!-- Begin page -->
 <div id="wrapper">
 
@@ -10,7 +9,7 @@
         <div class="topbar-left">
             <a href="index.html" class="logo">
                         <span>
-                            <img src="assets/images/transparent-logo2019.png" alt="" height="60">
+                            <img src="assets/images/Logo_blanco.png" alt="" height="60">
                         </span>
                 <i>
                     <img src="assets/images/sm-logo2019.png" alt="" height="28">
@@ -19,42 +18,52 @@
         </div>
 
         <nav class="navbar-custom">
-
             <ul class="list-inline float-right mb-0">
                 <li class="list-inline-item dropdown notification-list">
-                    <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
-                       aria-haspopup="false" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false" onclick="myFunction()" id="notification-icon">
                         <i class="dripicons-bell noti-icon"></i>
-                        <span class="badge badge-pink noti-icon-badge">4</span>
+                        <span class="badge badge-pink noti-icon-badge" id="notification-count">
+                            <?php
+                                $xc = conectar();
+                                $sqlNotificacion = "SELECT count(*) FROM cliente , persona WHERE notificacion_cliente = 0 AND notificacion_per = 0";
+                                $resNotificacion = mysqli_query($xc,$sqlNotificacion);
+                                $filaNotificacion = mysqli_fetch_array($resNotificacion);
+                                $xresNotificacion = $filaNotificacion[0];
+                                desconectar($xc);
+                                echo "$xresNotificacion";?>
+                        </span>
+                        <div id="notification-latest"></div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg" aria-labelledby="Preview">
                         <!-- item-->
                         <div class="dropdown-item noti-title">
-                            <h5><span class="badge badge-danger float-right">5</span>Notification</h5>
+                        <h5><span class="badge badge-danger float-right"><?php echo "$xresNotificacion";?></span>Notification</h5>
                         </div>
 
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon bg-success"><i class="icon-bubble"></i></div>
-                            <p class="notify-details">Robert S. Taylor commented on Admin<small class="text-muted">1 min ago</small></p>
-                        </a>
+                            <?php
+                                $xc = conectar();
+                                $sqlRespuesta = "SELECT nom_cliente, empr_cliente FROM cliente WHERE notificacion_cliente = 0";
+                                $resRespuesta = mysqli_query($xc,$sqlRespuesta);
+                                desconectar($xc);
 
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon bg-info"><i class="icon-user"></i></div>
-                            <p class="notify-details">New user registered.<small class="text-muted">1 min ago</small></p>
-                        </a>
+                                while($fila=mysqli_fetch_array($resRespuesta)){
+                                    $xnom_cliente = $fila["nom_cliente"];
+                                    $xempr_cliente = $fila["empr_cliente"];
 
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon bg-danger"><i class="icon-like"></i></div>
-                            <p class="notify-details">Carlos Crouch liked <b>Admin</b><small class="text-muted">1 min ago</small></p>
-                        </a>
+                                        echo "
+                                        <!-- item-->
+                                        <a href='javascript:void(0);' class='dropdown-item notify-item'>
+                                            <div class='notify-icon bg-info'><i class='icon-user'></i></div>
+                                            <p class='notify-details'>Nuevo usuario registrado.<small class='text-muted'>$xnom_cliente | $xempr_cliente</small></p>
+                                        </a>";
+                                }
 
-                        <!-- All-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item notify-all">
-                            View All
-                        </a>
+                                if ($xresNotificacion > 0) {
+                                    echo "<a href='javascript:void(0);' class='dropdown-item notify-item notify-all'>
+                                        View All
+                                    </a>";
+                                }
+                            ?>
 
                     </div>
                 </li>
@@ -72,12 +81,12 @@
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <i class="zmdi zmdi-account-circle"></i> <span>Profile</span>
+                            <i class="zmdi zmdi-account-circle"></i> <span>Perfil</span>
                         </a>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <i class="zmdi zmdi-settings"></i> <span>Settings</span>
+                            <i class="zmdi zmdi-settings"></i> <span>Configuración</span>
                         </a>
 
                         <!-- item-->
@@ -87,7 +96,7 @@
 
                         <!-- item-->
                         <a href="cerrar_sesion.php" class="dropdown-item notify-item">
-                            <i class="zmdi zmdi-power"></i> <span>Logout</span>
+                            <i class="zmdi zmdi-power"></i> <span>Cerrar sesion</span>
                         </a>
 
                     </div>
@@ -159,3 +168,25 @@
 
     </div>
     <!-- Left Sidebar End -->
+
+    <script type="text/javascript">
+      function myFunction() {
+        $.ajax({
+          url: "notificacion.php",
+          type: "POST",
+          processData:false,
+          success: function(data){
+            $("#notification-count").remove();                  
+            $("#notification-latest").show();$("#notification-latest").html(data);
+          },
+          error: function(){}
+        });
+      }
+      $(document).ready(function() {
+        $('body').click(function(e){
+          if ( e.target.id != 'notification-icon'){
+            $("#notification-latest").hide();
+          }
+        });
+      }); 
+    </script>

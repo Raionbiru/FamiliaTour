@@ -30,7 +30,7 @@ desconectar($xc);
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/ico.png">
 
         <!-- C3 charts css -->
         <link href="../plugins/c3/c3.min.css" rel="stylesheet" type="text/css"  />
