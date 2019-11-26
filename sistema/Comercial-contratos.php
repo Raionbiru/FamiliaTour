@@ -14,7 +14,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/ico.png">
 
         <!-- X editable -->
         <link href="../plugins/bootstrap-xeditable/css/bootstrap-editable.css" rel="stylesheet" />
@@ -42,10 +42,10 @@
                 <div class="topbar-left">
                     <a href="index.html" class="logo">
                                 <span>
-                                    <img src="assets/images/logo.png" alt="" height="25">
+                                    <img src="assets/images/Logo_blanco.png" alt="" height="60">
                                 </span>
                         <i>
-                            <img src="assets/images/logo_sm.png" alt="" height="28">
+                            <img src="assets/images/sm-logo2019.png" alt="" height="28">
                         </i>
                     </a>
                 </div>

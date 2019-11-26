@@ -14,7 +14,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/ico.png">
 
         <!-- C3 charts css -->
         <link href="../plugins/c3/c3.min.css" rel="stylesheet" type="text/css"  />
@@ -42,10 +42,10 @@
                 <div class="topbar-left">
                     <a href="index.html" class="logo">
                                 <span>
-                                    <img src="assets/images/logo.png" alt="" height="25">
+                                    <img src="assets/images/Logo_blanco.png" alt="" height="60">
                                 </span>
                         <i>
-                            <img src="assets/images/logo_sm.png" alt="" height="28">
+                            <img src="assets/images/sm-logo2019.png" alt="" height="28">
                         </i>
                     </a>
                 </div>
@@ -173,11 +173,12 @@
                             </li>
                             
                             <li>
-                                <a href="javascript: void(0);"><i class="fi-disc"></i><span> Subir Tours <span class="menu-arrow"></span></a>
+                                <a href="javascript: void(0);"><i class="fi-disc"></i><span> Tours <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="Comercial-subirtours.php">Subir Tour</a></li>
                                     <li><a href="Comercial-actualizartours.php">Actualizar Tour</a></li>
-                                    <li><a href="Comercial-eliminartours.php">Eliminar Tour</a></li>
+                                    
+                                    <li><a href="Comercial-bus.php">Buses</a></li>
                                 </ul>
                             </li>
 
