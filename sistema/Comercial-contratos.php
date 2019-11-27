@@ -239,54 +239,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card-box">
+                        <center>
                         <h4 class="m-t-0 m-b-30"> <b> CONTRATO </b> </h4>
-                        <p>
-                        Conste por el presente documento el contrato de FAMILIA TOUR, que celebran de una parte AAA, identificada con R.U.C. N° <a href="#" id="inline-username" data-type="text" data-pk="1" data-title="Enter username">superuser</a> inscrita en la partida electrónica N° <input type="number" name="" id=""> del Registro de Personas Jurídicas de <input type="text" name="" id="">, con domicio en <input type="text" name="" id=" ">, debidamente representada por su gerente general don <input type="text" name="" id="">, identificado con el D.N.I. N° <input type="number" name="" id="">, con poderes inscritos en el asiento <input type="number" name="" id=""> de la referida partida electrónica, a quien en lo sucesivo se denominará <strong>EL COMITENTE</strong>; y, de otra parte BBB, identificada con R.U.C. N° <input type="number" name="" id="">, inscrita en la partida electrónica N° <input type="number" name="" id=""> del Registrode Personas Jurídicas de <input type="text" name="" id="">, con domicilio en <input type="text" name="" id="">, identificado con D.N.I. N° <input type="number" name="" id="">              , con poderes inscritos en el asiento <input type="text" name="" id=""> de la referida partida electrónica, a quien en lo sucesivo se denominará <strong>LA LOCADORA</strong>; en los términos contenidos en las cláusulas siguientes:
-                        </p>
-                        <table class="table table-bordered table-striped">
-                            <tbody>
-                            <tr>
-                                <td width="35%">Simple text field</td>
-                                <td width="65%"><a href="#" id="inline-username" data-type="text" data-pk="1" data-title="Enter username">superuser</a></td>
-                            </tr>
-                            <tr>
-                                <td>Empty text field, required</td>
-                                <td><a href="#" id="inline-firstname" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Enter your firstname"></a></td>
-                            </tr>
-                            <tr>
-                                <td>Select, local array, custom display</td>
-                                <td><a href="#" id="inline-sex" data-type="select" data-pk="1" data-value="" data-title="Select sex"></a></td>
-                            </tr>
-                            <tr>
-                                <td>Select, remote array, no buttons</td>
-                                <td><a href="#" id="inline-group" data-type="select" data-pk="1" data-value="5" data-source="/groups" data-title="Select group">Admin</a></td>
-                            </tr>
-                            <tr>
-                                <td>Select, error while loading</td>
-                                <td><a href="#" id="inline-status" data-type="select" data-pk="1" data-value="0" data-source="/status" data-title="Select status">Active</a></td>
-                            </tr>
-
-                            <tr>
-                                <td>Combodate (date)</td>
-                                <td><a href="#" id="inline-dob" data-type="combodate" data-value="1984-05-15" data-format="YYYY-MM-DD" data-viewformat="DD/MM/YYYY" data-template="D / MMM / YYYY" data-pk="1"  data-title="Select Date of birth"></a></td>
-                            </tr>
-                            <tr>
-                                <td>Combodate (datetime)</td>
-                                <td><a href="#" id="inline-event" data-type="combodate" data-template="D MMM YYYY  HH:mm" data-format="YYYY-MM-DD HH:mm" data-viewformat="MMM D, YYYY, HH:mm" data-pk="1"  data-title="Setup event date and time"></a></td>
-                            </tr>
-
-                            <tr>
-                                <td>Textarea, buttons below. Submit by <i>ctrl+enter</i></td>
-                                <td><a href="#" id="inline-comments" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-title="Enter comments">awesome user!</a></td>
-                            </tr>
-
-                            <tr>
-                                <td>Checklist</td>
-                                <td><a href="#" id="inline-fruits" data-type="checklist" data-value="2,3" data-title="Select fruits"></a></td>
-                            </tr>
-
-                            </tbody>
-                        </table>
+                        
+                        <p style="text-align: justify, font: 14px/1.8 arial, helvetica, sans-serif;  " class="m-b-0 col-10">
+                                Conste por el presente documento el contrato de <strong>FAMILIA TOUR</strong>, que celebran de una parte AAA, identificada con R.U.C. N° <input type="number" name="" id=""> inscrita en la partida electrónica N° <input type="number" name="" id=""> del Registro de Personas Jurídicas de <input type="text" name="" id="">, con domicilio en <input type="text" name="" id=" ">, debidamente representada por su gerente general don <input type="text" name="" id="">, identificado con el D.N.I. N° <input type="number" name="" id="">, con poderes inscritos en el asiento <input type="number" name="" id=""> de la referida partida electrónica, a quien en lo sucesivo se denominará <strong>EL COMITENTE</strong>; y, de otra parte BBB, identificada con R.U.C. N° <input type="number" name="" id="">, inscrita en la partida electrónica N° <input type="number" name="" id=""> del Registrode Personas Jurídicas de <input type="text" name="" id="">, con domicilio en <input type="text" name="" id="">, identificado con D.N.I. N° <input type="number" name="" id="">              , con poderes inscritos en el asiento <input type="text" name="" id=""> de la referida partida electrónica, a quien en lo sucesivo se denominará <strong>LA LOCADORA</strong>; en los términos contenidos en las cláusulas siguientes:
+                                .</p>
+                        </center>
                     </div>
                 </div><!-- end col -->
             </div>
