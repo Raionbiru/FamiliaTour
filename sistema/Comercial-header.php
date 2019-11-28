@@ -176,8 +176,6 @@
                                 <a href="javascript: void(0);"><i class="fi-disc"></i><span> Tours <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="Comercial-subirtours.php">Subir Tour</a></li>
-                                    <li><a href="Comercial-actualizartours.php">Actualizar Tour</a></li>
-                                    
                                     <li><a href="Comercial-bus.php">Buses</a></li>
                                 </ul>
                             </li>

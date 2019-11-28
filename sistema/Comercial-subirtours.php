@@ -58,7 +58,7 @@ desconectar($xc);
                                             <div class='card-block'>
                                                 <h4 class='card-title'>$xnom_tour</h4>
                                                 <p class='card-text'>$xdescp_tour</p>
-                                                <a href='#' class='btn btn-primary'>Button</a>
+                                                <a href='#' class='btn btn-primary'>Actualizar</a>
                                             </div>
                                         </div>
                                     </div>

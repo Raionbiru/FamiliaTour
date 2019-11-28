@@ -157,6 +157,10 @@
                         <a href="Admi-personal.php"><i class="fi-disc"></i><span> Personal </span></a>
                     </li>
 
+                    <li>
+                        <a href="Admi-cotizador.php"><i class="fi-content-left "></i><span> Cotizador </span></a>
+                    </li>
+
                 </ul>
 
             </div>
