@@ -7,7 +7,7 @@
         
         require_once("funciones.php");
         $xc = conectar();
-        $sql = "SELECT p.nom_per,p.ape_per, j.hor_tra_jor, a.nom_area, j.viat_jor,j.sueldo_jor 
+        $sql = "SELECT j.id_jor, p.nom_per,p.ape_per, j.hor_tra_jor, a.nom_area, j.viat_jor,j.sueldo_jor 
             FROM jornal j
             INNER JOIN persona p ON j.id_per = p.id_per 
             INNER JOIN area a ON j.id_area = a.id_area";
@@ -126,6 +126,7 @@
                             <tbody>
 
                                 <?PHP while($fila=mysqli_fetch_array($res)){
+                                        $xid_jor = $fila["id_jor"];
                                         $xnom_per = $fila["nom_per"];
                                         $xape_per = $fila["ape_per"];
                                         $xhor_tra_jor = $fila["hor_tra_jor"];
@@ -142,8 +143,8 @@
                                                     <td>$xsueldo_jor</td>
                                                     <td>1000.00</td>
                                                     <td class='actions'>
-                                                        <a href='#' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
-                                                        <a href='#' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
+                                                        <a href='models/Personal.php?id=$xid_jor' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
+                                                        <a href='models/Personal.php?id=$xid_jor' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
                                                         <a href='#' class='hidden on-editing save-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Save'><i class='fa fa-save'></i></a>
                                                         <a href='#' class='hidden on-editing cancel-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Cancel'><i class='fa fa-times'></i></a>
                                                     </td>
@@ -176,19 +177,19 @@
         <div id="dialog" class="modal-block mfp-hide">
             <section class="card p-20">
                 <header class="panel-heading">
-                    <h4 class="panel-title mt-0">Are you sure?</h4>
+                    <h4 class="panel-title mt-0">¿Estás seguro?</h4>
                 </header>
                 <div class="panel-body">
                     <div class="modal-wrapper">
                         <div class="modal-text">
-                            <p>Are you sure that you want to delete this row?</p>
+                            <p>¿Está seguro de que desea eliminar esta fila?</p>
                         </div>
                     </div>
 
                     <div class="row m-t-20">
                         <div class="col-md-12 text-right">
-                            <button id="dialogConfirm" class="btn btn-success waves-effect waves-light">Confirm</button>
-                            <button id="dialogCancel" class="btn btn-danger waves-effect">Cancel</button>
+                            <button id="dialogConfirm" class="btn btn-success waves-effect waves-light">Aceptar</button>
+                            <button id="dialogCancel" class="btn btn-danger waves-effect">Cancelar</button>
                         </div>
                     </div>
                 </div>

@@ -5,8 +5,23 @@
             header("Location:login.php");
         }         
         
-
         require_once("funciones.php");
+        $xc = conectar();
+
+        $sql = "SELECT * FROM hostal";
+        $res = mysqli_query($xc,$sql);
+
+        $sqlTransporte = "SELECT * FROM transporte";
+        $resTransporte = mysqli_query($xc,$sqlTransporte);
+
+        $sqlComidas = "SELECT * FROM comidas";
+        $resComidas = mysqli_query($xc,$sqlComidas);
+
+        $sqlServicioPlus = "SELECT * FROM servicioplus";
+        $resServicioPlus = mysqli_query($xc,$sqlServicioPlus);
+
+
+        desconectar($xc);
     ?>
     <head>
         <meta charset="utf-8" />
@@ -60,6 +75,235 @@
             </div>
             <!-- end row -->
 
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card-box">
+                        <div class="row">
+                            <div class="col-6">
+                                <h4 class="m-t-0 header-title"><b>Hospedaje</b></h4>
+                                <p class="text-muted m-b-30 font-14"></p>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="m-b-30">
+                                    <button id="addToTable" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table class="table table-striped add-edit-table" id="datatable-editable">
+                            
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Clase</th>
+                                    <th>Tipo</th>
+                                    <th>Lugar</th>
+                                    <th>Precio</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <?PHP while($fila=mysqli_fetch_array($res)){
+                                        $xid_hostal = $fila["id_hostal"];
+                                        $xnom_hostal = $fila["nom_hostal"];
+                                        $xclase_hostal = $fila["clase_hostal"];
+                                        $xtipo_hostal = $fila["tipo_hostal"];
+                                        $xlugar_hostal = $fila["lugar_hostal"];
+                                        $xprec_hostal = $fila["prec_hostal"];
+
+                                            echo "
+                                                <tr class='gradeX'>
+                                                    <td>$xnom_hostal </td>
+                                                    <td>$xclase_hostal</td>
+                                                    <td>$xtipo_hostal</td>
+                                                    <td>$xlugar_hostal</td>
+                                                    <td>$xprec_hostal</td>
+                                                    <td class='actions'>
+                                                        <a href='Admi-cotizadorEdit.php?id=$xid_hostal&tipo=hospedaje' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
+                                                        <a href='#' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
+                                                        <a href='#' class='hidden on-editing save-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Save'><i class='fa fa-save'></i></a>
+                                                        <a href='#' class='hidden on-editing cancel-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Cancel'><i class='fa fa-times'></i></a>
+                                                    </td>
+                                                </tr>
+                                            ";}?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- end: page -->
+            </div> 
+            <!-- end row -->
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card-box">
+                        <div class="row">
+                            <div class="col-6">
+                                <h4 class="m-t-0 header-title"><b>Transporte</b></h4>
+                                <p class="text-muted m-b-30 font-14"></p>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="m-b-30">
+                                    <button id="addToTable" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table class="table table-striped add-edit-table" id="datatable-editable">
+                            
+                            <thead>
+                                <tr>
+                                    <th>Empresa</th>    
+                                    <th>Transporte</th>
+                                    <th>Salida</th>
+                                    <th>Lugar</th>
+                                    <th>Precio</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <?PHP while($fila=mysqli_fetch_array($resTransporte)){
+                                        $xid_transporte = $fila["id_transporte"];
+                                        $xnom_transporte = $fila["nom_transporte"];
+                                        $xtipo_transporte = $fila["tipo_transporte"];
+                                        $xsalida_transporte = $fila["salida_transporte"];
+                                        $xdes_transporte = $fila["des_transporte"];
+                                        $xprec_transporte = $fila["prec_transporte"];
+
+                                            echo "
+                                                <tr class='gradeX'>
+                                                    <td>$xnom_transporte</td>    
+                                                    <td>$xtipo_transporte </td>
+                                                    <td>$xsalida_transporte</td>
+                                                    <td>$xdes_transporte</td>
+                                                    <td>$xprec_transporte</td>
+                                                    <td class='actions'>
+                                                        <a href='Admi-cotizadorEdit.php?id=$xid_transporte&tipo=transporte' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
+                                                        <a href='#' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
+                                                        <a href='#' class='hidden on-editing save-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Save'><i class='fa fa-save'></i></a>
+                                                        <a href='#' class='hidden on-editing cancel-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Cancel'><i class='fa fa-times'></i></a>
+                                                    </td>
+                                                </tr>
+                                            ";}?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!-- end: page -->
+            </div> 
+            <!-- end row -->
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card-box">
+                        <div class="row">
+                            <div class="col-6">
+                                <h4 class="m-t-0 header-title"><b>Comidas</b></h4>
+                                <p class="text-muted m-b-30 font-14"></p>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="m-b-30">
+                                    <button id="addToTable" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table class="table table-striped add-edit-table" id="datatable-editable">
+                            
+                            <thead>
+                                <tr>
+                                    <th>Comida</th>    
+                                    <th>Carta</th>
+                                    <th>Precio</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <?PHP while($fila=mysqli_fetch_array($resComidas)){
+                                        $xid_comidas = $fila["id_comidas"];
+                                        $xtipo_comidas = $fila["tipo_comidas"];
+                                        $xcarta_comidas = $fila["carta_comidas"];
+                                        $xprecio_comidas = $fila["precio_comidas"];
+
+                                            echo "
+                                                <tr class='gradeX'>
+                                                    <td>$xtipo_comidas</td>    
+                                                    <td>$xcarta_comidas</td>
+                                                    <td>$xprecio_comidas</td>
+                                                    <td class='actions'>
+                                                        <a href='Admi-cotizadorEdit.php?id=$xid_comidas&tipo=comidas' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
+                                                        <a href='#' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
+                                                        <a href='#' class='hidden on-editing save-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Save'><i class='fa fa-save'></i></a>
+                                                        <a href='#' class='hidden on-editing cancel-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Cancel'><i class='fa fa-times'></i></a>
+                                                    </td>
+                                                </tr>
+                                            ";}?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!-- end: page -->
+            </div> 
+            <!-- end row -->
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card-box">
+                        <div class="row">
+                            <div class="col-6">
+                                <h4 class="m-t-0 header-title"><b>Servicio Adicional</b></h4>
+                                <p class="text-muted m-b-30 font-14"></p>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="m-b-30">
+                                    <button id="addToTable" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table class="table table-striped add-edit-table" id="datatable-editable">
+                            
+                            <thead>
+                                <tr>
+                                    <th>Servicio</th>    
+                                    <th>Categoria</th>
+                                    <th>Precio</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <?PHP while($fila=mysqli_fetch_array($resServicioPlus)){
+                                        $xid_serv_plus = $fila["id_serv_plus"];
+                                        $xnom_serv_plus = $fila["nom_serv_plus"];
+                                        $xtipo_serv_plus = $fila["tipo_serv_plus"];
+                                        $xprecio_serv_plus = $fila["precio_serv_plus"];
+
+                                            echo "
+                                                <tr class='gradeX'>
+                                                    <td>$xnom_serv_plus</td>    
+                                                    <td>$xtipo_serv_plus</td>
+                                                    <td>$xprecio_serv_plus</td>
+                                                    <td class='actions'>
+                                                        <a href='Admi-cotizadorEdit.php?id=$xid_serv_plus&tipo=servicio' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
+                                                        <a href='#' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
+                                                        <a href='#' class='hidden on-editing save-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Save'><i class='fa fa-save'></i></a>
+                                                        <a href='#' class='hidden on-editing cancel-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Cancel'><i class='fa fa-times'></i></a>
+                                                    </td>
+                                                </tr>
+                                            ";}?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!-- end: page -->
+            </div> 
+            <!-- end row -->
+
         </div> <!-- container -->
     </div> <!-- content -->
 
@@ -68,4 +312,59 @@
 <!-- ============================================================== -->
 <!-- End Right content here -->
 <!-- ============================================================== -->
-<?php require_once("Admi-footer.php");?>
+</div>
+        <!-- END wrapper -->
+
+
+        <!-- MODAL -->
+        <div id="dialog" class="modal-block mfp-hide">
+            <section class="card p-20">
+                <header class="panel-heading">
+                    <h4 class="panel-title mt-0">¿Estás seguro?</h4>
+                </header>
+                <div class="panel-body">
+                    <div class="modal-wrapper">
+                        <div class="modal-text">
+                            <p>¿Está seguro de que desea eliminar esta fila?</p>
+                        </div>
+                    </div>
+
+                    <div class="row m-t-20">
+                        <div class="col-md-12 text-right">
+                            <button id="dialogConfirm" class="btn btn-success waves-effect waves-light">Aceptar</button>
+                            <button id="dialogCancel" class="btn btn-danger waves-effect">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+        <!-- end Modal -->
+
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/tether.min.js"></script><!-- Tether for Bootstrap -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/metisMenu.min.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
+
+        <!-- Examples -->
+        <script src="../plugins/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+        <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="../plugins/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="../plugins/tiny-editable/mindmup-editabletable.js"></script>
+        <script src="../plugins/tiny-editable/numeric-input-example.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
+
+        <script src="assets/pages/jquery.datatables.editable.init.js"></script>
+
+        <script>
+            $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
+        </script>
+
+    </body>
+</html>

@@ -496,39 +496,49 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                        <label>Días de viaje</label>
-                                            <select name="" id="" class="form-control">
-                                                <option value="">1 Día</option>
-                                                <option value="">2 Día</option>
-                                                <option value="">3 Día</option>
-                                                <option value="">4 Día</option>
-                                                <option value="">5 Día</option>
-                                                <option value="">6 Día</option>
-                                                <option value="">7 Día</option>
+                                        <label>Tipo de comida</label>
+                                            <select name="" id="primary" class="form-control">
+                                                <option value="desayuno">Desayuno</option>
+                                                <option value="almuerzo">Almuerzo</option>
+                                                <option value="cena">Cena</option>
                                             </select>
                                         </div>
+<!--
                                         <div class="form-group">
-                                        <label>Comida</label>
-                                            <select name="" id="" class="form-control">
-                                                <option value="">Manzana</option>
-                                                <option value="">Pera</option>
-                                                <option value="">Mandarina</option>
-                                                <option value="">Fresa</option>
+                                        <label>Prueba</label>
+                                            <select id="producto" name="producto" onchange="ShowSelected();">
+                                                <option value="12">Texto One</option>
+                                                <option value="13">Texto Two</option>
                                             </select>
                                         </div>
                                     </div>
+-->
+                                        <div class="row">
+                                            <div class="col-md-6">    
+                                                <div class="form-group">
+                                                    <label>Cantidad</label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Costo por unidad</label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Cantidad</label>
-                                            <input class="form-control" type="text">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Costo por unidad</label>
-                                            <input class="form-control" type="text">
+                                            <label>Segundo</label>
+                                            <select name="" id="secondary" class="form-control">
+                                            </select>
                                         </div>
 
                                         <div class="row">
-                                            <div class="col-md-4">
+                                            <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Total costo</label>
                                                 <input class="form-control" type="text" readonly="" value="">
@@ -559,3 +569,40 @@
 <!-- End Right content here -->
 <!-- ============================================================== -->
 <?php require_once("Comercial-footer.php");?>
+
+
+<!--   Jalar datos de un combobox -->
+<!--
+<script type="text/javascript">
+function ShowSelected()
+{
+/* Para obtener el valor */
+var cod = document.getElementById("producto").value;
+alert(cod);
+ 
+/* Para obtener el texto */
+var combo = document.getElementById("producto");
+var selected = combo.options[combo.selectedIndex].text;
+alert(selected);
+}
+</script>-->
+
+<script>
+var options = {
+        desayuno : ["Desayuno Comida","Desayuno Continental","Desayuno Buffet"],
+        almuerzo : ["Entrada + Fondo + Bebida","Entrada + Fondo + Bebida + Postre","Buffet"],
+        cena : ["Entrada + Fondo + Bebida","Buffet","Pollo a la Braza + Bebida", "Pizza + Bebida"]
+}
+
+$(function(){
+	var fillSecondary = function(){
+		var selected = $('#primary').val();
+		$('#secondary').empty();
+		options[selected].forEach(function(element,index){
+			$('#secondary').append('<option value="'+element+'">'+element+'</option>');
+		});
+	}
+	$('#primary').change(fillSecondary);
+	fillSecondary();
+});
+</script>
