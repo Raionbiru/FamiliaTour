@@ -143,7 +143,7 @@
                                                     <td>$xsueldo_jor</td>
                                                     <td>1000.00</td>
                                                     <td class='actions'>
-                                                        <a href='models/Personal.php?id=$xid_jor' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
+                                                        <a href='Admi-personalEdit.php?id=$xid_jor&type=edit' class='on-default ' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
                                                         <a href='models/Personal.php?id=$xid_jor' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
                                                         <a href='#' class='hidden on-editing save-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Save'><i class='fa fa-save'></i></a>
                                                         <a href='#' class='hidden on-editing cancel-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Cancel'><i class='fa fa-times'></i></a>

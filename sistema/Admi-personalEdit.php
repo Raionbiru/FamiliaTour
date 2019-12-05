@@ -6,14 +6,16 @@
         }         
         
         require_once("funciones.php");
+
+        $xid = $_GET['id'];
+        $xtye = $_GET['type'];
+
+
         $xc = conectar();
-        $sql = "SELECT j.id_jor, p.nom_per,p.ape_per, j.hor_tra_jor, a.nom_area, j.viat_jor,j.sueldo_jor 
-            FROM jornal j
-            INNER JOIN persona p ON j.id_per = p.id_per 
-            INNER JOIN area a ON j.id_area = a.id_area";
-            
+        $sql = "SELECT * FROM jornal j INNER JOIN persona p ON j.id_per = p.id_per INNER JOIN area a ON j.id_area = a.id_area WHERE j.id_jor = '$xid'";
         $res = mysqli_query($xc,$sql);
         desconectar($xc);
+        $fila = mysqli_fetch_array($res);
     ?>
     <head>
         <meta charset="utf-8" />
@@ -69,11 +71,38 @@
                 <div class="col-12">
                     <div class="card-box">
                         <h4 class="m-t-0 header-title"><b>Editar</b></h4>
-                        <p class="text-muted m-b-30 font-14">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum repellat officia facilis magni. Cumque, error! Perspiciatis, tempora recusandae odit quod cum officiis autem natus explicabo in repellat nostrum, quisquam inventore?
-                        </p>
+                        <p class="text-muted m-b-30 font-14"></p>
 
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-6">
+                                <div class="p-20">
+                                    <form class="form-horizontal" role="form">
+
+                                        <div class="form-group row">
+                                            <label class="col-2 col-form-label">Persona</label>
+                                            <div class="col-10">
+                                                <input type="text" class="form-control" disabled="" value="<?PHP echo $fila['nom_per']?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-2 col-form-label">Input Select</label>
+                                            <div class="col-10">
+                                                <select class="form-control">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
                                 <div class="p-20">
                                     <form class="form-horizontal" role="form">
                                         <div class="form-group row">

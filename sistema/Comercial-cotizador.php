@@ -1,4 +1,9 @@
 <?php require_once("Comercial-header.php");?>
+<?php require_once("funciones.php");
+        $xc = conectar();
+        $sqlHospedaje = "SELECT * FROM hostal";
+        $resHospedaje = mysqli_query($xc,$sqlHospedaje);
+        desconectar($xc);?>
 <!-- ============================================================== -->
 <!-- Start right Content here -->
 <!-- ============================================================== -->
@@ -27,79 +32,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card-box">
-                    <h4 class="m-t-0 header-title"><b>Cotizador</b></h4>
-                                    <p class="text-muted m-b-30 font-14">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, asperiores ratione. Incidunt est voluptatum non, numquam dolores natus optio commodi vitae provident ab inventore at dolore illum perspiciatis amet, laborum officia aliquid iste. Quod, eaque! Animi, iusto dicta. Laboriosam, nihil?
-                                    </p>
-                        <form class="form-horizontal" method="POST" action="#">
-
-                            <input hidden="YES" name="accion" value="crear">
-
-                            <div class="row m-t-20">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="col-2 col-form-label">Nombres</label>
-                                        <input type="text" name="nom_tour" id="nom_tour" class="form-control">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-2 col-form-label">Email</label>
-                                        <input type="email"  name="nom_tour" id="nom_tour" class="form-control">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-2 col-form-label">Celular</label>
-                                        <input type="text"  name="nom_tour" id="nom_tour" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-2 col-form-label">País</label>
-                                        <select name="" id="" class="form-control">
-                                            <option value="">Perú</option>
-                                            <option value="">Argentina</option>
-                                            <option value="">Brazil</option>
-                                            <option value="">Paraguay</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="col-form-label">Fecha de Viaje</label>
-                                        <input type="text"  name="daterange" id="" class="form-control input-daterange-datepicker">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-2 col-form-label">N° Persona</label>
-                                        <input type="text"  name="nom_tour" id="nom_tour" class="form-control">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-form-label">Categotia Hotel</label>
-                                        <select name="" id="" class="form-control">
-                                                <option value="">Hotel Una Estrella</option>
-                                                <option value="">Hotel Dos Estrella</option>
-                                                <option value="">Hotel Tres Estrella</option>
-                                                <option value="">Hotel Cuatro Estrella</option>
-                                                <option value="">Hotel Cinco Estrella</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-2 col-form-label">Colsulta</label>
-                                        <textarea class="form-control" name="descp_tour" id="descp_tour"  rows="6"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-sm btn-primary btn-rounded w-md waves-effect waves-light pull-right">Enviar Consulta</button>
-                        </form>
-                    </div>
-                </div> <!-- end col -->
-            </div>
-            <!-- end row -->
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card-box">
-                        <h4 class="header-title m-t-0 m-b-30">Tabs Justified</h4>
+                        <h4 class="header-title m-t-0 m-b-30">Cotizador de servicios</h4>
 
                         <ul class="nav nav-pills navtab-bg nav-justified">
                             <li class="nav-item">
@@ -235,13 +168,13 @@
                                         <div class="form-group">
                                         <label>Número de Noches</label>
                                             <select name="" id="" class="form-control">
-                                                <option value="">1 Noche</option>
-                                                <option value="">2 Noche</option>
-                                                <option value="">3 Noche</option>
-                                                <option value="">4 Noche</option>
-                                                <option value="">5 Noche</option>
-                                                <option value="">6 Noche</option>
-                                                <option value="">7 Noche</option>
+                                                <option value="1">1 Noche</option>
+                                                <option value="2">2 Noche</option>
+                                                <option value="3">3 Noche</option>
+                                                <option value="4">4 Noche</option>
+                                                <option value="5">5 Noche</option>
+                                                <option value="6">6 Noche</option>
+                                                <option value="7">7 Noche</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -503,16 +436,7 @@
                                                 <option value="cena">Cena</option>
                                             </select>
                                         </div>
-<!--
-                                        <div class="form-group">
-                                        <label>Prueba</label>
-                                            <select id="producto" name="producto" onchange="ShowSelected();">
-                                                <option value="12">Texto One</option>
-                                                <option value="13">Texto Two</option>
-                                            </select>
-                                        </div>
-                                    </div>
--->
+
                                         <div class="row">
                                             <div class="col-md-6">    
                                                 <div class="form-group">
@@ -545,7 +469,6 @@
                                             </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>

@@ -29,9 +29,7 @@
 
     </head>
 
-
     <body>
-
         <!-- Begin page -->
         <div id="wrapper">
 
@@ -213,18 +211,17 @@
                 <div class="col-12">
                     <div class="page-title-box">
                         <h4 class="page-title float-left">Contratos</h4>
-
                         <ol class="breadcrumb float-right">
                             <li class="breadcrumb-item"><a href="#">Familia Tour</a></li>
                             <li class="breadcrumb-item"><a href="#">Comercial</a></li>
                             <li class="breadcrumb-item active">Contratos</li>
                         </ol>
-
                         <div class="clearfix"></div>
                     </div>
                 </div>
             </div>
             <!-- end row -->
+
 
             <div class="row">
                 <div class="col-12">
@@ -238,15 +235,33 @@
 
             <div class="row">
                 <div class="col-12">
-                    <div class="card-box">
-                        <center>
-                        <h4 class="m-t-0 m-b-30"> <b> CONTRATO </b> </h4>
-                        
-                        <p style="text-align: justify, font: 14px/1.8 arial, helvetica, sans-serif;  " class="m-b-0 col-10">
-                                Conste por el presente documento el contrato de <strong>FAMILIA TOUR</strong>, que celebran de una parte AAA, identificada con R.U.C. N° <input type="number" name="" id=""> inscrita en la partida electrónica N° <input type="number" name="" id=""> del Registro de Personas Jurídicas de <input type="text" name="" id="">, con domicilio en <input type="text" name="" id=" ">, debidamente representada por su gerente general don <input type="text" name="" id="">, identificado con el D.N.I. N° <input type="number" name="" id="">, con poderes inscritos en el asiento <input type="number" name="" id=""> de la referida partida electrónica, a quien en lo sucesivo se denominará <strong>EL COMITENTE</strong>; y, de otra parte BBB, identificada con R.U.C. N° <input type="number" name="" id="">, inscrita en la partida electrónica N° <input type="number" name="" id=""> del Registrode Personas Jurídicas de <input type="text" name="" id="">, con domicilio en <input type="text" name="" id="">, identificado con D.N.I. N° <input type="number" name="" id="">              , con poderes inscritos en el asiento <input type="text" name="" id=""> de la referida partida electrónica, a quien en lo sucesivo se denominará <strong>LA LOCADORA</strong>; en los términos contenidos en las cláusulas siguientes:
-                                .</p>
-                        </center>
-                    </div>
+                    <form method="POST" action="Comercial-generarcontrato.php">
+                        <input hidden="YES" name="tipo" value="pdf">
+                        <div class="card-box">
+                            <center>
+                            <h4 class="m-t-0 m-b-30"> <b> CONTRATO </b> </h4>
+                            
+                            <p style="text-align: justify, font: 14px/1.8 arial, helvetica, sans-serif;  " class="m-b-0 col-10">
+                                    Conste por el presente documento el contrato de <strong>FAMILIA TOUR</strong>, que celebran de una parte AAA, identificada con R.U.C. N° <input type="number" name="ruc" id="ruc"> inscrita en la partida electrónica N° <input type="number" name="electronica" id="electronica"> del Registro de Personas Jurídicas de <input type="text" name="registro" id="registro">, con domicilio en <input type="text" name="domicilio" id="domicilio">, debidamente representada por su gerente general don <input type="text" name="gerente" id="gerente">, identificado con el D.N.I. N° <input type="number" name="dni" id="dni">, con poderes inscritos en el asiento <input type="number" name="asiento" id="asiento"> de la referida partida electrónica, a quien en lo sucesivo se denominará <strong>EL COMITENTE</strong>; y, de otra parte BBB, identificada con R.U.C. N° <input type="number" name="ruc2" id="ruc2">, inscrita en la partida electrónica N° <input type="number" name="partida" id="partida"> del Registrode Personas Jurídicas de <input type="text" name="registro2" id="registro2">, con domicilio en <input type="text" name="domicilio2" id="domicilio2">, identificado con D.N.I. N° <input type="number" name="dni2" id="dni2">              , con poderes inscritos en el asiento <input type="text" name="asiento2" id="asiento2"> de la referida partida electrónica, a quien en lo sucesivo se denominará <strong>LA LOCADORA</strong>; en los términos contenidos en las cláusulas siguientes:
+                                    .</p>
+                            </center>
+                            <br>
+                            <div class='form-group row text-center m-t-10'>
+                                <div class='col-md-4 offset-md-4'>
+                                    <button class='btn btn-md btn-block btn-primary waves-effect waves-light' type='submit'>Generar Contrato</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <form action="Comercial-generarcontrato.php" method="post">
+                        <input hidden="YES" name="tipo" value="descargar">
+                        <div class='form-group row text-center m-t-10'>
+                                <div class='col-md-4'>
+                                    <button class='btn btn-md btn-block btn-primary waves-effect waves-light' type='submit'>Descargar</button>
+                                </div>
+                            </div>
+                    </form>
                 </div><!-- end col -->
             </div>
             <!-- end row -->

@@ -3,17 +3,33 @@
     <?php session_start();
         if (!isset($_SESSION["nom_per"] ) ){
             header("Location:login.php");
-        }         
+        }
         
         require_once("funciones.php");
-        $xid = $_GET['id'];
-        $xtipo = $_GET['tipo']; 
-
+        $xid = leerParam("id","");
+        $xtipo = leerParam("tipo","");
 
         $xc = conectar();
-        $sql = "SELECT * FROM hostal";
-        $res = mysqli_query($xc,$sql);
+
+        $sqlHospedaje = "SELECT * FROM hostal WHERE id_hostal = '$xid'";
+        $resHospedaje = mysqli_query($xc,$sqlHospedaje);
+        $filaHospedaje=mysqli_fetch_array($resHospedaje);
+
+        $sqlTransporte = "SELECT * FROM transporte WHERE id_transporte = '$xid'";
+        $resTransporte = mysqli_query($xc,$sqlTransporte);
+        $filaTransporte=mysqli_fetch_array($resTransporte);
+
+        $sqlComidas = "SELECT * FROM comidas WHERE id_comidas = '$xid'";
+        $resComidas = mysqli_query($xc,$sqlComidas);
+        $filaComidas=mysqli_fetch_array($resComidas);
+
+        $sqlServicio = "SELECT * FROM servicioplus WHERE id_serv_plus = '$xid'";
+        $resServicio = mysqli_query($xc,$sqlServicio);
+        $filaServicio=mysqli_fetch_array($resServicio);
+
+
         desconectar($xc);
+
     ?>
     <head>
         <meta charset="utf-8" />
@@ -69,7 +85,6 @@
 
             <?PHP 
                 if ($xtipo =="hospedaje"){
-
                     echo"
                     <div class='row'>
                         <div class='col-12'>
@@ -77,7 +92,7 @@
 
                                 <div class='row'>
                                     <div class='col-6'>
-                                        <h4 class='m-t-0 header-title'><b>Hospedaje</b></h4>
+                                        <h4 class='m-t-0 header-title'><b>Hospedaje </b></h4>
                                         <p class='text-muted m-b-30 font-14'></p>
                                     </div>
                                 </div><!-- end row -->
@@ -85,21 +100,24 @@
                                 <div class='row'>
                                     <div class='col-12'>
                                         <div class='p-20'>
-                                            <form class='form-horizontal' role='form'>
+                                            <form class='form-horizontal' role='form' method='POST' action='Admi-cotizadorGrabar.php'>
+
+                                                <input hidden='YES' name='id' value='$xid'>
+                                                <input hidden='YES' name='tabla' value='hostal'>
+                                                <input hidden='YES' name='accion' value='editar'>
 
                                                 <div class='row'>
                                                     <div class='col-6'>
                                                         <div class='form-group row'>
-                                                        <label class='col-2 col-form-label'>Lugar</label>
+                                                        <label class='col-2 col-form-label'>Hostal</label>
                                                             <div class='col-10'>
-                                                                <input type='text' class='form-control' placeholder='Helping text'>
-                                                                <span class='help-block'><small>Simple - Doble - Triple</small></span>
+                                                                <input type='text' class='form-control' disabled='' value='$filaHospedaje[nom_hostal]'>
                                                             </div>
                                                         </div>
                                                         <div class='form-group row'>
                                                             <label class='col-2 col-form-label'>Clase</label>
                                                             <div class='col-10'>
-                                                                <input type='text' class='form-control' disabled='' value='Simple'>
+                                                                <input type='text' class='form-control' disabled='' value='$filaHospedaje[clase_hostal]'>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -108,29 +126,23 @@
                                                         <div class='form-group row'>
                                                         <label class='col-2 col-form-label'>Tipo</label>
                                                             <div class='col-10'>
-                                                                <input type='text' class='form-control' disabled='' value='Doble'>
+                                                                <input type='text' class='form-control' disabled='' value='$filaHospedaje[tipo_hostal]'>
                                                             </div>
                                                         </div>
                                                         <div class='form-group row'>
-                                                        <label class='col-2 col-form-label'>Hostal</label>
+                                                        <label class='col-2 col-form-label'>Precio</label>
                                                             <div class='col-10'>
-                                                                <input type='text' class='form-control' disabled='' value='Triple'>
+                                                                <input type='text' class='form-control' placeholder='Precio de Hospedaje' id='prec_hostal' name='prec_hostal' value='$filaHospedaje[prec_hostal]'>
                                                             </div>
                                                         </div>
-                                                            <script>
-                                                                function comprobar(obj){   
-                                                                    if (obj.checked){
-                                                                        document.getElementById('boton').type = 'number';
-                                                                    } else{
-                                                                    document.getElementById('boton').type = 'text';
-                                                                }}
-                                                            </script>
-                                                        <input name='chec' type='checkbox' id='chec' onChange='comprobar(this);'/>
-                                                        <label for='chec'>Activar</label>
-                                                        <input name='text' id='boton' type='text' />
                                                     </div>
                                                 </div><!-- end row -->
-
+                                                
+                                                <div class='form-group row text-center m-t-10'>
+                                                    <div class='col-md-4 offset-md-4'>
+                                                        <button class='btn btn-md btn-block btn-primary waves-effect waves-light' type='submit'>Modificar</button>
+                                                    </div>
+                                                </div>
                                             </form>
                                         </div>
                                     </div>
@@ -153,7 +165,7 @@
 
                                 <div class='row'>
                                     <div class='col-6'>
-                                        <h4 class='m-t-0 header-title'><b>Hospedaje</b></h4>
+                                        <h4 class='m-t-0 header-title'><b>Transporte</b></h4>
                                         <p class='text-muted m-b-30 font-14'></p>
                                     </div>
                                 </div><!-- end row -->
@@ -161,52 +173,180 @@
                                 <div class='row'>
                                     <div class='col-12'>
                                         <div class='p-20'>
-                                            <form class='form-horizontal' role='form'>
+                                            <form class='form-horizontal' role='form' method='POST' action='Admi-cotizadorGrabar.php'>
+                                                <input hidden='YES' name='id' value='$xid'>
+                                                <input hidden='YES' name='tabla' value='transporte'>
+                                                <input hidden='YES' name='accion' value='editar'>
 
                                                 <div class='row'>
                                                     <div class='col-6'>
                                                         <div class='form-group row'>
-                                                        <label class='col-2 col-form-label'>Lugar</label>
+                                                        <label class='col-2 col-form-label'>Tipo de Transporte</label>
                                                             <div class='col-10'>
-                                                                <input type='text' class='form-control' placeholder='Helping text'>
-                                                                <span class='help-block'><small>Simple - Doble - Triple</small></span>
+                                                                <input type='text' class='form-control' disabled='' value='$filaTransporte[tipo_transporte]'>
                                                             </div>
                                                         </div>
                                                         <div class='form-group row'>
-                                                            <label class='col-2 col-form-label'>Clase</label>
+                                                            <label class='col-2 col-form-label'>Empresa</label>
                                                             <div class='col-10'>
-                                                                <input type='text' class='form-control' disabled='' value='Simple'>
+                                                                <input type='text' class='form-control' disabled='' value='$filaTransporte[nom_transporte]'>
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                     <div class='col-6'>
                                                         <div class='form-group row'>
-                                                        <label class='col-2 col-form-label'>Tipo</label>
+                                                        <label class='col-2 col-form-label'>Lugar</label>
                                                             <div class='col-10'>
-                                                                <input type='text' class='form-control' disabled='' value='Doble'>
+                                                                <input type='text' class='form-control' disabled='' value='$filaTransporte[des_transporte]'>
                                                             </div>
                                                         </div>
                                                         <div class='form-group row'>
-                                                        <label class='col-2 col-form-label'>Hostal</label>
+                                                        <label class='col-2 col-form-label'>Precio</label>
                                                             <div class='col-10'>
-                                                                <input type='text' class='form-control' disabled='' value='Triple'>
+                                                                <input type='text' class='form-control' placeholder='Precio de Transporte' id='prec_transporte' name='prec_transporte' value='$filaTransporte[prec_transporte]'>
                                                             </div>
                                                         </div>
-                                                            <script>
-                                                                function comprobar(obj){   
-                                                                    if (obj.checked){
-                                                                        document.getElementById('boton').type = 'number';
-                                                                    } else{
-                                                                    document.getElementById('boton').type = 'text';
-                                                                }}
-                                                            </script>
-                                                        <input name='chec' type='checkbox' id='chec' onChange='comprobar(this);'/>
-                                                        <label for='chec'>Activar</label>
-                                                        <input name='text' id='boton' type='text' />
                                                     </div>
                                                 </div><!-- end row -->
+                                                
+                                                <div class='form-group row text-center m-t-10'>
+                                                    <div class='col-md-4 offset-md-4'>
+                                                        <button class='btn btn-md btn-block btn-primary waves-effect waves-light' type='submit'>Modificar</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div><!-- end row -->
 
+                            </div> <!-- end card-box -->
+                        </div><!-- end col -->
+                    </div>
+                    <!-- end row -->";
+                }
+            ?>
+
+            <?PHP 
+                if ($xtipo =="comidas"){
+
+                    echo"
+                    <div class='row'>
+                        <div class='col-12'>
+                            <div class='card-box'>
+
+                                <div class='row'>
+                                    <div class='col-6'>
+                                        <h4 class='m-t-0 header-title'><b>Comidas</b></h4>
+                                        <p class='text-muted m-b-30 font-14'></p>
+                                    </div>
+                                </div><!-- end row -->
+                        
+                                <div class='row'>
+                                    <div class='col-12'>
+                                        <div class='p-20'>
+                                            <form class='form-horizontal' role='form' method='POST' action='Admi-cotizadorGrabar.php'>
+                                                <input hidden='YES' name='id' value='$xid'>
+                                                <input hidden='YES' name='tabla' value='comidas'>
+                                                <input hidden='YES' name='accion' value='editar'>
+
+                                                <div class='row'>
+                                                    <div class='col-6'>
+                                                        <div class='form-group row'>
+                                                        <label class='col-2 col-form-label'>Comida</label>
+                                                            <div class='col-10'>
+                                                                <input type='text' class='form-control' disabled='' value='$filaComidas[tipo_comidas]'>
+                                                            </div>
+                                                        </div>
+                                                        <div class='form-group row'>
+                                                            <label class='col-2 col-form-label'>Carta</label>
+                                                            <div class='col-10'>
+                                                                <input type='text' class='form-control' disabled='' value='$filaComidas[carta_comidas]'>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class='col-6'>
+                                                        <div class='form-group row'>
+                                                        <label class='col-2 col-form-label'>Precio</label>
+                                                            <div class='col-10'>
+                                                                <input type='text' class='form-control' placeholder='Precio de Comida' id='precio_comidas' name='precio_comidas' value='$filaComidas[precio_comidas]'>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- end row -->
+                                                
+                                                <div class='form-group row text-center m-t-10'>
+                                                    <div class='col-md-4 offset-md-4'>
+                                                        <button class='btn btn-md btn-block btn-primary waves-effect waves-light' type='submit'>Modificar</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div><!-- end row -->
+
+                            </div> <!-- end card-box -->
+                        </div><!-- end col -->
+                    </div>
+                    <!-- end row -->";
+                }
+            ?>
+
+            <?PHP 
+                if ($xtipo =="servicio"){
+
+                    echo"
+                    <div class='row'>
+                        <div class='col-12'>
+                            <div class='card-box'>
+
+                                <div class='row'>
+                                    <div class='col-6'>
+                                        <h4 class='m-t-0 header-title'><b>Servicio Adicional</b></h4>
+                                        <p class='text-muted m-b-30 font-14'></p>
+                                    </div>
+                                </div><!-- end row -->
+                        
+                                <div class='row'>
+                                    <div class='col-12'>
+                                        <div class='p-20'>
+                                            <form class='form-horizontal' role='form' method='POST' action='Admi-cotizadorGrabar.php'>
+                                                <input hidden='YES' name='id' value='$xid'>
+                                                <input hidden='YES' name='tabla' value='servicio'>
+                                                <input hidden='YES' name='accion' value='editar'>
+
+                                                <div class='row'>
+                                                    <div class='col-6'>
+                                                        <div class='form-group row'>
+                                                        <label class='col-2 col-form-label'>Servicio</label>
+                                                            <div class='col-10'>
+                                                                <input type='text' class='form-control' disabled='' value='$filaServicio[nom_serv_plus]'>
+                                                            </div>
+                                                        </div>
+                                                        <div class='form-group row'>
+                                                            <label class='col-2 col-form-label'>Categoria</label>
+                                                            <div class='col-10'>
+                                                                <input type='text' class='form-control' disabled='' value='$filaServicio[tipo_serv_plus]'>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class='col-6'>
+                                                        <div class='form-group row'>
+                                                        <label class='col-2 col-form-label'>Precio</label>
+                                                            <div class='col-10'>
+                                                                <input type='text' class='form-control' placeholder='Precio de Servicio' id='precio_serv_plus' name='precio_serv_plus' value='$filaServicio[precio_serv_plus]'>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- end row -->
+                                                
+                                                <div class='form-group row text-center m-t-10'>
+                                                    <div class='col-md-4 offset-md-4'>
+                                                        <button class='btn btn-md btn-block btn-primary waves-effect waves-light' type='submit'>Modificar</button>
+                                                    </div>
+                                                </div>
                                             </form>
                                         </div>
                                     </div>

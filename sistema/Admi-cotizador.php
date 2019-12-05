@@ -86,7 +86,7 @@
 
                             <div class="col-sm-6">
                                 <div class="m-b-30">
-                                    <button id="addToTable" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
+                                    <button id="addToTable" onclick="window.location.href='Admi-cotizadorAdd.php?tipo=hospedaje'" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -122,9 +122,7 @@
                                                     <td>$xprec_hostal</td>
                                                     <td class='actions'>
                                                         <a href='Admi-cotizadorEdit.php?id=$xid_hostal&tipo=hospedaje' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
-                                                        <a href='#' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
-                                                        <a href='#' class='hidden on-editing save-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Save'><i class='fa fa-save'></i></a>
-                                                        <a href='#' class='hidden on-editing cancel-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Cancel'><i class='fa fa-times'></i></a>
+                                                        <a href='Admi-cotizadorGrabar.php?id=$xid_hostal&tipo=hostal&accion=eliminar' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
                                                     </td>
                                                 </tr>
                                             ";}?>
@@ -147,7 +145,7 @@
 
                             <div class="col-sm-6">
                                 <div class="m-b-30">
-                                    <button id="addToTable" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
+                                    <button id="addToTable" onclick="window.location.href='Admi-cotizadorAdd.php?tipo=transporte'" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -183,9 +181,7 @@
                                                     <td>$xprec_transporte</td>
                                                     <td class='actions'>
                                                         <a href='Admi-cotizadorEdit.php?id=$xid_transporte&tipo=transporte' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
-                                                        <a href='#' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
-                                                        <a href='#' class='hidden on-editing save-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Save'><i class='fa fa-save'></i></a>
-                                                        <a href='#' class='hidden on-editing cancel-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Cancel'><i class='fa fa-times'></i></a>
+                                                        <a href='Admi-cotizadorGrabar.php?id=$xid_transporte&tipo=transporte&accion=eliminar' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
                                                     </td>
                                                 </tr>
                                             ";}?>
@@ -207,7 +203,7 @@
 
                             <div class="col-sm-6">
                                 <div class="m-b-30">
-                                    <button id="addToTable" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
+                                    <button id="addToTable" onclick="window.location.href='Admi-cotizadorAdd.php?tipo=comidas'" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -237,9 +233,7 @@
                                                     <td>$xprecio_comidas</td>
                                                     <td class='actions'>
                                                         <a href='Admi-cotizadorEdit.php?id=$xid_comidas&tipo=comidas' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
-                                                        <a href='#' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
-                                                        <a href='#' class='hidden on-editing save-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Save'><i class='fa fa-save'></i></a>
-                                                        <a href='#' class='hidden on-editing cancel-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Cancel'><i class='fa fa-times'></i></a>
+                                                        <a href='Admi-cotizadorGrabar.php?id=$xid_comidas&tipo=comidas&accion=eliminar' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
                                                     </td>
                                                 </tr>
                                             ";}?>
@@ -261,7 +255,7 @@
 
                             <div class="col-sm-6">
                                 <div class="m-b-30">
-                                    <button id="addToTable" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
+                                    <button onclick="window.location.href='Admi-cotizadorAdd.php?tipo=servicio'" id="addToTable" type="submit" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -291,9 +285,7 @@
                                                     <td>$xprecio_serv_plus</td>
                                                     <td class='actions'>
                                                         <a href='Admi-cotizadorEdit.php?id=$xid_serv_plus&tipo=servicio' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
-                                                        <a href='#' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
-                                                        <a href='#' class='hidden on-editing save-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Save'><i class='fa fa-save'></i></a>
-                                                        <a href='#' class='hidden on-editing cancel-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Cancel'><i class='fa fa-times'></i></a>
+                                                        <a href='Admi-cotizadorGrabar.php?id=$xid_serv_plus&tipo=servicio&accion=eliminar' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
                                                     </td>
                                                 </tr>
                                             ";}?>
