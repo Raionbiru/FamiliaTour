@@ -103,7 +103,7 @@
                                             <form class='form-horizontal' role='form' method='POST' action='Admi-cotizadorGrabar.php'>
 
                                                 <input hidden='YES' name='id' value='$xid'>
-                                                <input hidden='YES' name='tabla' value='hostal'>
+                                                <input hidden='YES' name='tipo' value='hostal'>
                                                 <input hidden='YES' name='accion' value='editar'>
 
                                                 <div class='row'>
@@ -175,7 +175,7 @@
                                         <div class='p-20'>
                                             <form class='form-horizontal' role='form' method='POST' action='Admi-cotizadorGrabar.php'>
                                                 <input hidden='YES' name='id' value='$xid'>
-                                                <input hidden='YES' name='tabla' value='transporte'>
+                                                <input hidden='YES' name='tipo' value='transporte'>
                                                 <input hidden='YES' name='accion' value='editar'>
 
                                                 <div class='row'>
@@ -247,7 +247,7 @@
                                         <div class='p-20'>
                                             <form class='form-horizontal' role='form' method='POST' action='Admi-cotizadorGrabar.php'>
                                                 <input hidden='YES' name='id' value='$xid'>
-                                                <input hidden='YES' name='tabla' value='comidas'>
+                                                <input hidden='YES' name='tipo' value='comidas'>
                                                 <input hidden='YES' name='accion' value='editar'>
 
                                                 <div class='row'>
@@ -313,7 +313,7 @@
                                         <div class='p-20'>
                                             <form class='form-horizontal' role='form' method='POST' action='Admi-cotizadorGrabar.php'>
                                                 <input hidden='YES' name='id' value='$xid'>
-                                                <input hidden='YES' name='tabla' value='servicio'>
+                                                <input hidden='YES' name='tipo' value='servicio'>
                                                 <input hidden='YES' name='accion' value='editar'>
 
                                                 <div class='row'>
@@ -336,7 +336,7 @@
                                                         <div class='form-group row'>
                                                         <label class='col-2 col-form-label'>Precio</label>
                                                             <div class='col-10'>
-                                                                <input type='text' class='form-control' placeholder='Precio de Servicio' id='precio_serv_plus' name='precio_serv_plus' value='$filaServicio[precio_serv_plus]'>
+                                                                <input type='text' class='form-control' placeholder='Precio de Servicio' id='prec_int_serv_plus' name='prec_int_serv_plus' value='$filaServicio[prec_int_serv_plus]'>
                                                             </div>
                                                         </div>
                                                     </div>

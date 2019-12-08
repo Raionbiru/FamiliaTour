@@ -276,7 +276,7 @@
                                         $xid_serv_plus = $fila["id_serv_plus"];
                                         $xnom_serv_plus = $fila["nom_serv_plus"];
                                         $xtipo_serv_plus = $fila["tipo_serv_plus"];
-                                        $xprecio_serv_plus = $fila["precio_serv_plus"];
+                                        $xprecio_serv_plus = $fila["prec_int_serv_plus"];
 
                                             echo "
                                                 <tr class='gradeX'>

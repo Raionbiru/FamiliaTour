@@ -34,9 +34,9 @@ if ($xtipo == "persona") {
         ini_set( 'display_errors', 1 );
         error_reporting( E_ALL );
         $from = "johnnbill123@hotmial.com";
-        $to = "johnn.condori@tecsup.edu.pe";
+        $to = "$xemail_per_per";
         $subject = "Familia Viajera Tour";
-        $message = "Se esta evaluando la solicitud de su cuenta para la empresa, Señor: $xnom_cliente $xape_cliente";
+        $message = "Se esta evaluando la solicitud de su cuenta - Empresa, Señor: $xnom_cliente $xape_cliente";
         $headers = "From:" . $from;
         mail($to,$subject,$message, $headers);
         echo "Se envio un correo.";
@@ -59,7 +59,7 @@ if ($xtipo == "persona") {
         // die();
         mysqli_query($xc,$sql);
         desconectar($xc);
-    }elseif ($xaccion=="") {//significa que estamos eliminadno el registro
+    }elseif ($xaccion=="") {
         $xid_per= leerParam("xid_per","");
         $xc = conectar();
         $sql = "DELETE FROM persona WHERE id_per='$xid_per'";
@@ -92,7 +92,7 @@ elseif ($xtipo == "agencia"){
         ini_set( 'display_errors', 1 );
         error_reporting( E_ALL );
         $from = "johnnbill123@hotmial.com";
-        $to = "johnn.condori@tecsup.edu.pe";
+        $to = "$xemail_cliente";
         $subject = "Familia Viajera Tour";
         $message = "Se esta evaluando la solicitud de su cuenta - Agencia, Señor: $xnom_cliente $xape_cliente";
         $headers = "From:" . $from;
@@ -117,7 +117,7 @@ elseif ($xtipo == "agencia"){
         // die();
         mysqli_query($xc,$sql);
         desconectar($xc);
-    }elseif ($xaccion=="") {//significa que estamos eliminadno el registro
+    }elseif ($xaccion=="") {
         $xid_per= leerParam("xid_per","");
         $xc = conectar();
         $sql = "DELETE FROM persona WHERE id_per='$xid_per'";
@@ -125,33 +125,6 @@ elseif ($xtipo == "agencia"){
         mysqli_query($xc,$sql);
         desconectar($xc);
     }
-
 }
 
 ?>
-
-<div class="container-fluid">
-
-    <!-- Page Heading -->
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">
-                <?php 
-                    if($xaccion == "crear"){
-                        echo"<small>Registro Creado Correctamente</small>
-                        $xtipo - $xaccion
-                        ";
-                    }
-                    if($xaccion == "editar"){
-                        echo"<small>Registro Editado Correctamente</small>";
-                    }
-                    if($xaccion == ""){
-                        echo"<small>Registro Eliminado Correctamente</small>";
-                    }
-                ?>
-            </h1>
-        </div>
-    </div>
-    <!-- /.row -->
-
-</div>

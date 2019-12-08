@@ -252,17 +252,19 @@
                                             <form enctype='multipart/form-data' class='form-horizontal' method='POST' action='Admi-cotizadorGrabar.php'>
 
                                                 <input hidden='YES' name='accion' value='crear'>
+                                                <input hidden='YES' name='tipo' value='comidas'>
+
                                                 <div class='form-group row'>
                                                     <label class='col-2 col-form-label'>Nombre de Comida</label>
                                                     <div class='col-10'>
-                                                        <input type='text'  name='nom_tour' id='nom_tour' class='form-control' placeholder='Comida'>
+                                                        <input type='text'  name='carta_comidas' id='carta_comidas' class='form-control' placeholder='Comida'>
                                                     </div>
                                                 </div>
 
                                                 <div class='form-group row'>
                                                     <label class='col-2 col-form-label'>Categoria</label>
                                                     <div class='col-10'>
-                                                        <select name='' id='' class='form-control'>
+                                                        <select name='tipo_comidas' id='tipo_comidas' class='form-control'>
                                                             <option value=''>-----------</option>
                                                             <option value='Desayuno'>Desayuno</option>
                                                             <option value='Almuerzo'>Almuerzo</option>
@@ -274,7 +276,7 @@
                                                 <div class='form-group row'>
                                                     <label class='col-2 col-form-label'>Precio</label>
                                                     <div class='col-10'>
-                                                        <input type='number'  name='prec_tour' id='prec_tour' class='form-control' placeholder=''>
+                                                        <input type='number'  name='precio_comidas' id='precio_comidas' class='form-control' placeholder=''>
                                                     </div>
                                                 </div>
                                                 
@@ -317,17 +319,19 @@
                                             <form enctype='multipart/form-data' class='form-horizontal' method='POST' action='Admi-cotizadorGrabar.php'>
 
                                                 <input hidden='YES' name='accion' value='crear'>
+                                                <input hidden='YES' name='tipo' value='servicio'>
+
                                                 <div class='form-group row'>
                                                     <label class='col-2 col-form-label'>Nombre de Servicio</label>
                                                     <div class='col-10'>
-                                                        <input type='text'  name='nom_tour' id='nom_tour' class='form-control' placeholder='Servicio'>
+                                                        <input type='text'  name='nom_serv_plus' id='nom_serv_plus' class='form-control' placeholder='Servicio'>
                                                     </div>
                                                 </div>
 
                                                 <div class='form-group row'>
                                                     <label class='col-2 col-form-label'>Categoria</label>
                                                     <div class='col-10'>
-                                                        <select name='' id='' class='form-control'>
+                                                        <select name='tipo_serv_plus' id='tipo_serv_plus' class='form-control'>
                                                             <option value=''>-----------</option>
                                                             <option value='Basico'>Basico</option>
                                                             <option value='Superior'>Superior</option>
@@ -340,7 +344,7 @@
                                                 <div class='form-group row'>
                                                     <label class='col-2 col-form-label'>Precio</label>
                                                     <div class='col-10'>
-                                                        <input type='number'  name='prec_tour' id='prec_tour' class='form-control' placeholder=''>
+                                                        <input type='number'  name='prec_int_serv_plus' id='prec_int_serv_plus' class='form-control' placeholder=''>
                                                     </div>
                                                 </div>
                                                 

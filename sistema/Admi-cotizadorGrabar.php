@@ -71,33 +71,16 @@ elseif ($xtipo == "transporte"){
 elseif ($xtipo == "comidas"){
     if ($xaccion=="crear") {
 
-        $xempr_cliente=leerParam("empr_cliente","");
-        $xruc_empr_cliente=leerParam("ruc_empr_cliente","");
-        $xdirec_cliente=leerParam("direc_cliente","");
-        $xweb_empr_cliente=leerParam("web_empr_cliente","");
-        $xape_cliente=leerParam("ape_cliente","");
-        $xnom_cliente=leerParam("nom_cliente","");
-        $xcel_cliente=leerParam("cel_cliente","");
-        $xemail_cliente=leerParam("email_cliente","");
-        $xpas_cliente=leerParam("pas_cliente","");
-        $xestado_cliente=leerParam("estado_cliente","");
+        $xtipo_comidas=leerParam("tipo_comidas","");
+        $xcarta_comidas=leerParam("carta_comidas","");
+        $xprecio_comidas=leerParam("precio_comidas","");
          
         $xc = conectar();
-        $sql = "INSERT INTO cliente (empr_cliente,ruc_empr_cliente,direc_cliente,web_empr_cliente,ape_cliente,nom_cliente,cel_cliente,email_cliente,pas_cliente,estado_cliente) VALUES ('$xempr_cliente','$xruc_empr_cliente','$xdirec_cliente','$xweb_empr_cliente','$xape_cliente','$xnom_cliente','$xcel_cliente','$xemail_cliente','$xpas_cliente','0')";
+        $sql = "INSERT INTO comidas (tipo_comidas,carta_comidas,precio_comidas) VALUES ('$xtipo_comidas','$xcarta_comidas','$xprecio_comidas')";
     
         mysqli_query($xc,$sql);
         desconectar($xc);
-
-        ini_set( 'display_errors', 1 );
-        error_reporting( E_ALL );
-        $from = "johnnbill123@hotmial.com";
-        $to = "johnn.condori@tecsup.edu.pe";
-        $subject = "Familia Viajera Tour";
-        $message = "Se esta evaluando la solicitud de su cuenta - Agencia, Señor: $xnom_cliente $xape_cliente";
-        $headers = "From:" . $from;
-        mail($to,$subject,$message, $headers);
-        echo "Se envio un correo.";
-    
+        header("Location: Admi-cotizador.php");
     }elseif ($xaccion=="editar") {
         $xprec_comidas= leerParam("precio_comidas","");
         $xc = conectar();
@@ -116,37 +99,21 @@ elseif ($xtipo == "comidas"){
 elseif ($xtipo == "servicio"){
     if ($xaccion=="crear") {
 
-        $xempr_cliente=leerParam("empr_cliente","");
-        $xruc_empr_cliente=leerParam("ruc_empr_cliente","");
-        $xdirec_cliente=leerParam("direc_cliente","");
-        $xweb_empr_cliente=leerParam("web_empr_cliente","");
-        $xape_cliente=leerParam("ape_cliente","");
-        $xnom_cliente=leerParam("nom_cliente","");
-        $xcel_cliente=leerParam("cel_cliente","");
-        $xemail_cliente=leerParam("email_cliente","");
-        $xpas_cliente=leerParam("pas_cliente","");
-        $xestado_cliente=leerParam("estado_cliente","");
+        $xnom_serv_plus=leerParam("nom_serv_plus","");
+        $xtipo_serv_plus=leerParam("tipo_serv_plus","");
+        $xprecio_serv_plus=leerParam("precio_serv_plus","");
          
         $xc = conectar();
-        $sql = "INSERT INTO cliente (empr_cliente,ruc_empr_cliente,direc_cliente,web_empr_cliente,ape_cliente,nom_cliente,cel_cliente,email_cliente,pas_cliente,estado_cliente) VALUES ('$xempr_cliente','$xruc_empr_cliente','$xdirec_cliente','$xweb_empr_cliente','$xape_cliente','$xnom_cliente','$xcel_cliente','$xemail_cliente','$xpas_cliente','0')";
+        $sql = "INSERT INTO servicioplus (nom_serv_plus,tipo_serv_plus,precio_serv_plus) VALUES ('$xnom_serv_plus','$xtipo_serv_plus','$xprecio_serv_plus')";
     
         mysqli_query($xc,$sql);
         desconectar($xc);
-
-        ini_set( 'display_errors', 1 );
-        error_reporting( E_ALL );
-        $from = "johnnbill123@hotmial.com";
-        $to = "johnn.condori@tecsup.edu.pe";
-        $subject = "Familia Viajera Tour";
-        $message = "Se esta evaluando la solicitud de su cuenta - Agencia, Señor: $xnom_cliente $xape_cliente";
-        $headers = "From:" . $from;
-        mail($to,$subject,$message, $headers);
-        echo "Se envio un correo.";
+        header("Location: Admi-cotizador.php");
     
     }elseif ($xaccion=="editar") {
-        $xprecio_serv_plus= leerParam("precio_serv_plus","");
+        $xprec_int_serv_plus= leerParam("prec_int_serv_plus","");
         $xc = conectar();
-        $sql = "UPDATE servicioplus SET precio_serv_plus='$xprecio_serv_plus' WHERE id_serv_plus='$xid'";
+        $sql = "UPDATE servicioplus SET prec_int_serv_plus='$xprec_int_serv_plus' WHERE id_serv_plus='$xid'";
 
         mysqli_query($xc,$sql);
         desconectar($xc);
