@@ -7,7 +7,7 @@
         
         require_once("funciones.php");
         $xc = conectar();
-        $sql = "SELECT j.id_jor, p.nom_per,p.ape_per, j.hor_tra_jor, a.nom_area, j.viat_jor,j.sueldo_jor 
+        $sql = "SELECT j.id_jor, p.nom_per,p.ape_per, j.hor_tra_jor, a.nom_area, j.viat_jor,j.sueldo_jor,j.pago_variado_jor
             FROM jornal j
             INNER JOIN persona p ON j.id_per = p.id_per 
             INNER JOIN area a ON j.id_area = a.id_area";
@@ -104,7 +104,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="m-b-30">
-                                    <button id="addToTable" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
+                                    <button onclick="window.location.href='Admi-personalAñadir.php'" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                                     <th>Viaticos</th>
                                     <th>Pago</th>
                                     <th>Pago Variado</th>
-                                    <th>Actions</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
 
@@ -133,6 +133,7 @@
                                         $xnom_area = $fila["nom_area"];
                                         $xviat_jor = $fila["viat_jor"];
                                         $xsueldo_jor = $fila["sueldo_jor"];
+                                        $xpago_variado_jor = $fila["pago_variado_jor"];
 
                                             echo "
                                                 <tr class='gradeX'>
@@ -141,12 +142,10 @@
                                                     <td>$xhor_tra_jor</td>
                                                     <td>$xviat_jor</td>
                                                     <td>$xsueldo_jor</td>
-                                                    <td>1000.00</td>
+                                                    <td>$xpago_variado_jor</td>
                                                     <td class='actions'>
-                                                        <a href='Admi-personalEdit.php?id=$xid_jor&type=edit' class='on-default ' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
-                                                        <a href='models/Personal.php?id=$xid_jor' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
-                                                        <a href='#' class='hidden on-editing save-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Save'><i class='fa fa-save'></i></a>
-                                                        <a href='#' class='hidden on-editing cancel-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Cancel'><i class='fa fa-times'></i></a>
+                                                        <a href='Admi-personalEdit.php?id=$xid_jor' class='on-default ' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
+                                                        <a href='Admi-personalGrabar.php?id=$xid_jor&type=eliminar' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
                                                     </td>
                                                 </tr>
                                             ";

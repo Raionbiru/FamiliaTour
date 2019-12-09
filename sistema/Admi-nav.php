@@ -138,7 +138,7 @@
                     </li>
 
                     <li>
-                        <a href="Admi-accesousuario.php"><i class="fi-briefcase"></i> <span> Acceso Usuarios </span></a>
+                        <a href="Admi-accesousuario.php"><i class="fi-briefcase"></i> <span> Acceso Clientes </span></a>
                     </li>
 
                     <li>

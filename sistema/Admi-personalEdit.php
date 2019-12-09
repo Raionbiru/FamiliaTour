@@ -6,16 +6,12 @@
         }         
         
         require_once("funciones.php");
-
-        $xid = $_GET['id'];
-        $xtye = $_GET['type'];
-
-
+        $xid = leerParam("id","");
         $xc = conectar();
-        $sql = "SELECT * FROM jornal j INNER JOIN persona p ON j.id_per = p.id_per INNER JOIN area a ON j.id_area = a.id_area WHERE j.id_jor = '$xid'";
-        $res = mysqli_query($xc,$sql);
+        $sqlJornal = "SELECT * FROM jornal j INNER JOIN persona p ON j.id_per = p.id_per INNER JOIN area a ON j.id_area = a.id_area WHERE j.id_jor = '$xid'";
+        $resJornal = mysqli_query($xc,$sqlJornal);
+        $filaJornal = mysqli_fetch_array($resJornal);
         desconectar($xc);
-        $fila = mysqli_fetch_array($res);
     ?>
     <head>
         <meta charset="utf-8" />
@@ -54,8 +50,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box">
-                        <h4 class="page-title float-left">Personal</h4>
 
+                        <h4 class="page-title float-left">Personal</h4>
                         <ol class="breadcrumb float-right">
                             <li class="breadcrumb-item"><a href="#">Familia Tour</a></li>
                             <li class="breadcrumb-item"><a href="#">Administración</a></li>
@@ -74,77 +70,72 @@
                         <p class="text-muted m-b-30 font-14"></p>
 
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-12">
                                 <div class="p-20">
-                                    <form class="form-horizontal" role="form">
+                                    <form class="form-horizontal" role="form" method="POST" action="Admi-personalGrabar.php">
+                                        
+                                        <input hidden="YES" name="id" value="<?PHP echo $xid; ?>">
+                                        <input hidden="YES" name="accion" value="editar">
 
-                                        <div class="form-group row">
-                                            <label class="col-2 col-form-label">Persona</label>
-                                            <div class="col-10">
-                                                <input type="text" class="form-control" disabled="" value="<?PHP echo $fila['nom_per']?>">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group row">
+                                                <label class="col-2 col-form-label">Persona</label>
+                                                <div class="col-10">
+                                                <input type="text" class="form-control" disabled="" value="<?php echo$filaJornal['nom_per']?>">
+                                                </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                <label class="col-2 col-form-label">Horas</label>
+                                                <div class="col-10">
+                                                <input type="text" class="form-control" id="hor_tra_jor" name="hor_tra_jor" value="<?php echo$filaJornal['hor_tra_jor']?>">
+                                                </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                <label class="col-2 col-form-label">Pago</label>
+                                                <div class="col-10">
+                                                <input type="text" class="form-control" id="sueldo_jor" name="sueldo_jor" value="<?php echo$filaJornal['sueldo_jor']?>">
+                                                </div>
+                                                </div>
                                             </div>
+
+                                            <div class="col-6">
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Area</label>
+                                                <div class="col-10">
+                                                <input type="text" class="form-control" disabled="" value="<?php echo$filaJornal['nom_area']?>">
+                                                </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                <label class="col-2 col-form-label">Viaticos</label>
+                                                <div class="col-10">
+                                                <input type="text" class="form-control" id="viat_jor" name="viat_jor" value="<?php echo$filaJornal['viat_jor']?>">
+                                                </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                <label class="col-2 col-form-label">Pago variado</label>
+                                                <div class="col-10">
+                                                <input type="text" class="form-control" id="pago_variado_jor" name="pago_variado_jor" value="<?php echo$filaJornal['pago_variado_jor']?>">
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                        </div><!-- end row -->
+                                        
+                                        <div class="form-group row text-center m-t-10">
+                                        <div class="col-md-4 offset-md-4">
+                                        <button class="btn btn-md btn-block btn-primary waves-effect waves-light" type="submit">Modificar</button>
                                         </div>
-
-                                        <div class="form-group row">
-                                            <label class="col-2 col-form-label">Input Select</label>
-                                            <div class="col-10">
-                                                <select class="form-control">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
-                                                </select>
-                                            </div>
                                         </div>
 
                                     </form>
                                 </div>
                             </div>
-
-                            <div class="col-6">
-                                <div class="p-20">
-                                    <form class="form-horizontal" role="form">
-                                        <div class="form-group row">
-                                            <label class="col-2 col-form-label">Text</label>
-                                            <div class="col-10">
-                                                <input type="text" class="form-control" value="Some text value...">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label class="col-2 col-form-label">Placeholder</label>
-                                            <div class="col-10">
-                                                <input type="text" class="form-control" placeholder="placeholder">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label class="col-2 col-form-label">Disabled</label>
-                                            <div class="col-10">
-                                                <input type="text" class="form-control" disabled="" value="Disabled value">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label class="col-2 col-form-label">Input Select</label>
-                                            <div class="col-10">
-                                                <select class="form-control">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                    </form>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- end row -->
+                        </div><!-- end row -->
 
                     </div> <!-- end card-box -->
                 </div><!-- end col -->

@@ -86,12 +86,14 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="text-center">
-                                        <button type="button" class="btn m-r-5 btn-facebook waves-effect waves-light">
+                                        <a href="https://www.facebook.com/viajesgrupalesescolarespromocion/ "><button type="submit" class="btn m-r-5 btn-facebook waves-effect waves-light">
                                             <i class="fa fa-facebook"></i>
-                                        </button>
+                                        </button></a>
+                                        <a href="mailto:FamiliaViajeraTours@gmail.com?Subject=Interesado en un tour&body=Buenas Familia Tour">
                                         <button type="button" class="btn m-r-5 btn-googleplus waves-effect waves-light">
                                             <i class="fa fa-google"></i>
                                         </button>
+                                        </a>
                                         <button type="button" class="btn m-r-5 btn-twitter waves-effect waves-light">
                                             <i class="fa fa-twitter"></i>
                                         </button>

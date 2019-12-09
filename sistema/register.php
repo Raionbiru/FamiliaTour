@@ -172,16 +172,22 @@ desconectar($xc);
                                                     </div>
 
                                                     <div class="form-group row m-b-20">
-                                                        <div class="col-12">
+                                                    
+                                                    <div class="col-7">
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="remember" type="checkbox" checked="">
+                                                        <label for="remember">
+                                                            Acepto <a href="#">Terminos y Condiciones</a>
+                                                        </label>
+                                                    </div>
+                                                    </div>
 
-                                                            <div class="checkbox checkbox-success">
-                                                                <input id="remember" type="checkbox" checked="">
-                                                                <label for="remember">
-                                                                    Acepto <a href="#">Terminos y Condiciones</a>
-                                                                </label>
-                                                            </div>
-
-                                                        </div>
+                                                    <div class="col-5">
+                                                        <label for="remember">
+                                                            ¿Ya tiene una cuenta? <br> <center><a href="login.php">Log In</a></center>
+                                                        </label>
+                                                    </div>
+                                                    
                                                     </div>
 
                                                     <div class="form-group row text-center m-t-10">
@@ -268,16 +274,22 @@ desconectar($xc);
                                                     </div>
 
                                                     <div class="form-group row m-b-20">
-                                                    <div class="col-12">
-
+                                                    
+                                                    <div class="col-7">
                                                     <div class="checkbox checkbox-success">
                                                         <input id="remember" type="checkbox" checked="">
                                                         <label for="remember">
-                                                            Acepto <a href="#">Terminos y Condiciones</a>
+                                                            Acepto <a href="login.php">Terminos y Condiciones</a>
+                                                        </label>
+                                                    </div>
+                                                    </div>
+
+                                                    <div class="col-5">
+                                                        <label for="remember">
+                                                            ¿Ya tiene una cuenta? <br> <center><a href="Login.php">Log In</a></center>
                                                         </label>
                                                     </div>
 
-                                                    </div>
                                                     </div>
 
                                                     <div class="form-group row text-center m-t-10">
@@ -290,10 +302,8 @@ desconectar($xc);
                                                 
                                             </div>
 
-
                                         </div>
                                     </div>
-
 
                                 </div>
                                 <!-- end card-box-->

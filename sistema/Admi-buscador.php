@@ -70,10 +70,12 @@
                     <div class="col-sm-12">
                         <div class="card-box">
 
-                            <h4 class="m-t-0 header-title"><b>Stack Table</b></h4>
+                            <h4 class="m-t-0 header-title"><b>Titulo</b></h4>
                             <p class="text-muted font-14">
-                                The Stack Table stacks the table headers to a two column layout with headers on the left. Resize your viewport to across the 40em (640px) breakpoint to see the change.
-                                <?php echo"$xfec_ini - $xfec_fin";?>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam sint iure dignissimos! Ipsum id tempora repellendus, eligendi praesentium voluptatum ad sint rem possimus similique, maxime a aliquam magni esse ducimus maiores sit exercitationem dolores temporibus voluptas et quae culpa. Corrupti.
+                                <br>
+                                <br>
+                                <?php echo"Desde: $xfec_ini  Hasta: $xfec_fin";?>
                             </p>
 
                             <table class="tablesaw table m-b-0" data-tablesaw-mode="swipe">
