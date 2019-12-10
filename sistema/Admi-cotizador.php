@@ -75,7 +75,7 @@
             </div>
             <!-- end row -->
 
-            <div class="row">
+            <div class="row"> <!-- Tabla Hospedaje -->
                 <div class="col-sm-12">
                     <div class="card-box">
                         <div class="row">
@@ -86,7 +86,7 @@
 
                             <div class="col-sm-6">
                                 <div class="m-b-30">
-                                    <button id="addToTable" onclick="window.location.href='Admi-cotizadorAdd.php?tipo=hospedaje'" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
+                                    <button onclick="window.location.href='Admi-cotizadorAdd.php?tipo=hospedaje'" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -100,7 +100,9 @@
                                     <th>Tipo</th>
                                     <th>Lugar</th>
                                     <th>Precio</th>
+                                    <th>Precio Variado</th>
                                     <th>Acciones</th>
+                                    <th></th>
                                 </tr>
                             </thead>
 
@@ -112,6 +114,7 @@
                                         $xtipo_hostal = $fila["tipo_hostal"];
                                         $xlugar_hostal = $fila["lugar_hostal"];
                                         $xprec_hostal = $fila["prec_hostal"];
+                                        $xprec_var_hostal = $fila["prec_var_hostal"];
 
                                             echo "
                                                 <tr class='gradeX'>
@@ -120,10 +123,12 @@
                                                     <td>$xtipo_hostal</td>
                                                     <td>$xlugar_hostal</td>
                                                     <td>$xprec_hostal</td>
+                                                    <td>$xprec_var_hostal</td>
                                                     <td class='actions'>
-                                                        <a href='Admi-cotizadorEdit.php?id=$xid_hostal&tipo=hospedaje' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
-                                                        <a href='Admi-cotizadorGrabar.php?id=$xid_hostal&tipo=hostal&accion=eliminar' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
+                                                        <a href='Admi-cotizadorEdit.php?id=$xid_hostal&tipo=hospedaje' class='on-default' data-toggle='tooltip' data-placement='top' data-original-title='Editar'><i class='fa fa-pencil'></i></a>
+                                                        <a href='Admi-cotizadorGrabar.php?id=$xid_hostal&tipo=hostal&accion=eliminar' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Eliminar'><i class='fa fa-trash-o'></i></a>
                                                     </td>
+                                                    <td></td>
                                                 </tr>
                                             ";}?>
                             </tbody>
@@ -134,7 +139,7 @@
             </div> 
             <!-- end row -->
 
-            <div class="row">
+            <div class="row"> <!-- Tabla Transporte -->
                 <div class="col-sm-12">
                     <div class="card-box">
                         <div class="row">
@@ -145,7 +150,7 @@
 
                             <div class="col-sm-6">
                                 <div class="m-b-30">
-                                    <button id="addToTable" onclick="window.location.href='Admi-cotizadorAdd.php?tipo=transporte'" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
+                                    <button onclick="window.location.href='Admi-cotizadorAdd.php?tipo=transporte'" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -159,6 +164,7 @@
                                     <th>Salida</th>
                                     <th>Lugar</th>
                                     <th>Precio</th>
+                                    <th>Precio Variado</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
@@ -171,6 +177,7 @@
                                         $xsalida_transporte = $fila["salida_transporte"];
                                         $xdes_transporte = $fila["des_transporte"];
                                         $xprec_transporte = $fila["prec_transporte"];
+                                        $xprec_var_transporte = $fila["prec_var_transporte"];
 
                                             echo "
                                                 <tr class='gradeX'>
@@ -179,6 +186,7 @@
                                                     <td>$xsalida_transporte</td>
                                                     <td>$xdes_transporte</td>
                                                     <td>$xprec_transporte</td>
+                                                    <td>$xprec_var_transporte</td>
                                                     <td class='actions'>
                                                         <a href='Admi-cotizadorEdit.php?id=$xid_transporte&tipo=transporte' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
                                                         <a href='Admi-cotizadorGrabar.php?id=$xid_transporte&tipo=transporte&accion=eliminar' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
@@ -192,7 +200,7 @@
             </div> 
             <!-- end row -->
 
-            <div class="row">
+            <div class="row"> <!-- Tabla Comidas -->
                 <div class="col-sm-12">
                     <div class="card-box">
                         <div class="row">
@@ -203,7 +211,7 @@
 
                             <div class="col-sm-6">
                                 <div class="m-b-30">
-                                    <button id="addToTable" onclick="window.location.href='Admi-cotizadorAdd.php?tipo=comidas'" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
+                                    <button onclick="window.location.href='Admi-cotizadorAdd.php?tipo=comidas'" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -215,6 +223,7 @@
                                     <th>Comida</th>    
                                     <th>Carta</th>
                                     <th>Precio</th>
+                                    <th>Precio Varaido</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
@@ -225,12 +234,14 @@
                                         $xtipo_comidas = $fila["tipo_comidas"];
                                         $xcarta_comidas = $fila["carta_comidas"];
                                         $xprecio_comidas = $fila["precio_comidas"];
+                                        $xprecio_variado_comidas = $fila["precio_variado_comidas"];
 
                                             echo "
                                                 <tr class='gradeX'>
                                                     <td>$xtipo_comidas</td>    
                                                     <td>$xcarta_comidas</td>
                                                     <td>$xprecio_comidas</td>
+                                                    <td>$xprecio_variado_comidas</td>
                                                     <td class='actions'>
                                                         <a href='Admi-cotizadorEdit.php?id=$xid_comidas&tipo=comidas' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
                                                         <a href='Admi-cotizadorGrabar.php?id=$xid_comidas&tipo=comidas&accion=eliminar' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
@@ -244,7 +255,7 @@
             </div> 
             <!-- end row -->
 
-            <div class="row">
+            <div class="row"> <!-- Tabla Servicio Adicional -->
                 <div class="col-sm-12">
                     <div class="card-box">
                         <div class="row">
@@ -255,7 +266,7 @@
 
                             <div class="col-sm-6">
                                 <div class="m-b-30">
-                                    <button onclick="window.location.href='Admi-cotizadorAdd.php?tipo=servicio'" id="addToTable" type="submit" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
+                                    <button onclick="window.location.href='Admi-cotizadorAdd.php?tipo=servicio'" type="submit" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -267,6 +278,7 @@
                                     <th>Servicio</th>    
                                     <th>Categoria</th>
                                     <th>Precio</th>
+                                    <th>Precio Variado</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
@@ -276,13 +288,15 @@
                                         $xid_serv_plus = $fila["id_serv_plus"];
                                         $xnom_serv_plus = $fila["nom_serv_plus"];
                                         $xtipo_serv_plus = $fila["tipo_serv_plus"];
-                                        $xprecio_serv_plus = $fila["prec_int_serv_plus"];
+                                        $xprecio_serv_plus = $fila["prec_serv_plus"];
+                                        $xprecio_var_serv_plus = $fila["prec_var_serv_plus"];
 
                                             echo "
                                                 <tr class='gradeX'>
                                                     <td>$xnom_serv_plus</td>    
                                                     <td>$xtipo_serv_plus</td>
                                                     <td>$xprecio_serv_plus</td>
+                                                    <td>$xprecio_var_serv_plus</td>
                                                     <td class='actions'>
                                                         <a href='Admi-cotizadorEdit.php?id=$xid_serv_plus&tipo=servicio' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
                                                         <a href='Admi-cotizadorGrabar.php?id=$xid_serv_plus&tipo=servicio&accion=eliminar' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>

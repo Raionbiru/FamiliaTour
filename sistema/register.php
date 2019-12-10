@@ -82,7 +82,7 @@ desconectar($xc);
                                             <div class="tab-pane fade" id="home1">
                                                 
                                                 <!-- ===================== -->
-                                                <!-- FORMULARIO DE PERSONAL -->
+                                                <!-- FORMULARIO DE EMPRESA -->
                                                 <!-- ===================== -->
 
                                                 <form class="form-horizontal" method="POST" action="registro-grabar.php">

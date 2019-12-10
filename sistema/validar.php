@@ -23,12 +23,13 @@ if ( $xcanPersona > 0 ) {
     $filaPersonaConsulta = mysqli_fetch_array($resPersonaConsulta);
 
     $xid_area = $filaPersonaConsulta["id_area"];
+    $xestado_per = $filaPersonaConsulta["estado_per"];
 
     session_start();
     $_SESSION["nom_per"]=$filaPersonaConsulta["nom_per"];
     $_SESSION["ape_per"]=$filaPersonaConsulta["ape_per"];
 
-    if($xid_area > 0){
+    if($xestado_per > 0){
         switch ($xid_area) {
             case '1':
                 header("Location: Comercial.php");

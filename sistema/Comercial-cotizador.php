@@ -3,7 +3,18 @@
         $xc = conectar();
         $sqlHospedaje = "SELECT * FROM hostal";
         $resHospedaje = mysqli_query($xc,$sqlHospedaje);
-        desconectar($xc);?>
+
+        $sqlTransporte = "SELECT * FROM transporte";
+        $resTransporte = mysqli_query($xc,$sqlTransporte);
+
+        $sqlComidas = "SELECT * FROM comidas";
+        $resComidas = mysqli_query($xc,$sqlComidas);
+
+        $sqlServicioPlus = "SELECT * FROM servicioplus";
+        $resServicioPlus = mysqli_query($xc,$sqlServicioPlus);
+
+        desconectar($xc);
+    ?>
 <!-- ============================================================== -->
 <!-- Start right Content here -->
 <!-- ============================================================== -->
@@ -66,9 +77,9 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="tab-content">
 
-                            <div class="tab-pane fade show active" id="Transporte">
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="Transporte"> <!--Tab Transporte-->
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -162,7 +173,7 @@
                                 </div>
                             </div>
                             
-                            <div class="tab-pane fade" id="Hospedaje">
+                            <div class="tab-pane fade" id="Hospedaje"> <!--Tab Hospedaje-->
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -245,7 +256,7 @@
                                 </div>
                             </div>
                             
-                            <div class="tab-pane fade" id="Tours">
+                            <div class="tab-pane fade" id="Tours"> <!--Tab Tours-->
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -329,7 +340,7 @@
                                 </div>
                             </div>
                             
-                            <div class="tab-pane fade" id="Alimentacion">
+                            <div class="tab-pane fade" id="Alimentacion"> <!--Tab Alimentacion-->
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -377,7 +388,7 @@
                                 </div>
                             </div>
 
-                            <div class="tab-pane fade" id="ServicioAdicional">
+                            <div class="tab-pane fade" id="ServicioAdicional"> <!--Tab Servicio Adicional-->
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -425,7 +436,7 @@
                                 </div>
                             </div>
 
-                            <div class="tab-pane fade" id="Comidas">
+                            <div class="tab-pane fade" id="Comidas"> <!--Tab Comidas-->
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -512,7 +523,11 @@ alert(selected);
 
 <script>
 var options = {
-        desayuno : ["Desayuno Comida","Desayuno Continental","Desayuno Buffet"],
+        desayuno : <?PHP $sqlTipoComidas = "SELECT * FROM comidas WHERE tipo_comidas = 'Desayuno'"; 
+                         $resTipoComidas = mysqli_query($xc,$sqlTipoComidas);
+                         $filaTipoComidas=mysqli_fetch_array($resTipoComidas);
+                         echo $filaTipoComidas;?>,
+        //desayuno : ["Desayuno Comida","Desayuno Continental","Desayuno Buffet"],
         almuerzo : ["Entrada + Fondo + Bebida","Entrada + Fondo + Bebida + Postre","Buffet"],
         cena : ["Entrada + Fondo + Bebida","Buffet","Pollo a la Braza + Bebida", "Pizza + Bebida"]
 }

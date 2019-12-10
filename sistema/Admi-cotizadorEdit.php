@@ -123,6 +123,7 @@
                                                     </div>
 
                                                     <div class='col-6'>
+
                                                         <div class='form-group row'>
                                                         <label class='col-2 col-form-label'>Tipo</label>
                                                             <div class='col-10'>
@@ -135,6 +136,13 @@
                                                                 <input type='text' class='form-control' placeholder='Precio de Hospedaje' id='prec_hostal' name='prec_hostal' value='$filaHospedaje[prec_hostal]'>
                                                             </div>
                                                         </div>
+                                                        <div class='form-group row'>
+                                                        <label class='col-3 col-form-label'>Precio Variado</label>
+                                                            <div class='col-9'>
+                                                                <input type='text' class='form-control' placeholder='Precio variado de Hospedaje' id='prec_var_hostal' name='prec_var_hostal' value='$filaHospedaje[prec_var_hostal]'>
+                                                            </div>
+                                                        </div>
+
                                                     </div>
                                                 </div><!-- end row -->
                                                 
@@ -195,6 +203,7 @@
                                                     </div>
 
                                                     <div class='col-6'>
+
                                                         <div class='form-group row'>
                                                         <label class='col-2 col-form-label'>Lugar</label>
                                                             <div class='col-10'>
@@ -207,6 +216,13 @@
                                                                 <input type='text' class='form-control' placeholder='Precio de Transporte' id='prec_transporte' name='prec_transporte' value='$filaTransporte[prec_transporte]'>
                                                             </div>
                                                         </div>
+                                                        <div class='form-group row'>
+                                                        <label class='col-3 col-form-label'>Precio Variado</label>
+                                                            <div class='col-9'>
+                                                                <input type='text' class='form-control' placeholder='Precio variado de Transporte' id='prec_var_transporte' name='prec_var_transporte' value='$filaTransporte[prec_var_transporte]'>
+                                                            </div>
+                                                        </div>
+
                                                     </div>
                                                 </div><!-- end row -->
                                                 
@@ -267,12 +283,21 @@
                                                     </div>
 
                                                     <div class='col-6'>
+                                                        
                                                         <div class='form-group row'>
                                                         <label class='col-2 col-form-label'>Precio</label>
                                                             <div class='col-10'>
                                                                 <input type='text' class='form-control' placeholder='Precio de Comida' id='precio_comidas' name='precio_comidas' value='$filaComidas[precio_comidas]'>
                                                             </div>
                                                         </div>
+
+                                                        <div class='form-group row'>
+                                                        <label class='col-3 col-form-label'>Precio Variado</label>
+                                                            <div class='col-9'>
+                                                                <input type='text' class='form-control' placeholder='Precio variado de Comida' id='precio_variado_comidas' name='precio_variado_comidas' value='$filaComidas[precio_variado_comidas]'>
+                                                            </div>
+                                                        </div>
+
                                                     </div>
                                                 </div><!-- end row -->
                                                 
@@ -336,7 +361,13 @@
                                                         <div class='form-group row'>
                                                         <label class='col-2 col-form-label'>Precio</label>
                                                             <div class='col-10'>
-                                                                <input type='text' class='form-control' placeholder='Precio de Servicio' id='prec_int_serv_plus' name='prec_int_serv_plus' value='$filaServicio[prec_int_serv_plus]'>
+                                                                <input type='text' class='form-control' placeholder='Precio de Servicio' id='prec_serv_plus' name='prec_serv_plus' value='$filaServicio[prec_serv_plus]'>
+                                                            </div>
+                                                        </div>
+                                                        <div class='form-group row'>
+                                                        <label class='col-3 col-form-label'>Precio Variado</label>
+                                                            <div class='col-9'>
+                                                                <input type='text' class='form-control' placeholder='Precio variado de Servicio' id='prec_var_serv_plus' name='prec_var_serv_plus' value='$filaServicio[prec_var_serv_plus]'>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -372,7 +403,7 @@
         <!-- END wrapper -->
 
 
-        <!-- MODAL -->
+        <!-- MODAL - Eliminar-->
         <div id="dialog" class="modal-block mfp-hide">
             <section class="card p-20">
                 <header class="panel-heading">

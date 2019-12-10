@@ -43,6 +43,7 @@
                             <?php
                                 $xc = conectar();
                                 $sqlRespuesta = "SELECT nom_cliente, empr_cliente FROM cliente WHERE notificacion_cliente = 0";
+                                $sqlPersona = "SELECT nom_per, ape_per FROM persona WHERE notificacion_per = 0";
                                 $resRespuesta = mysqli_query($xc,$sqlRespuesta);
                                 desconectar($xc);
 

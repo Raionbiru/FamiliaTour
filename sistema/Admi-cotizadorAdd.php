@@ -94,7 +94,7 @@
                                                 <div class='form-group row'>
                                                     <label class='col-2 col-form-label'>Clase de hospedaje</label>
                                                     <div class='col-10'>
-                                                        <select name='clase_hostal' id='clase_hostal' class='form-control'>
+                                                        <select name='tipo_hostal' id='tipo_hostal' class='form-control'>
                                                             <option value=''>-----------</option>
                                                             <option value='Simple'>Simple</option>
                                                             <option value='Intermedio'>Intermedio</option>
@@ -106,7 +106,7 @@
                                                 <div class='form-group row'>
                                                     <label class='col-2 col-form-label'>Tipo</label>
                                                     <div class='col-10'>
-                                                        <select name='tipo_hostal' id='tipo_hostal' class='form-control'>
+                                                        <select name='clase_hostal' id='clase_hostal' class='form-control'>
                                                             <option value=''>-----------</option>
                                                             <option value='Simple'>Simple</option>
                                                             <option value='Doble'>Doble</option>
@@ -126,6 +126,13 @@
                                                     <label class='col-2 col-form-label'>Precio</label>
                                                     <div class='col-10'>
                                                         <input type='number'  name='prec_hostal' id='prec_hostal' class='form-control' placeholder=''>
+                                                    </div>
+                                                </div>
+
+                                                <div class='form-group row'>
+                                                    <label class='col-2 col-form-label'>Precio Variado</label>
+                                                    <div class='col-10'>
+                                                        <input type='number'  name='prec_var_hostal' id='prec_var_hostal' class='form-control' placeholder=''>
                                                     </div>
                                                 </div>
                                                 
@@ -212,6 +219,13 @@
                                                         <input type='number'  name='prec_transporte' id='prec_transporte' class='form-control' placeholder=''>
                                                     </div>
                                                 </div>
+
+                                                <div class='form-group row'>
+                                                    <label class='col-2 col-form-label'>Precio Variado</label>
+                                                    <div class='col-10'>
+                                                        <input type='number'  name='prec_var_transporte' id='prec_var_transporte' class='form-control' placeholder=''>
+                                                    </div>
+                                                </div>
                                                 
                                                 <div class='form-group row text-center m-t-10'>
                                                     <div class='col-md-4 offset-md-4'>
@@ -279,6 +293,13 @@
                                                         <input type='number'  name='precio_comidas' id='precio_comidas' class='form-control' placeholder=''>
                                                     </div>
                                                 </div>
+
+                                                <div class='form-group row'>
+                                                    <label class='col-2 col-form-label'>Precio Variado</label>
+                                                    <div class='col-10'>
+                                                        <input type='number'  name='precio_variado_comidas' id='precio_variado_comidas' class='form-control' placeholder=''>
+                                                    </div>
+                                                </div>
                                                 
                                                 <div class='form-group row text-center m-t-10'>
                                                     <div class='col-md-4 offset-md-4'>
@@ -344,7 +365,14 @@
                                                 <div class='form-group row'>
                                                     <label class='col-2 col-form-label'>Precio</label>
                                                     <div class='col-10'>
-                                                        <input type='number'  name='prec_int_serv_plus' id='prec_int_serv_plus' class='form-control' placeholder=''>
+                                                        <input type='number'  name='prec_serv_plus' id='prec_serv_plus' class='form-control' placeholder=''>
+                                                    </div>
+                                                </div>
+
+                                                <div class='form-group row'>
+                                                    <label class='col-2 col-form-label'>Precio Variado</label>
+                                                    <div class='col-10'>
+                                                        <input type='number'  name='prec_var_serv_plus' id='prec_var_serv_plus' class='form-control' placeholder=''>
                                                     </div>
                                                 </div>
                                                 
