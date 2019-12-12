@@ -118,21 +118,47 @@
                                                 <div class='form-group row'>
                                                     <label class='col-2 col-form-label'>Lugar</label>
                                                     <div class='col-10'>
-                                                        <input type='text'  name='lugar_hostal' id='lugar_hostal' class='form-control' placeholder='Lugar de hospedaje'>
+                                                        <select name='lugar_hostal' id='lugar_hostal' class='form-control'>
+                                                            <option value=''>-----------</option>
+                                                            <option value='Amazonas'>Amazonas</option>
+                                                            <option value='Áncash'>Áncash</option>
+                                                            <option value='Apurímac'>Apurímac</option>
+                                                            <option value='Arequipa'>Arequipa</option>
+                                                            <option value='Ayacucho'>Ayacucho</option>
+                                                            <option value='Cajamarca'>Cajamarca</option>
+                                                            <option value='Cuzco'>Cuzco</option>
+                                                            <option value='Huancavelica'>Huancavelica</option>
+                                                            <option value='Huánuco'>Huánuco</option>
+                                                            <option value='Ica'>Ica</option>
+                                                            <option value='Junín'>Junín</option>
+                                                            <option value='La Libertad'>La Libertad</option>
+                                                            <option value='Lambayeque'>Lambayeque</option>
+                                                            <option value='Lima'>Lima</option>
+                                                            <option value='Loreto'>Loreto</option>
+                                                            <option value='Madre de Dios'>Madre de Dios</option>
+                                                            <option value='Moquegua'>Moquegua</option>
+                                                            <option value='Pasco'>Pasco</option>
+                                                            <option value='Piura'>Piura</option>
+                                                            <option value='Puno'>Puno</option>
+                                                            <option value='San Martín'>San Martín</option>
+                                                            <option value='Tacna'>Tacna</option>
+                                                            <option value='Tumbes'>Tumbes</option>
+                                                            <option value='Ucayali'>Ucayali</option>
+                                                        </select>
                                                     </div>
                                                 </div>
 
                                                 <div class='form-group row'>
-                                                    <label class='col-2 col-form-label'>Precio</label>
+                                                    <label class='col-2 col-form-label'>Tarifa Interna</label>
                                                     <div class='col-10'>
-                                                        <input type='number'  name='prec_hostal' id='prec_hostal' class='form-control' placeholder=''>
+                                                        <input type='number'  name='prec_hostal' id='prec_hostal' class='form-control'  maxlength='4' oninput='if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);' />
                                                     </div>
                                                 </div>
 
                                                 <div class='form-group row'>
-                                                    <label class='col-2 col-form-label'>Precio Variado</label>
+                                                    <label class='col-2 col-form-label'>Tarifa Externa</label>
                                                     <div class='col-10'>
-                                                        <input type='number'  name='prec_var_hostal' id='prec_var_hostal' class='form-control' placeholder=''>
+                                                        <input type='number'  name='prec_var_hostal' id='prec_var_hostal' class='form-control' maxlength='4' oninput='if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);'>
                                                     </div>
                                                 </div>
                                                 
@@ -214,16 +240,16 @@
                                                 </div>
 
                                                 <div class='form-group row'>
-                                                    <label class='col-2 col-form-label'>Precio</label>
+                                                    <label class='col-2 col-form-label'>Tarifa Interna</label>
                                                     <div class='col-10'>
-                                                        <input type='number'  name='prec_transporte' id='prec_transporte' class='form-control' placeholder=''>
+                                                        <input type='number'  name='prec_transporte' id='prec_transporte' class='form-control' maxlength='4' oninput='if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);'>
                                                     </div>
                                                 </div>
 
                                                 <div class='form-group row'>
-                                                    <label class='col-2 col-form-label'>Precio Variado</label>
+                                                    <label class='col-2 col-form-label'>Tarifa Externa</label>
                                                     <div class='col-10'>
-                                                        <input type='number'  name='prec_var_transporte' id='prec_var_transporte' class='form-control' placeholder=''>
+                                                        <input type='number'  name='prec_var_transporte' id='prec_var_transporte' class='form-control' maxlength='4' oninput='if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);'>
                                                     </div>
                                                 </div>
                                                 
@@ -288,16 +314,16 @@
                                                 </div>
 
                                                 <div class='form-group row'>
-                                                    <label class='col-2 col-form-label'>Precio</label>
+                                                    <label class='col-2 col-form-label'>Tarifa Interna</label>
                                                     <div class='col-10'>
-                                                        <input type='number'  name='precio_comidas' id='precio_comidas' class='form-control' placeholder=''>
+                                                        <input type='number'  name='precio_comidas' id='precio_comidas' class='form-control' maxlength='3' oninput='if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);'>
                                                     </div>
                                                 </div>
 
                                                 <div class='form-group row'>
-                                                    <label class='col-2 col-form-label'>Precio Variado</label>
+                                                    <label class='col-2 col-form-label'>Tarifa Externa</label>
                                                     <div class='col-10'>
-                                                        <input type='number'  name='precio_variado_comidas' id='precio_variado_comidas' class='form-control' placeholder=''>
+                                                        <input type='number'  name='precio_variado_comidas' id='precio_variado_comidas' class='form-control' maxlength='4' oninput='if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);'>
                                                     </div>
                                                 </div>
                                                 
@@ -363,16 +389,16 @@
                                                 </div>
 
                                                 <div class='form-group row'>
-                                                    <label class='col-2 col-form-label'>Precio</label>
+                                                    <label class='col-2 col-form-label'>Tarifa Interna</label>
                                                     <div class='col-10'>
-                                                        <input type='number'  name='prec_serv_plus' id='prec_serv_plus' class='form-control' placeholder=''>
+                                                        <input type='number'  name='prec_serv_plus' id='prec_serv_plus' class='form-control' maxlength='3' oninput='if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);'>
                                                     </div>
                                                 </div>
 
                                                 <div class='form-group row'>
-                                                    <label class='col-2 col-form-label'>Precio Variado</label>
+                                                    <label class='col-2 col-form-label'>Tarifa Externa</label>
                                                     <div class='col-10'>
-                                                        <input type='number'  name='prec_var_serv_plus' id='prec_var_serv_plus' class='form-control' placeholder=''>
+                                                        <input type='number'  name='prec_var_serv_plus' id='prec_var_serv_plus' class='form-control' maxlength='4' oninput='if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);'>
                                                     </div>
                                                 </div>
                                                 
@@ -403,32 +429,6 @@
 <!-- ============================================================== -->
 </div>
         <!-- END wrapper -->
-
-
-        <!-- MODAL -->
-        <div id="dialog" class="modal-block mfp-hide">
-            <section class="card p-20">
-                <header class="panel-heading">
-                    <h4 class="panel-title mt-0">¿Estás seguro?</h4>
-                </header>
-                <div class="panel-body">
-                    <div class="modal-wrapper">
-                        <div class="modal-text">
-                            <p>¿Está seguro de que desea eliminar esta fila?</p>
-                        </div>
-                    </div>
-
-                    <div class="row m-t-20">
-                        <div class="col-md-12 text-right">
-                            <button id="dialogConfirm" class="btn btn-success waves-effect waves-light">Aceptar</button>
-                            <button id="dialogCancel" class="btn btn-danger waves-effect">Cancelar</button>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-        </div>
-        <!-- end Modal -->
 
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>

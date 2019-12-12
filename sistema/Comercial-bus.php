@@ -1,4 +1,15 @@
-<?php require_once("Comercial-header.php");?>
+<?php require_once("Comercial-header.php");
+
+    require_once("funciones.php");
+    $xc = conectar();
+
+    $sqlBus = "SELECT * FROM bus";
+    $resBus = mysqli_query($xc,$sqlBus);
+
+    desconectar($xc);
+
+
+?>
 <!-- ============================================================== -->
 <!-- Start right Content here -->
 <!-- ============================================================== -->
@@ -30,7 +41,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="m-b-30">
-                                    <button id="addToTable" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
+                                    <button onclick="window.location.href='Comercial-busAdd.php'" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -50,58 +61,37 @@
 
                             <tbody>
 
-                                <?PHP /* while($fila=mysqli_fetch_array($res)){
-                                        $xnom_per = $fila["nom_per"];
-                                        $xape_per = $fila["ape_per"];
-                                        $xhor_tra_jor = $fila["hor_tra_jor"];
-                                        $xnom_area = $fila["nom_area"];
-                                        $xviat_jor = $fila["viat_jor"];
-                                        $xsueldo_jor = $fila["sueldo_jor"];
+                                <?PHP while($filaBus=mysqli_fetch_array($resBus)){
+                                        $xid_bus    =  $filaBus["id_bus"];
+                                        $xcond_bus  =  $filaBus["cond_bus"];
+                                        $xplaca_bus =  $filaBus["placa_bus"];
+                                        $xmod_bus   =  $filaBus["mod_bus"];
+                                        $xcap_bus   =  $filaBus["cap_bus"];
+                                        $xest_bus   =  $filaBus["est_bus"];
 
                                             echo "
                                                 <tr class='gradeX'>
-                                                    <td>$xnom_per $xape_per</td>
-                                                    <td>$xnom_area</td>
-                                                    <td>$xhor_tra_jor</td>
-                                                    <td>$xviat_jor</td>
-                                                    <td>$xsueldo_jor</td>
-                                                    <td>1000.00</td>
+                                                    <td>$xcond_bus</td>
+                                                    <td>$xplaca_bus</td>
+                                                    <td>$xmod_bus</td>
+                                                    <td>$xcap_bus</td>
+                                                    <td>$xest_bus</td>
+                                                    <td>";
+                                                if ($xest_bus == "Mantenimiento"){
+                                                    echo"<span class='label label-table label-warning'>Mantenimiento</span>";
+                                                }
+                                                elseif($xest_bus == "Operativo"){
+                                                    echo"<span class='label label-table label-success'>Operativo</span>";
+                                                }
+                                            echo "</td>
                                                     <td class='actions'>
-                                                        <a href='#' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
-                                                        <a href='#' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
-                                                        <a href='#' class='hidden on-editing save-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Save'><i class='fa fa-save'></i></a>
-                                                        <a href='#' class='hidden on-editing cancel-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Cancel'><i class='fa fa-times'></i></a>
+                                                        <a href='Comercial-busEdit.php?id=$xid_bus' class='on-default edit-row' data-toggle='tooltip' data-placement='top' data-original-title='Editar'><i class='fa fa-pencil'></i></a>
+                                                        <a href='Comercial-busGrabar.php?id=$xid_bus&accion=eliminar' class='on-default remove-row' data-toggle='tooltip' data-placement='top' data-original-title='Eliminar'><i class='fa fa-trash-o'></i></a>
                                                     </td>
                                                 </tr>
                                             ";
-                                    }*/
+                                    }
                                 ?>
-                                <tr class='gradeX'>
-                                    <td>Nombre Apellido</td>
-                                    <td>XQ2 - 154</td>
-                                    <td>Hyunda</td>
-                                    <td>45</td>                                    
-                                    <td>Operativo</td>
-                                    <td class='actions'>
-                                        <a href='#' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
-                                        <a href='#' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
-                                        <a href='#' class='hidden on-editing save-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Save'><i class='fa fa-save'></i></a>
-                                        <a href='#' class='hidden on-editing cancel-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Cancel'><i class='fa fa-times'></i></a>
-                                    </td>
-                                </tr>
-                                <tr class='gradeX'>
-                                    <td>Nombre Apellido</td>
-                                    <td>YZ2 - 456</td>
-                                    <td>Ford</td>
-                                    <td>65</td>                                    
-                                    <td>Mantenimiento</td>
-                                    <td class='actions'>
-                                        <a href='#' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit'><i class='fa fa-pencil'></i></a>
-                                        <a href='#' class='on-default remove-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Delete'><i class='fa fa-trash-o'></i></a>
-                                        <a href='#' class='hidden on-editing save-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Save'><i class='fa fa-save'></i></a>
-                                        <a href='#' class='hidden on-editing cancel-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Cancel'><i class='fa fa-times'></i></a>
-                                    </td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -109,9 +99,6 @@
                 <!-- end: page -->
             </div> 
             <!-- end row -->
-
-
-
 
         </div> <!-- container -->
 

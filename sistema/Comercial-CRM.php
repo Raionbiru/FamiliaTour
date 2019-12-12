@@ -1,4 +1,31 @@
-<?php require_once("Comercial-header.php");?>
+<?php require_once("Comercial-header.php");
+
+    require_once("funciones.php");
+    $xc = conectar();
+
+    $sqlPersona = "SELECT count(*)  FROM persona";
+    $resPersona = mysqli_query($xc, $sqlPersona );    
+    $filaPersona = mysqli_fetch_array($resPersona);
+    $xcanPersona = $filaPersona[0];
+
+    $sqlAgencia = "SELECT count(*)  FROM cliente";
+    $resAgencia = mysqli_query($xc, $sqlAgencia);
+    $filaAgencia = mysqli_fetch_array($resAgencia);
+    $xcanAgencia = $filaAgencia[0];
+
+    $sqlTour = "SELECT count(*)  FROM tour";
+    $resTour = mysqli_query($xc, $sqlTour);
+    $filaTour = mysqli_fetch_array($resTour);
+    $xcanTour= $filaTour[0];
+
+    $sqlBus = "SELECT count(*)  FROM bus";
+    $resBus = mysqli_query($xc, $sqlBus);
+    $filaBus = mysqli_fetch_array($resBus);
+    $xcanBus = $filaBus[0];
+
+
+    desconectar($xc);
+?>
 <!-- ============================================================== -->
 <!-- Start right Content here -->
 <!-- ============================================================== -->
@@ -31,8 +58,8 @@
                             <img class="" src="assets/images/icons/clock.svg" title="clock.svg">
                         </div>
                         <div class="text-right">
-                            <p class="m-t-5 text-uppercase font-14 font-600">Productos</p>
-                            <h2 class="m-b-10"><span data-plugin="counterup">2,562</span></h2>
+                            <p class="m-t-5 text-uppercase font-14 font-600">Agencias</p>
+                            <h2 class="m-b-10"><span data-plugin="counterup"> <?PHP echo $xcanAgencia;?> </span></h2>
                         </div>
                     </div>
                 </div>
@@ -43,8 +70,8 @@
                             <img src="assets/images/icons/advertising1.svg" title="advertising.svg">
                         </div>
                         <div class="text-right">
-                            <p class="m-t-5 text-uppercase font-14 font-600">Usuarios</p>
-                            <h2 class="m-b-10"><span data-plugin="counterup">8,542</span></h2>
+                            <p class="m-t-5 text-uppercase font-14 font-600">Personal</p>
+                            <h2 class="m-b-10"><span data-plugin="counterup"> <?PHP echo $xcanPersona;?> </span></h2>
                         </div>
                     </div>
                 </div>
@@ -55,8 +82,8 @@
                             <img src="assets/images/icons/paid.svg" title="paid.svg">
                         </div>
                         <div class="text-right">
-                            <p class="m-t-5 text-uppercase font-14 font-600">Contratos</p>
-                            <h2 class="m-b-10"><span data-plugin="counterup">6,254</span></h2>
+                            <p class="m-t-5 text-uppercase font-14 font-600">Tours</p>
+                            <h2 class="m-b-10"><span data-plugin="counterup"> <?PHP echo $xcanTour;?>  </span></h2>
                         </div>
                     </div>
                 </div>
@@ -67,8 +94,8 @@
                             <img src="assets/images/icons/timeline.svg" title="timeline.svg">
                         </div>
                         <div class="text-right">
-                            <p class="m-t-5 text-uppercase font-14 font-600">Contratos</p>
-                            <h2 class="m-b-10"><span data-plugin="counterup">7,524</span></h2>
+                            <p class="m-t-5 text-uppercase font-14 font-600">Buses</p>
+                            <h2 class="m-b-10"><span data-plugin="counterup"> <?PHP echo $xcanBus;?> </span></h2>
                         </div>
                     </div>
                 </div>
@@ -97,9 +124,8 @@
                 <div class="col-sm-6">
                     <div class="card-box">
 
-                        <h4 class="m-t-0 header-title"><b>Tabla Uno</b></h4>
+                        <h4 class="m-t-0 header-title"><b>Semanas</b></h4>
                         <p class="text-muted font-14">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, sapiente?
                         </p>
 
                         <table class="tablesaw table m-b-0" data-tablesaw-mode="swipe">
@@ -151,9 +177,8 @@
                 <div class="col-sm-6">
                     <div class="card-box">
 
-                        <h4 class="m-t-0 header-title"><b>Tabla Dos</b></h4>
+                        <h4 class="m-t-0 header-title"><b>Datos adicionales</b></h4>
                         <p class="text-muted font-14">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, vitae.
                         </p>
 
                         <table class="tablesaw table m-b-0" data-tablesaw-mode="swipe" id="table-2555   ">

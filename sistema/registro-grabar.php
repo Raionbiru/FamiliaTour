@@ -36,12 +36,12 @@ if ($xtipo == "persona") {
         $from = "johnnbill123@hotmial.com";
         $to = "$xemail_per_per";
         $subject = "Familia Viajera Tour";
-        $message = "Se esta evaluando la solicitud de su cuenta - Empresa, Señor: $xnom_per $xape_per";
+        $message = "Se esta evaluando la solicitud de su cuenta para que pueda acceder Empresa, Señor: $xnom_per, $xape_per";
         $headers = "From:" . $from;
         mail($to,$subject,$message, $headers);
-        echo "Se envio un correo.";
+        //echo "Se envio un correo.";
 
-        header("Location: login.php");
+        header("Location: prueba.php?email=$xemail_per_per");
     
     }elseif ($xaccion=="editar") {
         $xid_per= leerParam("id_per","");
@@ -71,24 +71,23 @@ if ($xtipo == "persona") {
     }
 }
 elseif ($xtipo == "agencia"){
+    if ($xaccion =="crear") {
 
-    if ($xaccion=="crear") {
-
-        $xempr_cliente=leerParam("empr_cliente","");
-        $xruc_empr_cliente=leerParam("ruc_empr_cliente","");
-        $xdirec_cliente=leerParam("direc_cliente","");
-        $xweb_empr_cliente=leerParam("web_empr_cliente","");
-        $xape_cliente=leerParam("ape_cliente","");
-        $xnom_cliente=leerParam("nom_cliente","");
-        $xcel_cliente=leerParam("cel_cliente","");
-        $xemail_cliente=leerParam("email_cliente","");
-        $xpas_cliente=leerParam("pas_cliente","");
-        $xestado_cliente=leerParam("estado_cliente","");
+        $xempr_cliente      =leerParam("empr_cliente","");
+        $xruc_empr_cliente  =leerParam("ruc_empr_cliente","");
+        $xdirec_cliente     =leerParam("direc_cliente","");
+        $xweb_empr_cliente  =leerParam("web_empr_cliente","");
+        $xape_cliente       =leerParam("ape_cliente","");
+        $xnom_cliente       =leerParam("nom_cliente","");
+        $xcel_cliente       =leerParam("cel_cliente","");
+        $xemail_cliente     =leerParam("email_cliente","");
+        $xpas_cliente       =leerParam("pas_cliente","");
          
         $xc = conectar();
         $sql = "INSERT INTO cliente (empr_cliente,ruc_empr_cliente,direc_cliente,web_empr_cliente,ape_cliente,nom_cliente,cel_cliente,email_cliente,pas_cliente,estado_cliente,notificacion_cliente) VALUES ('$xempr_cliente','$xruc_empr_cliente','$xdirec_cliente','$xweb_empr_cliente','$xape_cliente','$xnom_cliente','$xcel_cliente','$xemail_cliente','$xpas_cliente','0','0')";
     
         mysqli_query($xc,$sql);
+
         desconectar($xc);
 
         ini_set( 'display_errors', 1 );
@@ -96,11 +95,12 @@ elseif ($xtipo == "agencia"){
         $from = "johnnbill123@hotmial.com";
         $to = "$xemail_cliente";
         $subject = "Familia Viajera Tour";
-        $message = "Se esta evaluando la solicitud de su cuenta - Agencia, Señor: $xnom_cliente $xape_cliente";
+        $message = "La empresa esta evaluando su ingreso Agencia: $xempr_cliente, Señor: $xnom_cliente $xape_cliente";
         $headers = "From:" . $from;
         mail($to,$subject,$message, $headers);
-        echo "Se envio un correo.";
-        header("Location: login.php");
+        //echo "Se envio un correo.";
+        
+        header("Location: prueba.php?email=$xemail_cliente");
     
     }elseif ($xaccion=="editar") {
         $xid_per= leerParam("id_per","");
@@ -120,7 +120,7 @@ elseif ($xtipo == "agencia"){
         // die();
         mysqli_query($xc,$sql);
         desconectar($xc);
-    }elseif ($xaccion=="") {
+    }elseif ($xaccion=="eliminar") {
         $xid_per= leerParam("xid_per","");
         $xc = conectar();
         $sql = "DELETE FROM persona WHERE id_per='$xid_per'";

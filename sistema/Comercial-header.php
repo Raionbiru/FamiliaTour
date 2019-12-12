@@ -40,7 +40,7 @@
 
                 <!-- LOGO -->
                 <div class="topbar-left">
-                    <a href="index.html" class="logo">
+                    <a href="Comercial.php" class="logo">
                                 <span>
                                     <img src="assets/images/Logo_blanco.png" alt="" height="60">
                                 </span>
@@ -57,35 +57,19 @@
                             <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
                                aria-haspopup="false" aria-expanded="false">
                                 <i class="dripicons-bell noti-icon"></i>
-                                <span class="badge badge-pink noti-icon-badge">4</span>
+                                <!--<span class="badge badge-pink noti-icon-badge">0</span>-->
                             </a>
+                            
                             <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg" aria-labelledby="Preview">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
-                                    <h5><span class="badge badge-danger float-right">5</span>Notification</h5>
+                                    <h5><span class="badge badge-danger float-right"></span>Notification</h5>
                                 </div>
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-success"><i class="icon-bubble"></i></div>
-                                    <p class="notify-details">Robert S. Taylor commented on Admin<small class="text-muted">1 min ago</small></p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-info"><i class="icon-user"></i></div>
-                                    <p class="notify-details">New user registered.<small class="text-muted">1 min ago</small></p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-danger"><i class="icon-like"></i></div>
-                                    <p class="notify-details">Carlos Crouch liked <b>Admin</b><small class="text-muted">1 min ago</small></p>
-                                </a>
 
                                 <!-- All-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item notify-all">
-                                    View All
+                                    Todo
                                 </a>
 
                             </div>
@@ -99,27 +83,22 @@
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
-                                    <h5 class="text-overflow"><small>Welcome ! John</small> </h5>
+                                    <h5 class="text-overflow"><small>Hola ! <?PHP echo $_SESSION['nom_per']; ?></small> </h5>
                                 </div>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="zmdi zmdi-account-circle"></i> <span>Profile</span>
+                                <a href="Mantenmiento.php" class="dropdown-item notify-item">
+                                    <i class="zmdi zmdi-account-circle"></i> <span>Perfil</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="zmdi zmdi-settings"></i> <span>Settings</span>
+                                <a href="Mantenmiento.php" class="dropdown-item notify-item">
+                                    <i class="zmdi zmdi-settings"></i> <span>Configuración</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="zmdi zmdi-lock-open"></i> <span>Lock Screen</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="login.php" class="dropdown-item notify-item">
-                                    <i class="zmdi zmdi-power"></i> <span>Logout</span>
+                                <a href="cerrar_sesion.php" class="dropdown-item notify-item">
+                                    <i class="zmdi zmdi-power"></i> <span>Salir</span>
                                 </a>
 
                             </div>
@@ -155,7 +134,7 @@
                     <div id="sidebar-menu">
                         <!-- Left Menu Start -->
                         <ul class="metismenu" id="side-menu">
-                            <li class="menu-title">Navigation</li>
+                            <li class="menu-title">Comercial</li>
                             <li>
                                 <a href="Comercial-CRM.php"><i class="fi-briefcase"></i> <span> CRM </span></a>
                             </li>
@@ -172,12 +151,21 @@
                                 <a href="Comercial-contratos.php"><i class="fi-paper"></i><span> Contratos </span></a>
                             </li>
                             
+                            <!--
                             <li>
                                 <a href="javascript: void(0);"><i class="fi-disc"></i><span> Tours <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="Comercial-subirtours.php">Subir Tour</a></li>
                                     <li><a href="Comercial-bus.php">Buses</a></li>
                                 </ul>
+                            </li>-->
+
+                            <li>
+                                <a href="Comercial-tours.php"><i class="fi-disc"></i><span> Tours </span></a>
+                            </li>
+                            
+                            <li>
+                                <a href="Comercial-bus.php"><i class="fi-paper"></i><span> Buses </span></a>
                             </li>
 
                         </ul>

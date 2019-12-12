@@ -7,7 +7,7 @@
     
     require_once("funciones.php");
     $xc = conectar();
-    $sql = "SELECT p.nom_per,p.ape_per, j.hor_tra_jor, a.nom_area, j.viat_jor,j.sueldo_jor 
+    $sql = "SELECT p.nom_per,p.ape_per, j.hor_tra_jor, a.nom_area, j.viat_jor,j.sueldo_jor, j.fec_jor
         FROM jornal j
         INNER JOIN persona p ON j.id_per = p.id_per 
         INNER JOIN area a ON j.id_area = a.id_area";
@@ -49,6 +49,24 @@
     <!-- Start content -->
     <div class="content">
         <div class="container-fluid">
+        
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box">
+                        <h4 class="page-title float-left">Administrador</h4>
+
+                        <ol class="breadcrumb float-right">
+                            <li class="breadcrumb-item"><a href="#">Familia Tour</a></li>
+                            <li class="breadcrumb-item"><a href="#">Administración</a></li>
+                            <li class="breadcrumb-item active">Pagos</li>
+                        </ol>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
 
             <div class="row">
                 <div class="col-sm-12">
@@ -67,6 +85,7 @@
                                 <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="2">Area </th>
                                 <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1">Viaticos</th>
                                 <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="4">Pago</th>
+                                <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="4">Fecha</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -77,6 +96,7 @@
                                     $xnom_area = $fila["nom_area"];
                                     $xviat_jor = $fila["viat_jor"];
                                     $xsueldo_jor = $fila["sueldo_jor"];
+                                    $xfec_jor = $fila["fec_jor"];
 
                                         echo "
                                             <tr>
@@ -85,6 +105,7 @@
                                             <td>$xnom_area</td>
                                             <td>$xviat_jor</td>
                                             <td>$xsueldo_jor</td>
+                                            <td>$xfec_jor</td>
                                             </tr>
                                         ";
                                 }

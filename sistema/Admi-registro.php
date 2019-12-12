@@ -45,10 +45,11 @@
     <!-- Start content -->
     <div class="content">
         <div class="container-fluid">
+            
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box">
-                        <h4 class="page-title float-left">Administrador</h4>
+                        <h4 class="page-title float-left"> Administrador</h4>
 
                         <ol class="breadcrumb float-right">
                             <li class="breadcrumb-item"><a href="#">Familia Tour</a></li>
@@ -59,13 +60,13 @@
                         <div class="clearfix"></div>
                     </div>
                 </div>
-            </div>
+            </div><!-- End Row-->
             
             <!-- Inicio - Tabla -->
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card-box">
-                        <h4 class="m-t-0 header-title">Solicitud de Registro</h4>
+                        <h4 class="m-t-0 header-title"><b>Solicitud de Registro</b></h4>
                         <p class="text-muted m-b-30 font-13">
                             El personal quiere ingresar al sistema.
                         </p>
@@ -105,30 +106,30 @@
                                     $xnom_area = $fila["nom_area"];
                                     $xestado_per = $fila["estado_per"];
 
+                                    if ($xestado_per == 0) {
+                                    
                                         echo "
                                             <tr>
                                             <td class='text-center'>
                                                 
                                                 <div class='button-list'>
-
                                                 <form method='POST' action='activar-usuario.php'>
 
-                                                <input hidden='YES' name='accion' value='desactivar'>
-                                                <input hidden='YES' name='id_per' value=$xid_per>
-
-                                                <button class='demo-delete-row btn btn-danger btn-xs btn-icon'><i class='fa fa-times'></i></button>
+                                                    <input hidden='YES' name='accion' value='desactivar'>
+                                                    <input hidden='YES' name='id_per' value=$xid_per>
+                                                    
+                                                    <button class='demo-delete-row btn btn-danger btn-xs btn-icon' type='submit'><i class='fa fa-times'></i></button>
 
                                                 </form>
 
                                                 <form method='POST' action='activar-usuario.php'>
 
-                                                <input hidden='YES' name='accion' value='activar'>
-                                                <input hidden='YES' name='id_per' value=$xid_per>
+                                                    <input hidden='YES' name='accion' value='activar'>
+                                                    <input hidden='YES' name='id_per' value=$xid_per>
 
-                                                <button class='demo-delete-row btn btn-danger btn-xs btn-icon'><i class='fa fa-check'></i></button>
+                                                    <button class='demo-delete-row btn btn-danger btn-xs btn-icon' type='submit'><i class='fa fa-check'></i></button>
 
                                                 </form>
-
                                                 </div>
                                             </td>
                                             <td>$xnom_per</td>
@@ -138,7 +139,7 @@
                                             
                                             <td>";
                                                 if ($xestado_per == 0){
-                                                    echo"<span class='label label-table label-danger'>Desactivado</span>";
+                                                    echo"<span class='label label-table label-warning'>Pendiente</span>";
                                                 }
                                                 elseif($xestado_per == 1){
                                                     echo"<span class='label label-table label-success'>Activado</span>";
@@ -147,6 +148,7 @@
                                             </tr>
                                             
                                         ";
+                                    }
                                 }
                             ?>
                             </tbody>

@@ -36,7 +36,7 @@
                             <div class='card-box'>
                                 <h4 class='m-t-0 header-title'><b>SEMANA 1 DEL 01/10 AL 07/10</b></h4>
                                 <p class='text-muted font-14'>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, vitae.
+                                    
                                 </p>
 
                                 <table class='tablesaw table m-b-0' data-tablesaw-mode='swipe' id='table-2555   '>

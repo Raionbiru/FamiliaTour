@@ -153,17 +153,17 @@
                     <div id="sidebar-menu">
                         <!-- Left Menu Start -->
                         <ul class="metismenu" id="side-menu">
-                            <li class="menu-title">Navigation</li>
+                            <li class="menu-title">Nvegación</li>
                             <li>
-                                <a href="Admi-header.php"><i class="fi-briefcase"></i> <span> CRM </span></a>
+                                <a href="Comercial-CRM.php"><i class="fi-briefcase"></i> <span> CRM </span></a>
                             </li>
 
                             <li>
-                                <a href="Admi-header.php"><i class="fi-bar-graph-2"></i><span> Cotizador </span></a>
+                                <a href="Comercial-cotizador.php"><i class="fi-bar-graph-2"></i><span> Cotizador </span></a>
                             </li>
 
                             <li>
-                                <a href="Admi-header.php"><i class="fi-mail"></i><span> Programas </span></a>
+                                <a href="Comercial-programa.php"><i class="fi-mail"></i><span> Programas </span></a>
                             </li>
 
                             <li>
@@ -175,11 +175,10 @@
                             </li>
                             
                             <li>
-                                <a href="javascript: void(0);"><i class="fi-disc"></i><span> Subir Tours <span class="menu-arrow"></span></a>
+                                <a href="javascript: void(0);"><i class="fi-disc"></i><span> Tours <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="Comercial-subirtours.php">Subir Tour</a></li>
-                                    <li><a href="Comercial-actualizartours.php">Actualizar Tour</a></li>
-                                    <li><a href="Comercial-eliminartours.php">Eliminar Tour</a></li>
+                                    <li><a href="Comercial-bus.php">Buses</a></li>
                                 </ul>
                             </li>
 
@@ -226,7 +225,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card-box">
-                        <button onclick="window.location.href='Comercial-inserttour.php'" type="button" class="btn btn-sm btn-primary btn-rounded w-md waves-effect waves-light pull-right">Agregar Contrato</button>
+                        <button onclick="window.location.href='Comercial-adjuntar.php'" type="button" class="btn btn-sm btn-primary btn-rounded w-md waves-effect waves-light pull-right">Agregar Contrato</button>
                         <h4 class="m-b-30 m-t-0 header-title"><b>Demo Contrato</b></h4>
                     </div>
                 </div>

@@ -21,7 +21,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/ico.png">
 
         <!-- Modal -->
         <link href="../plugins/custombox/css/custombox.min.css" rel="stylesheet">
@@ -179,11 +179,9 @@
             <!-- ============================================================== -->
             <!-- End Right content here -->
             <!-- ============================================================== -->
-        
     
         </div>
         <!-- END wrapper -->
-
 
         <!-- Modal -->
         <div id="asiento-modal" class="modal-demo">
@@ -204,11 +202,6 @@
 
             </div>
         </div>
-
-
-
-
-
 
         <!-- Modal -->
         <div id="custom-modal" class="modal-demo">

@@ -153,32 +153,6 @@
 </div>
         <!-- END wrapper -->
 
-
-        <!-- MODAL -->
-        <div id="dialog" class="modal-block mfp-hide">
-            <section class="card p-20">
-                <header class="panel-heading">
-                    <h4 class="panel-title mt-0">¿Estás seguro?</h4>
-                </header>
-                <div class="panel-body">
-                    <div class="modal-wrapper">
-                        <div class="modal-text">
-                            <p>¿Está seguro de que desea eliminar esta fila?</p>
-                        </div>
-                    </div>
-
-                    <div class="row m-t-20">
-                        <div class="col-md-12 text-right">
-                            <button id="dialogConfirm" class="btn btn-success waves-effect waves-light">Aceptar</button>
-                            <button id="dialogCancel" class="btn btn-danger waves-effect">Cancelar</button>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-        </div>
-        <!-- end Modal -->
-
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/tether.min.js"></script><!-- Tether for Bootstrap -->

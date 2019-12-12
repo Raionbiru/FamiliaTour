@@ -68,6 +68,22 @@
         <div class="container-fluid">
 
             <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box">
+                        <h4 class="page-title float-left"> Administrador</h4>
+
+                        <ol class="breadcrumb float-right">
+                            <li class="breadcrumb-item"><a href="#">Familia Tour</a></li>
+                            <li class="breadcrumb-item"><a href="#">Administrador</a></li>
+                            <li class="breadcrumb-item active">Resumen Ventas</li>
+                        </ol>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div><!-- End Row-->
+
+            <div class="row">
                 <div class="col-sm-12">
                     <div class="card-box">
 

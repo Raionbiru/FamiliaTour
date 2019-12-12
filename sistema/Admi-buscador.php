@@ -70,10 +70,8 @@
                     <div class="col-sm-12">
                         <div class="card-box">
 
-                            <h4 class="m-t-0 header-title"><b>Titulo</b></h4>
+                            <h4 class="m-t-0 header-title"><b>Busqueda</b></h4>
                             <p class="text-muted font-14">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam sint iure dignissimos! Ipsum id tempora repellendus, eligendi praesentium voluptatum ad sint rem possimus similique, maxime a aliquam magni esse ducimus maiores sit exercitationem dolores temporibus voluptas et quae culpa. Corrupti.
-                                <br>
                                 <br>
                                 <?php echo"Desde: $xfec_ini  Hasta: $xfec_fin";?>
                             </p>

@@ -57,7 +57,7 @@ desconectar($xc);
                                         </h2>
                                         <center>
                                             <h4 class="text-uppercase font-bold m-b-5 m-t-50">Registrate</h4>
-                                            <p class="m-b-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                            <p class="m-b-0">Te damos la beinvenida a Familia Viajera Tours</p>
                                             <br>
                                         </center>
                                             <ul class="nav nav-pills navtab-bg nav-justified">
@@ -92,14 +92,14 @@ desconectar($xc);
                                                     
                                                     <div class="form-group row m-b-20">
                                                         <div class="col-12">
-                                                            <label for="emailaddress">Apellidos</label>
+                                                            <label for="emailaddress">Apellidos *</label>
                                                             <input class="form-control" type="text" name="ape_per" id="ape_per" required="" placeholder="">
                                                         </div>
                                                     </div>
                                                     
                                                     <div class="form-group row m-b-20">
                                                         <div class="col-12">
-                                                            <label for="emailaddress">Nombre</label>
+                                                            <label for="emailaddress">Nombre *</label>
                                                             <input class="form-control" type="text" name="nom_per" id="nom_per" required="" placeholder="">
                                                         </div>
                                                     </div>
@@ -108,21 +108,21 @@ desconectar($xc);
 
                                                     <div class="form-group row m-b-20">
                                                         <div class="col-12">
-                                                            <label for="emailaddress">Celular</label>
+                                                            <label for="emailaddress">Celular *</label>
                                                             <input class="form-control" type="text" name="cel_per_per" id="cel_per_per" required="" placeholder="">
                                                         </div>
                                                     </div>
                                                     
                                                     <div class="form-group row m-b-20">
                                                         <div class="col-12">
-                                                            <label for="emailaddress">DNI</label>
+                                                            <label for="emailaddress">DNI *</label>
                                                             <input class="form-control" type="number" name="dni_per" id="dni_per" required="" placeholder="">
                                                         </div>
                                                     </div>
 
                                                     <div class="form-group row m-b-20">
                                                         <div class="col-12">
-                                                            <label for="emailaddress">Dirección</label>
+                                                            <label for="emailaddress">Dirección *</label>
                                                             <input class="form-control" type="text" name="direc_per" id="direc_per" required="" placeholder="">
                                                         </div>
                                                     </div>
@@ -131,7 +131,7 @@ desconectar($xc);
                                                         <div class="col-12">
                                                             <label>Área</label>
                                                                 <select class="form-control" name="id_area">
-                                                                    <option value="" selected>Seleccioné Área</option> 
+                                                                    <option value="" selected>Seleccioné Área *</option> 
                                                                     <?php while ($fila=mysqli_fetch_array($res3)){
                                                                         $xid_area = $fila["id_area"];
                                                                         $xnom_area = $fila["nom_area"];
@@ -145,21 +145,21 @@ desconectar($xc);
 
                                                     <div class="form-group row m-b-20">
                                                         <div class="col-12">
-                                                            <label for="emailaddress">Cargo</label>
+                                                            <label for="emailaddress">Cargo *</label>
                                                             <input class="form-control" type="text" name="cargo_per" id="cargo_per" required="" placeholder="">
                                                         </div>
                                                     </div>
 
                                                     <div class="form-group row m-b-20">
                                                         <div class="col-12">
-                                                            <label for="emailaddress">Email</label>
+                                                            <label for="emailaddress">Email *</label>
                                                             <input class="form-control" type="email" name="email_per_per" id="email_per_per" required="" placeholder="">
                                                         </div>
                                                     </div>
 
                                                     <div class="form-group row m-b-20">
                                                         <div class="col-12">
-                                                            <label for="emailaddress">Contraseña</label>
+                                                            <label for="emailaddress">Contraseña *</label>
                                                             <input class="form-control" type="password" name="pass_per" id="pass_per" required="pass_per" placeholder="">
                                                         </div>
                                                     </div>
@@ -167,7 +167,7 @@ desconectar($xc);
                                                     <div class="form-group row m-b-20">
                                                         <div class="col-12">
                                                         <label for="emailaddress">Adjuntar CV</label>
-                                                        <input class="form-control" type="file" id="" required="" name="archivo">
+                                                        <input class="form-control" type="file" id="" name="archivo">
                                                         </div>
                                                     </div>
 
@@ -207,12 +207,13 @@ desconectar($xc);
                                                 <!-- ===================== -->
 
                                                 <form class="form-horizontal" method="POST" action="registro-grabar.php">
+                                                    
                                                     <input hidden="YES" name="accion" value="crear">
                                                     <input hidden="YES" name="tipo" value="agencia">
 
                                                     <div class="form-group row m-b-20">
                                                     <div class="col-12">
-                                                    <label for="empr_cliente">Empresa</label>
+                                                    <label for="empr_cliente">Empresa *</label>
                                                     <input class="form-control" type="text" name="empr_cliente" id="empr_cliente" required="" maxlength="50" style="text-transform:uppercase;">
                                                     </div>
                                                     </div>
@@ -234,41 +235,41 @@ desconectar($xc);
                                                     <div class="form-group row m-b-20">
                                                     <div class="col-12">
                                                     <label for="web_empr_cliente">Web</label>
-                                                    <input class="form-control" type="url" name="web_empr_cliente" id="web_empr_cliente" required="" maxlength="60">
+                                                    <input class="form-control" type="url" name="web_empr_cliente" id="web_empr_cliente" placeholder="Opcional" maxlength="60">
                                                     </div>
                                                     </div>
 
                                                     <div class="form-group row m-b-20">
                                                     <div class="col-12">
-                                                    <label for="ape_cliente">Apellido</label>
+                                                    <label for="ape_cliente">Apellido *</label>
                                                     <input class="form-control" type="text" name="ape_cliente" id="ape_cliente" required="" maxlength="25">
                                                     </div>
                                                     </div>
                                                     
                                                     <div class="form-group row m-b-20">
                                                     <div class="col-12">
-                                                    <label for="nom_cliente">Nombre</label>
+                                                    <label for="nom_cliente">Nombre *</label>
                                                     <input class="form-control" type="text" name="nom_cliente" id="nom_cliente" required="" maxlength="25">
                                                     </div>
                                                     </div>
 
                                                     <div class="form-group row m-b-20">
                                                     <div class="col-12">
-                                                    <label for="cel_cliente ">Celular</label>
+                                                    <label for="cel_cliente ">Celular *</label>
                                                     <input class="form-control" type="number" name="cel_cliente " id="cel_cliente " required="" maxlength="9">
                                                     </div>
                                                     </div>
 
                                                     <div class="form-group row m-b-20">
                                                     <div class="col-12">
-                                                    <label for="email_cliente">Email</label>
+                                                    <label for="email_cliente">Email *</label>
                                                     <input class="form-control" type="email" name="email_cliente" id="email_cliente" required="" maxlength="50">
                                                     </div>
                                                     </div>
 
                                                     <div class="form-group row m-b-20">
                                                     <div class="col-12">
-                                                    <label for="pas_cliente">Contraseña</label>
+                                                    <label for="pas_cliente">Contraseña *</label>
                                                     <input class="form-control" type="password" name="pas_cliente" id="pas_cliente" required="" maxlength="50">
                                                     </div>
                                                     </div>
@@ -286,7 +287,7 @@ desconectar($xc);
 
                                                     <div class="col-5">
                                                         <label for="remember">
-                                                            ¿Ya tiene una cuenta? <br> <center><a href="Login.php">Log In</a></center>
+                                                            ¿Ya tiene una cuenta? <br> <center><a href="login.php">Log In</a></center>
                                                         </label>
                                                     </div>
 

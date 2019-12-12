@@ -14,7 +14,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/ico.png">
 
         <!-- C3 charts css -->
         <link href="../plugins/c3/c3.min.css" rel="stylesheet" type="text/css"  />
@@ -40,12 +40,12 @@
 
                 <!-- LOGO -->
                 <div class="topbar-left">
-                    <a href="index.html" class="logo">
-                                <span>
-                                    <img src="assets/images/logo.png" alt="" height="25">
+                    <a href="Operaciones.php" class="logo">
+                            <span>
+                                    <img src="assets/images/Logo_blanco.png" alt="" height="60">
                                 </span>
                         <i>
-                            <img src="assets/images/logo_sm.png" alt="" height="28">
+                            <img src="assets/images/sm-logo2019.png" alt="" height="28">
                         </i>
                     </a>
                 </div>
@@ -57,35 +57,17 @@
                             <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
                                aria-haspopup="false" aria-expanded="false">
                                 <i class="dripicons-bell noti-icon"></i>
-                                <span class="badge badge-pink noti-icon-badge">4</span>
+                                
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg" aria-labelledby="Preview">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
-                                    <h5><span class="badge badge-danger float-right">5</span>Notification</h5>
+                                    <h5><span class="badge badge-danger float-right"></span>Notificaciones</h5>
                                 </div>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-success"><i class="icon-bubble"></i></div>
-                                    <p class="notify-details">Robert S. Taylor commented on Admin<small class="text-muted">1 min ago</small></p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-info"><i class="icon-user"></i></div>
-                                    <p class="notify-details">New user registered.<small class="text-muted">1 min ago</small></p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-danger"><i class="icon-like"></i></div>
-                                    <p class="notify-details">Carlos Crouch liked <b>Admin</b><small class="text-muted">1 min ago</small></p>
-                                </a>
 
                                 <!-- All-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item notify-all">
-                                    View All
+                                    Todo
                                 </a>
 
                             </div>
@@ -99,27 +81,22 @@
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
-                                    <h5 class="text-overflow"><small>Welcome ! John</small> </h5>
+                                    <h5 class="text-overflow"><small>Hola ! <?PHP echo $_SESSION['nom_per']; ?></small> </h5>
                                 </div>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="zmdi zmdi-account-circle"></i> <span>Profile</span>
+                                <a href="Mantenmiento.php" class="dropdown-item notify-item">
+                                    <i class="zmdi zmdi-account-circle"></i> <span>Perfil</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="zmdi zmdi-settings"></i> <span>Settings</span>
+                                <a href="Mantenmiento.php" class="dropdown-item notify-item">
+                                    <i class="zmdi zmdi-settings"></i> <span>Configuración</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="zmdi zmdi-lock-open"></i> <span>Lock Screen</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="login.php" class="dropdown-item notify-item">
-                                    <i class="zmdi zmdi-power"></i> <span>Logout</span>
+                                <a href="cerrar_sesion.php" class="dropdown-item notify-item">
+                                    <i class="zmdi zmdi-power"></i> <span>Salir</span>
                                 </a>
 
                             </div>
@@ -155,7 +132,7 @@
                     <div id="sidebar-menu">
                         <!-- Left Menu Start -->
                         <ul class="metismenu" id="side-menu">
-                            <li class="menu-title">Navegación</li>
+                            <li class="menu-title">Operaciones</li>
                             <li>
                                 <a href="Operaciones-listaproveedores.php"><i class="fi-target"></i> <span> Lista Proveedores </span></a>
                             </li>

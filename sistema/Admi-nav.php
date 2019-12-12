@@ -7,7 +7,7 @@
 
         <!-- LOGO -->
         <div class="topbar-left">
-            <a href="index.html" class="logo">
+            <a href="Admi.php" class="logo">
                         <span>
                             <img src="assets/images/Logo_blanco.png" alt="" height="60">
                         </span>
@@ -65,6 +65,10 @@
                                     </a>";
                                 }
                             ?>
+                            <!-- All-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item notify-all">
+                                    Todo
+                                </a>
 
                     </div>
                 </li>
@@ -77,22 +81,17 @@
                     <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                         <!-- item-->
                         <div class="dropdown-item noti-title">
-                            <h5 class="text-overflow"><small>Bienvenido! <?PHP echo $_SESSION['nom_per']; ?></small> </h5>
+                            <h5 class="text-overflow"><small>Hola | <?PHP echo $_SESSION['nom_per']; ?></small> </h5>
                         </div>
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                        <a href="Mantenmiento.php" class="dropdown-item notify-item">
                             <i class="zmdi zmdi-account-circle"></i> <span>Perfil</span>
                         </a>
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                        <a href="Mantenmiento.php" class="dropdown-item notify-item">
                             <i class="zmdi zmdi-settings"></i> <span>Configuración</span>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <i class="zmdi zmdi-lock-open"></i> <span>Lock Screen</span>
                         </a>
 
                         <!-- item-->
@@ -133,17 +132,17 @@
             <div id="sidebar-menu">
                 <!-- Left Menu Start -->
                 <ul class="metismenu" id="side-menu">
-                    <li class="menu-title">Menú</li>
+                    <li class="menu-title"><span>Administrador</span></li>
                     <li>
                         <a href="Admi-pago-mensual.php"><i class="fi-target"></i> <span> Pagos Mensuales </span></a>
                     </li>
 
                     <li>
-                        <a href="Admi-accesousuario.php"><i class="fi-briefcase"></i> <span> Acceso Clientes </span></a>
+                        <a href="Admi-accesousuario.php"><i class="fi-briefcase"></i> <span> Acceso Agencia </span></a>
                     </li>
 
                     <li>
-                        <a href="Admi-registro.php"><i class="fi-bar-graph-2"></i><span> Solicitud de Registro </span></a>
+                        <a href="Admi-registro.php"><i class="fi-bar-graph-2"></i><span> Acceso Personal </span></a>
                     </li>
 
                     <li>

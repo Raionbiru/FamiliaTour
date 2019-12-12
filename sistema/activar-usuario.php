@@ -24,10 +24,12 @@ if ($xtipo == "cliente") {
     }
 
 }else{
+
     if ($xaccion=="desactivar") {
+        
         $xid_per= leerParam("id_per","");
         $xc = conectar();
-        $sql = "UPDATE persona SET estado_per='0' WHERE id_per='$xid_per'";
+        $sql = "DELETE FROM persona WHERE id_per='$xid_per'";
         // echo "CONSULTA -> $sql";
         // die();
         mysqli_query($xc,$sql);

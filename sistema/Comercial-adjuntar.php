@@ -25,18 +25,19 @@
             <!-- end row -->
 
 
+            <!--
             <div class="row">
                 <div class="col-12">
                     <div class="card-box">
                         <div class="row">
                             <div class="col-12">
-<!--
+                                
                                 <center><h1>Formulario</h1></center>
 
                                 <p class="text-muted">En referencia al N° de contrato <select><option value="" selected>00001</option> <option value="">00002</option> </select>
                                     
                                 modifica las siguientes clausulas.</p>
--->
+                                        
                                 <div class="clearfix"></div>
 
                                 <h2 style="text-align: center;">CONTRATO DE FAMILIA TOUR</h2>
@@ -55,8 +56,9 @@
                     </div>
                 </div>
 
-            </div>
+            </div>-->
             <!-- end row -->
+            <?php require_once("Page.php");?>
 
         </div> <!-- container -->
 

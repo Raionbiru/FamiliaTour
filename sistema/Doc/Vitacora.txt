@@ -1,0 +1,7 @@
+Style.css
+    Color de Nav
+        .navbar-custom - Linea 60 - #3985c4
+    Color Boton Movil (Desplegable de Menú) 
+        .button-menu-mobile - Linea 138 - #3985c4
+    Titulo de menu - Tamaño
+        .menu-title - Linea 255 - font-size: 11px;

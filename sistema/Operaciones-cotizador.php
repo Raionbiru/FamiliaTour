@@ -44,6 +44,7 @@
             </div>
             <!-- end row -->
 
+            <!--
             <div class="row">
                 <div class="col-md-12">
                     <div class="card-box">
@@ -89,7 +90,7 @@
 
                                         <select class="form-control" name="select1" onchange="this.nextElementSibling.style.display='block'">
                                             <option value=""></option>
-                                            <?php while ($fila=mysqli_fetch_array($res3)){
+                                            <?php /*while ($fila=mysqli_fetch_array($res3)){
                                                             $xnom_produc = $fila["nom_produc"];
                                                             $xid_produc = $fila["id_produc"];
                                                             echo "<option value='select1$xid_produc'>$xnom_produc</option>";
@@ -101,7 +102,7 @@
                                         <select class="form-control" name="select2" onchange="this.nextElementSibling.style.display='block'" style="display: none">
                                             <option value=""></option>
                                             
-                                            <?php while ($fila=mysqli_fetch_array($res3)){
+                                            <?php /*while ($fila=mysqli_fetch_array($res3)){
                                                             $xprec_tour = $fila["prec_tour"];
                                                             $xid_tour = $fila["id_tour"];
                                                             echo "<option>$xprec_tour</option>";
@@ -136,11 +137,11 @@
 
                                         <select class="form-control" name="select1" onchange="this.nextElementSibling.style.display='block'">
                                             <option value=""></option>
-                                            <?php while ($fila=mysqli_fetch_array($res)){
+                                            <?php /*while ($fila=mysqli_fetch_array($res)){
                                                             $xnom_tour = $fila["nom_tour"];
                                                             $xid_tour = $fila["id_tour"];
                                                             echo "<option value='select1$xid_tour'>$xnom_tour</option>";
-                                                        } ?>
+                                                        } */?>
                                         </select>
 
 
@@ -231,9 +232,13 @@
                             </div>
                         </div>
                     </div>
-                </div> <!-- end col -->
+                </div> 
             </div>
+            -->
             <!-- end row -->
+
+            <?PHP require_once("page.php");?>
+
 
         </div> <!-- container -->
     </div> <!-- content -->

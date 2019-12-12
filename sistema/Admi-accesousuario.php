@@ -64,7 +64,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card-box">
-                        <h4 class="m-t-0 header-title">Acceso a clientes</h4>
+                        <h4 class="m-t-0 header-title"><b>Acceso a clientes</b></h4>
                         <p class="text-muted m-b-30 font-13">
                             Un usuario externo quiere ingresar al sistema.
                         </p>
@@ -105,6 +105,8 @@
                                     $xweb_empr_cliente = $fila["web_empr_cliente"];
                                     $xestado_cliente = $fila["estado_cliente"];
 
+                                    if ($xestado_cliente == 0) {
+                                    
                                         echo "
                                             <tr>
                                             <td class='text-center'>
@@ -121,7 +123,6 @@
 
                                                 </form>
 
-                                                <!--
                                                 <form method='POST' action='activar-usuario.php'>
 
                                                 <input hidden='YES' name='accion' value='activar'>
@@ -131,7 +132,6 @@
                                                 <button class='demo-delete-row btn btn-danger btn-xs btn-icon'><i class='fa fa-check'></i></button>
 
                                                 </form>
-                                                -->
                                                 </div>
                                             </td>
                                             <td>$xnom_cliente $xape_cliente</td>
@@ -150,6 +150,7 @@
                                             </tr>
                                             
                                         ";
+                                    }    
                                 }
                             ?>
                             </tbody>

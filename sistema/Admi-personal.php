@@ -52,7 +52,7 @@
             <div class="row">
                     <div class="col-12">
                         <div class="page-title-box">
-                            <h4 class="page-title float-left">Personal</h4>
+                            <h4 class="page-title float-left">Administrador</h4>
 
                             <ol class="breadcrumb float-right">
                                 <li class="breadcrumb-item"><a href="#">Familia Tour</a></li>
@@ -170,32 +170,6 @@
 <!-- ============================================================== -->
 </div>
         <!-- END wrapper -->
-
-
-        <!-- MODAL -->
-        <div id="dialog" class="modal-block mfp-hide">
-            <section class="card p-20">
-                <header class="panel-heading">
-                    <h4 class="panel-title mt-0">¿Estás seguro?</h4>
-                </header>
-                <div class="panel-body">
-                    <div class="modal-wrapper">
-                        <div class="modal-text">
-                            <p>¿Está seguro de que desea eliminar esta fila?</p>
-                        </div>
-                    </div>
-
-                    <div class="row m-t-20">
-                        <div class="col-md-12 text-right">
-                            <button id="dialogConfirm" class="btn btn-success waves-effect waves-light">Aceptar</button>
-                            <button id="dialogCancel" class="btn btn-danger waves-effect">Cancelar</button>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-        </div>
-        <!-- end Modal -->
 
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>
