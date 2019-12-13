@@ -85,7 +85,7 @@
                                         <div class="form-group row">
                                         <label class="col-2 col-form-label">Persona</label>
                                         <div class="col-10">
-                                        <select class="form-control" name="id_area">
+                                        <select class="form-control" name="id_per">
                                             <option value="" selected>------------------------</option> 
                                             <?php while ($filaPersona=mysqli_fetch_array($resPersona)){
                                                 $xid_per = $filaPersona["id_per"];
@@ -99,46 +99,30 @@
                                         </div>
 
                                         <div class="form-group row">
-                                        <label class="col-2 col-form-label">Area</label>
-                                        <div class="col-10">
-                                            <?php while ($filaPersona=mysqli_fetch_array($resPersona)){
-                                                $xnom_area = $filaPersona["nom_area"];
-
-                                                echo "<input type='text'  name='nom_hostal' id='nom_hostal' class='form-control' disabled='' value='$xnom_area'>";
-                                            } ?>
-                                        </div>
-                                        </div>
-
-                                        <div class="form-group row">
                                         <label class="col-2 col-form-label">Horas</label>
                                         <div class="col-10">
-                                            <select name="tipo_hostal" id="tipo_hostal" class="form-control">
-                                                <option value="">-----------</option>
-                                                <option value="Simple">Simple</option>
-                                                <option value="Doble">Doble</option>
-                                                <option value="Triple">Triple</option>
-                                            </select>
+                                            <input type="text" required=""  name="hor_tra_jor " id="hor_tra_jor " class="form-control">
                                         </div>
                                         </div>
                                         
                                         <div class="form-group row">
                                         <label class="col-2 col-form-label">Viaticos</label>
                                         <div class="col-10">
-                                            <input type="text"  name="lugar_hostal" id="lugar_hostal" class="form-control" placeholder="Lugar de hospedaje">
+                                            <input type="text"  name="viat_jor " id="viat_jor " class="form-control" maxlength="12" required="">
                                         </div>
                                         </div>
 
                                         <div class="form-group row">
-                                        <label class="col-2 col-form-label">Pago</label>
+                                        <label class="col-2 col-form-label">Sueldo</label>
                                         <div class="col-10">
-                                            <input type="number"  name="prec_hostal" id="prec_hostal" class="form-control" placeholder="">
+                                            <input type="number"  name="sueldo_jor " id="sueldo_jor " class="form-control" maxlength="12" required="">
                                         </div>
                                         </div>
 
                                         <div class="form-group row">
-                                        <label class="col-2 col-form-label">Pago Variado</label>
+                                        <label class="col-2 col-form-label">Sueldo Variado</label>
                                         <div class="col-10">
-                                            <input type="number"  name="prec_hostal" id="prec_hostal" class="form-control" placeholder="">
+                                            <input type="number"  name="pago_variado_jor" id="pago_variado_jor" class="form-control" maxlength="20">
                                         </div>
                                         </div>
                                         

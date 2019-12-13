@@ -104,7 +104,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="m-b-30">
-                                    <button onclick="window.location.href='Admi-personalAñadir.php'" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
+                                    <button onclick="window.location.href='Admi-personalAdd.php'" class="btn btn-success waves-effect waves-light">Añadir <i class="mdi mdi-plus-circle-outline"></i></button>
                                 </div>
                             </div>
                         </div>

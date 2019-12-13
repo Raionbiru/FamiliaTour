@@ -4,14 +4,15 @@ $xid=leerParam("id","");
 $xaccion=leerParam("accion","");
 
 if ($xaccion=="crear") {
-    $xnom_hostal=leerParam("nom_hostal","");
-    $xclase_hostal=leerParam("clase_hostal","");
-    $xtipo_hostal=leerParam("tipo_hostal","");
-    $xlugar_hostal=leerParam("lugar_hostal","");
-    $xprec_hostal=leerParam("prec_hostal","");
+    $xid_per=leerParam("id_per","");
+    $xhor_tra_jor=leerParam("hor_tra_jor","");
+    $xviat_jor=leerParam("viat_jor","");
+    $xsueldo_jor=leerParam("sueldo_jor","");
+    $xpago_variado_jor=leerParam("pago_variado_jor","");
+    $xfec_jor= date("Y-m-d");
     
     $xc = conectar();
-    $sql = "INSERT INTO jornal (nom_hostal,clase_hostal,tipo_hostal,lugar_hostal,prec_hostal) VALUES ('$xnom_hostal','$xclase_hostal','$xtipo_hostal','$xlugar_hostal','$xprec_hostal')";
+    $sql = "INSERT INTO jornal (id_per, hor_tra_jor, viat_jor, sueldo_jor, pago_variado_jor, fec_jor) VALUES ('$xid_per','$xhor_tra_jor','$xviat_jor','$xsueldo_jor','$xpago_variado_jor','$xfec_jor')";
 
     mysqli_query($xc,$sql);
     desconectar($xc);
