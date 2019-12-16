@@ -194,6 +194,13 @@
                 $this.$extEvents.append('<div class="external-event bg-' + categoryColor + '" data-class="bg-' + categoryColor + '" style="position: relative;"><i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>' + categoryName + '</div>')
                 $this.enableDrag();
             }
+            datos={usuario: Johnn, respuesta: 123};
+            var request = $.ajax({ 
+                url: "Comercial-programaGrabar.php", //Archivo de servidor que inserta en la BD 
+                method: "POST", 
+                data: datos, 
+                dataType: "json" 
+            }); 
 
         });
     },
@@ -208,3 +215,29 @@ function($) {
     "use strict";
     $.CalendarApp.init()
 }(window.jQuery);
+
+
+function alternativo(){
+    var name = $('#nm').val();
+    var datodos = $('#dd').val();
+    var datotres = $('#dt').val();
+
+    $.ajax({
+        type: "POST",
+        url: "Comercial-programaGrabar.php?p=add",
+        data: "nm="+name+"&dd="+datodos+"&dt="+datotres,
+        success: function(data){
+            verdata();
+        }
+    });
+}
+
+function verdata(){
+    $.ajax({
+        type: "GET",
+        url: "Comercial-programaGrabar.php",
+        success: function(data){
+            $('tbody').html(data);
+        }
+    });
+}

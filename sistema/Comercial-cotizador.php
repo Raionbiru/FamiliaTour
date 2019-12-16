@@ -1,8 +1,19 @@
 <?php require_once("Comercial-header.php");?>
 <?php require_once("funciones.php");
         $xc = conectar();
+        
+        //Hostal Parametros
+        $xidlugar=leerParam("lugar","");
+
+
+        //Hostal Consultas
         $sqlHospedaje = "SELECT * FROM hostal";
         $resHospedaje = mysqli_query($xc,$sqlHospedaje);
+
+        $sqlNombre = "SELECT * FROM hostal WHERE id_hostal = '$xidlugar'";
+        $resNombre = mysqli_query($xc,$sqlNombre);
+
+        //Transporte Consultas
 
         $sqlTransporte = "SELECT * FROM transporte";
         $resTransporte = mysqli_query($xc,$sqlTransporte);
@@ -179,33 +190,34 @@
                                         <div class="form-group">
                                         <label>Número de Noches</label>
                                             <select name="" id="" class="form-control">
-                                                <option value="1">1 Noche</option>
-                                                <option value="2">2 Noche</option>
-                                                <option value="3">3 Noche</option>
-                                                <option value="4">4 Noche</option>
-                                                <option value="5">5 Noche</option>
-                                                <option value="6">6 Noche</option>
-                                                <option value="7">7 Noche</option>
+                                                <?php for ($x = 1; $x <= 31; $x++) {
+                                                    echo "<option value='$x'>$x Noche</option>";
+                                                    }?>
                                             </select>
                                         </div>
                                         <div class="form-group">
+                                        <form method='post' name='envia' action='Comercial-cotizador.php'>
                                         <label>Lugar</label>
-                                            <select name="" id="" class="form-control">
-                                                <option value="">Lima</option>
-                                                <option value="">Arequipa</option>
-                                                <option value="">Cusco</option>
-                                                <option value="">Puno</option>
-                                                <option value="">Huancayo</option>
+                                            <select name="lugar" id="lugar" class="form-control">
+                                                <?PHP while($fila=mysqli_fetch_array($resHospedaje)){
+                                                    $xlugar_hostal = $fila["lugar_hostal"];
+                                                    $xid_hostal = $fila["id_hostal"];
+                                                    echo "<option value='$xid_hostal'> $xlugar_hostal </option>";};
+                                                ?>
                                             </select>
+                                            <script>
+                                            
+                                            </script>
+                                        </form>
                                         </div>
                                         <div class="form-group">
                                         <label>Hotel</label>
                                             <select name="" id="" class="form-control">
-                                                <option value="">El Ducado</option>
-                                                <option value="">Hotel Melodia</option>
-                                                <option value="">El Patio de Eliza</option>
-                                                <option value="">La Campiña Hostal</option>
-                                                <option value="">Hotal Villa Melgar</option>
+                                                <?PHP while($fila=mysqli_fetch_array($resNombre)){
+                                                    $xnom_hostal = $fila["nom_hostal"];
+                                                    $xid_hostal = $fila["id_hostal"];
+                                                    echo "<option value='$xid_hostal'> $xnom_hostal </option>";};
+                                                ?>
                                             </select>
                                         </div>
                                     </div>
