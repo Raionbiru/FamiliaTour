@@ -42,69 +42,73 @@
                             <p class="m-b-0">¡Los mejores tours a los mejores precios!</p></center>
                         </div>
                         <div class="account-content">
-                            <!--
-                            <form class="form-horizontal" method="POST" action="validar.php">
-                            -->
+
                             <form class="form-horizontal" method="POST" action="validar.php">
 
                                 <div class="form-group m-b-20 row">
-                                    <div class="col-12">
-                                        <label for="emailaddress">Email</label>
-                                        <input class="form-control" type="text" id="emailaddress" required="" name="log_per" placeholder="Usuario / Email">
-                                    </div>
+                                <div class="col-12">
+                                <label for="emailaddress">Email</label>
+                                <input class="form-control" type="text" id="emailaddress" required="" name="log_per" placeholder="Usuario / Email">
+                                </div>
                                 </div>
 
                                 <div class="form-group row m-b-20">
-                                    <div class="col-12">
-                                        <a href="page-recoverpw.html" class="text-muted pull-right"><small>¿Olvidaste tu contraseña?</small></a>
-                                        <label for="password">Password</label>
-                                        <input class="form-control" type="password" required="" id="password" name="pass_per" placeholder="Contraseña">
-                                    </div>
+                                <div class="col-12">
+                                <a href="page-recoverpw.html" class="text-muted pull-right"><small>¿Olvidaste tu contraseña?</small></a>
+                                <label for="password">Password</label>
+                                <input class="form-control" type="password" required="" id="password" name="pass_per" placeholder="Contraseña">
+                                </div>
                                 </div>
 
                                 <div class="form-group row m-b-20">
-                                    <div class="col-12">
-
-                                        <div class="checkbox checkbox-success">
-                                            <input id="remember" type="checkbox">
-                                            <label for="remember">
-                                                Recordar usuario
-                                            </label>
-                                        </div>
-
-                                    </div>
+                                <div class="col-12">
+                                <div class="checkbox checkbox-success">
+                                <input id="remember" type="checkbox">
+                                <label for="remember">Recordar usuario</label>
+                                </div>
+                                </div>
                                 </div>
 
                                 <div class="form-group row text-center m-t-10">
-                                    <div class="col-12">
-                                        <button class="btn btn-md btn-block btn-primary waves-effect waves-light" type="submit">Ingresar</button>
-                                    </div>
+                                <div class="col-12">
+                                <button class="btn btn-md btn-block btn-primary waves-effect waves-light" type="submit">Ingresar</button>
+                                </div>
                                 </div>
 
                             </form>
 
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="text-center">
-                                        <a href="https://www.facebook.com/viajesgrupalesescolarespromocion/ "><button type="submit" class="btn m-r-5 btn-facebook waves-effect waves-light">
-                                            <i class="fa fa-facebook"></i>
-                                        </button></a>
-                                        <a href="mailto:FamiliaViajeraTours@gmail.com?Subject=Interesado en un tour&body=Buenas Familia Tour">
-                                        <button type="button" class="btn m-r-5 btn-googleplus waves-effect waves-light">
-                                            <i class="fa fa-google"></i>
-                                        </button>
-                                        </a>
-                                        <button type="button" class="btn m-r-5 btn-twitter waves-effect waves-light">
-                                            <i class="fa fa-twitter"></i>
-                                        </button>
-                                    </div>
-                                </div>
+                            <div class="">
+                            <div class="col-sm-12 text-center">
+                            <p class="text-muted">¿Eres nuevo? <a href="register.php" class="text-dark m-l-5"><b>Registrate</b></a></p>
+                            </div>
                             </div>
 
-                            <div class="row m-t-50">
-                                <div class="col-sm-12 text-center">
-                                    <p class="text-muted">¿Eres nuevo? <a href="register.php" class="text-dark m-l-5"><b>Registrate</b></a></p>
-                                </div>
+                            <div class="row m-t-10">
+                            <div class="col-sm-12 text-center">
+                            <p class="text-muted">¡Síguenos en nuestras redes sociales!</p>
+                            </div>
+                            </div>
+
+                            <div class="row">
+                            <div class="col-sm-12">
+                            <div class="text-center">
+                            
+                            <a href="https://www.facebook.com/viajesgrupalesescolarespromocion/ "><button type="submit" class="btn m-r-5 btn-facebook waves-effect waves-light">
+                            <i class="fa fa-facebook"></i>
+                            </button></a>
+                            
+                            <a href="mailto:FamiliaViajeraTours@gmail.com?Subject=Interesado en un tour&body=Buenas Familia Tour">
+                            <button type="button" class="btn m-r-5 btn-googleplus waves-effect waves-light">
+                            <i class="fa fa-google"></i>
+                            </button>
+                            </a>
+                            
+                            <button type="button" class="btn m-r-5 btn-twitter waves-effect waves-light">
+                            <i class="fa fa-twitter"></i>
+                            </button>
+                            
+                            </div>
+                            </div>
                             </div>
 
                         </div>

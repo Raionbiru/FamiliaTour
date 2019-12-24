@@ -53,7 +53,7 @@ if ( $xcanPersona > 0 ) {
         }
     }else{
         desconectar($xc);
-    header("Location: login.php");
+    header("Location: index.php");
     }
 
 }else if( $xcanCliente > 0){
@@ -74,6 +74,6 @@ if ( $xcanPersona > 0 ) {
     
 }else {
     desconectar($xc);
-    header("Location: login.php");
+    header("Location: index.php");
 }
 

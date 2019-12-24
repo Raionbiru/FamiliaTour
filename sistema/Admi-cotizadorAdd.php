@@ -2,7 +2,7 @@
 <html>
     <?php session_start();
         if (!isset($_SESSION["nom_per"] ) ){
-            header("Location:login.php");
+            header("Location:index.php");
         }
         
         require_once("funciones.php");
@@ -87,7 +87,7 @@
                                                 <div class='form-group row'>
                                                     <label class='col-2 col-form-label'>Hospedaje</label>
                                                     <div class='col-10'>
-                                                        <input type='text'  name='nom_hostal' id='nom_hostal' class='form-control' placeholder='Nombre de hospedaje'>
+                                                        <input type='text' name='nom_hostal' id='nom_hostal' class='form-control' placeholder='Nombre de hospedaje'>
                                                     </div>
                                                 </div>
 
@@ -96,7 +96,7 @@
                                                     <div class='col-10'>
                                                         <select name='tipo_hostal' id='tipo_hostal' class='form-control'>
                                                             <option value=''>-----------</option>
-                                                            <option value='Simple'>Simple</option>
+                                                            <option value='Economico'>Economico</option>
                                                             <option value='Intermedio'>Intermedio</option>
                                                             <option value='Superior'>Superior</option>
                                                         </select>

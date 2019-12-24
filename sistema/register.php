@@ -1,12 +1,6 @@
 <?php require_once("funciones.php");
 
 $xc = conectar();
-/*$sql = "SELECT * FROM sector";
-$res = mysqli_query($xc,$sql);
-
-$sql2 = "SELECT * FROM tipo_persona";
-$res2 = mysqli_query($xc,$sql2);*/
-
 $sql3 = "SELECT * FROM area";
 $res3 = mysqli_query($xc,$sql3);
 desconectar($xc);
@@ -91,112 +85,113 @@ desconectar($xc);
                                                     <input hidden="YES" name="tipo" value="persona">
                                                     
                                                     <div class="form-group row m-b-20">
-                                                        <div class="col-12">
-                                                            <label for="emailaddress">Apellidos *</label>
-                                                            <input class="form-control" type="text" name="ape_per" id="ape_per" required="" placeholder="">
-                                                        </div>
+                                                    <div class="col-12">
+                                                    <label for="emailaddress">Apellidos *</label>
+                                                    <input class="form-control" type="text" name="ape_per" id="ape_per" required="" placeholder="">
+                                                    </div>
                                                     </div>
                                                     
                                                     <div class="form-group row m-b-20">
-                                                        <div class="col-12">
-                                                            <label for="emailaddress">Nombre *</label>
-                                                            <input class="form-control" type="text" name="nom_per" id="nom_per" required="" placeholder="">
-                                                        </div>
+                                                    <div class="col-12">
+                                                    <label for="emailaddress">Nombre *</label>
+                                                    <input class="form-control" type="text" name="nom_per" id="nom_per" required="" placeholder="">
+                                                    </div>
                                                     </div>
 
                                                     <input hidden="YES" name="estado_per" id="estado_per" value="0">
 
                                                     <div class="form-group row m-b-20">
-                                                        <div class="col-12">
-                                                            <label for="emailaddress">Celular *</label>
-                                                            <input class="form-control" type="text" name="cel_per_per" id="cel_per_per" required="" placeholder="">
-                                                        </div>
+                                                    <div class="col-12">
+                                                    <label for="emailaddress">Celular *</label>
+                                                    <input class="form-control" type="text" name="cel_per_per" id="cel_per_per" required="" placeholder="">
+                                                    </div>
                                                     </div>
                                                     
                                                     <div class="form-group row m-b-20">
-                                                        <div class="col-12">
-                                                            <label for="emailaddress">DNI *</label>
-                                                            <input class="form-control" type="number" name="dni_per" id="dni_per" required="" placeholder="">
-                                                        </div>
+                                                    <div class="col-12">
+                                                    <label for="emailaddress">DNI *</label>
+                                                    <input class="form-control" type="number" name="dni_per" id="dni_per" required="" placeholder="">
+                                                    </div>
                                                     </div>
 
                                                     <div class="form-group row m-b-20">
-                                                        <div class="col-12">
-                                                            <label for="emailaddress">Dirección *</label>
-                                                            <input class="form-control" type="text" name="direc_per" id="direc_per" required="" placeholder="">
-                                                        </div>
+                                                    <div class="col-12">
+                                                    <label for="emailaddress">Dirección *</label>
+                                                    <input class="form-control" type="text" name="direc_per" id="direc_per" required="" placeholder="">
+                                                    </div>
                                                     </div>
 
                                                     <div class="form-group row m-b-20">
-                                                        <div class="col-12">
-                                                            <label>Área</label>
-                                                                <select class="form-control" name="id_area">
-                                                                    <option value="" selected>Seleccioné Área *</option> 
-                                                                    <?php while ($fila=mysqli_fetch_array($res3)){
-                                                                        $xid_area = $fila["id_area"];
-                                                                        $xnom_area = $fila["nom_area"];
-                                                                        if ($xnom_area !== "Administracion") {
-                                                                            echo "<option value='$xid_area'>$xnom_area</option>";
-                                                                        }
-                                                                    } ?>
-                                                                </select>
-                                                        </div>
+                                                    <div class="col-12">
+                                                    <label>Área</label>
+                                                    <select class="form-control" name="id_area">
+                                                        <option value="" selected>Seleccioné Área *</option> 
+                                                        <?php while ($fila=mysqli_fetch_array($res3)){
+                                                            $xid_area = $fila["id_area"];
+                                                            $xnom_area = $fila["nom_area"];
+                                                            if ($xnom_area !== "Administracion") {
+                                                                echo "<option value='$xid_area'>$xnom_area</option>";
+                                                            }
+                                                        } ?>
+                                                    </select>
+                                                    </div>
                                                     </div>
 
                                                     <div class="form-group row m-b-20">
-                                                        <div class="col-12">
-                                                            <label for="emailaddress">Cargo *</label>
-                                                            <input class="form-control" type="text" name="cargo_per" id="cargo_per" required="" placeholder="">
-                                                        </div>
+                                                    <div class="col-12">
+                                                    <label for="emailaddress">Cargo *</label>
+                                                    <input class="form-control" type="text" name="cargo_per" id="cargo_per" required="" placeholder="">
+                                                    </div>
                                                     </div>
 
                                                     <div class="form-group row m-b-20">
-                                                        <div class="col-12">
-                                                            <label for="emailaddress">Email *</label>
-                                                            <input class="form-control" type="email" name="email_per_per" id="email_per_per" required="" placeholder="">
-                                                        </div>
+                                                    <div class="col-12">
+                                                    <label for="emailaddress">Email *</label>
+                                                    <input class="form-control" type="email" name="email_per_per" id="email_per_per" required="" placeholder="">
+                                                    </div>
                                                     </div>
 
                                                     <div class="form-group row m-b-20">
-                                                        <div class="col-12">
-                                                            <label for="emailaddress">Contraseña *</label>
-                                                            <input class="form-control" type="password" name="pass_per" id="pass_per" required="pass_per" placeholder="">
-                                                        </div>
+                                                    <div class="col-12">
+                                                    <label for="emailaddress">Contraseña *</label>
+                                                    <input class="form-control" type="password" name="pass_per" id="pass_per" required="pass_per" placeholder="">
+                                                    </div>
                                                     </div>
 
                                                     <div class="form-group row m-b-20">
-                                                        <div class="col-12">
-                                                        <label for="emailaddress">Adjuntar CV</label>
-                                                        <input class="form-control" type="file" id="" name="archivo">
-                                                        </div>
+                                                    <div class="col-12">
+                                                    <label for="emailaddress">Adjuntar CV</label>
+                                                    <input class="form-control" type="file" id="" name="archivo">
+                                                    </div>
                                                     </div>
 
                                                     <div class="form-group row m-b-20">
                                                     
                                                     <div class="col-7">
                                                     <div class="checkbox checkbox-success">
-                                                        <input id="remember" type="checkbox" checked="">
-                                                        <label for="remember">
-                                                            Acepto <a href="#">Terminos y Condiciones</a>
-                                                        </label>
+                                                    <input id="remember" type="checkbox" checked="">
+                                                    <label for="remember">
+                                                        Acepto <a href="#">Terminos y Condiciones</a>
+                                                    </label>
                                                     </div>
-                                                    </div>
-
-                                                    <div class="col-5">
-                                                        <label for="remember">
-                                                            ¿Ya tiene una cuenta? <br> <center><a href="login.php">Log In</a></center>
-                                                        </label>
                                                     </div>
                                                     
                                                     </div>
 
                                                     <div class="form-group row text-center m-t-10">
-                                                        <div class="col-12">
-                                                            <button class="btn btn-md btn-block btn-primary waves-effect waves-light" type="submit">Registrate</button>
-                                                        </div>
+                                                    <div class="col-12">
+                                                    <button class="btn btn-md btn-block btn-primary waves-effect waves-light" type="submit">Registrate</button>
+                                                    </div>
                                                     </div>
 
                                                 </form>
+
+                                                <div class="row m-t-10">
+                                                <div class="col-sm-12 text-center">
+                                                <p class="text-muted">¿Ya tienes una cuenta?<a href="index.php" class="text-dark m-l-5"><b>Ingresa al sistema</b></a></p>
+                                                </div>
+                                                </div>
+
                                             </div>
 
 
@@ -280,15 +275,9 @@ desconectar($xc);
                                                     <div class="checkbox checkbox-success">
                                                         <input id="remember" type="checkbox" checked="">
                                                         <label for="remember">
-                                                            Acepto <a href="login.php">Terminos y Condiciones</a>
+                                                            Acepto <a href="index.php">Terminos y Condiciones</a>
                                                         </label>
                                                     </div>
-                                                    </div>
-
-                                                    <div class="col-5">
-                                                        <label for="remember">
-                                                            ¿Ya tiene una cuenta? <br> <center><a href="login.php">Log In</a></center>
-                                                        </label>
                                                     </div>
 
                                                     </div>
@@ -298,8 +287,13 @@ desconectar($xc);
                                                     <button class="btn btn-md btn-block btn-primary waves-effect waves-light" type="submit">Registrarse</button>
                                                     </div>
                                                     </div>
-
                                                 </form>
+
+                                                <div class="row m-t-10">
+                                                <div class="col-sm-12 text-center">
+                                                <p class="text-muted">¿Ya tienes una cuenta?<a href="index.php" class="text-dark m-l-5"><b>Ingresa al sistema</b></a></p>
+                                                </div>
+                                                </div>
                                                 
                                             </div>
 

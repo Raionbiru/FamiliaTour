@@ -87,7 +87,7 @@
                                             <p class="text-muted font-13 m-t-10">Se ha enviado un correo electrónico a <b><?PHP echo $xemail;?></b>. Compruebe si hay un correo electrónico de la empresa y haga clic en el enlace incluido para restablecer su contraseña.
                                             </p>
 
-                                            <a href="login.php" class="btn btn-md btn-block btn-primary waves-effect waves-light m-t-30">Regresar al Login</a>
+                                            <a href="index.php" class="btn btn-md btn-block btn-primary waves-effect waves-light m-t-30">Regresar al Login</a>
                                         </div>
 
                                     </div>

@@ -2,7 +2,7 @@
 <html>
 <?php session_start();
     if (!isset($_SESSION["nom_per"] ) ){
-        header("Location:login.php");
+        header("Location:index.php");
     }         
     require_once("funciones.php");
     $xc = conectar();

@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <?php session_start();
     if (!isset($_SESSION["nom_per"] ) ){
-        header("Location:login.php");
+        header("Location:index.php");
     }         
 ?>
     <head>
@@ -242,6 +242,7 @@
 
                     <div class="card-box">
                         <div class="row">
+<!--
                             <div class="col-md-3">
                                 <a href="#" data-toggle="modal" data-target="#add-category" class="btn btn-lg btn-primary btn-block waves-effect m-t-20 waves-light">
                                     <i class="fa fa-plus"></i> Create New
@@ -263,14 +264,15 @@
                                     </div>
                                 </div>
 
-                                <!-- checkbox -->
+
                                 <div class="checkbox checkbox-primary m-t-30">
                                     <input type="checkbox" id="drop-remove">
                                     <label for="drop-remove">
                                         Remove after drop
                                     </label>
                                 </div>
-                            </div> <!-- end col-->
+                            </div> 
+-->
                             <div class="col-md-9">
                                 <div id="calendar"></div>
                             </div> <!-- end col -->

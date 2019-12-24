@@ -111,7 +111,7 @@ desconectar($xc);
                                 </a>
 
                                 <!-- item-->
-                                <a href="login.php" class="dropdown-item notify-item">
+                                <a href="index.php" class="dropdown-item notify-item">
                                     <i class="zmdi zmdi-power"></i> <span>Salir</span>
                                 </a>
 
