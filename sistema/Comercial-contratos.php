@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html>
 <?php session_start();
     if (!isset($_SESSION["nom_per"] ) ){
         header("Location:index.php");
     }         
 ?>
+<!DOCTYPE html>
+<html>
     <head>
         <meta charset="utf-8" />
         <title> Familia </title>
@@ -73,17 +73,64 @@
                         <div class="card-box">
                             <center>
                             <h4 class="m-t-0 m-b-30"> <b> CONTRATO </b> </h4>
-                            
-                            <p style="text-align: justify, font: 14px/1.8 arial, helvetica, sans-serif;  " class="m-b-0 col-10">
-                                    Conste por el presente documento el contrato de <strong>FAMILIA TOUR</strong>, que celebran de una parte AAA, identificada con R.U.C. N° <input type="number" name="ruc" id="ruc"> inscrita en la partida electrónica N° <input type="number" name="electronica" id="electronica"> del Registro de Personas Jurídicas de <input type="text" name="registro" id="registro">, con domicilio en <input type="text" name="domicilio" id="domicilio">, debidamente representada por su gerente general don <input type="text" name="gerente" id="gerente">, identificado con el D.N.I. N° <input type="number" name="dni" id="dni">, con poderes inscritos en el asiento <input type="number" name="asiento" id="asiento"> de la referida partida electrónica, a quien en lo sucesivo se denominará <strong>EL COMITENTE</strong>; y, de otra parte BBB, identificada con R.U.C. N° <input type="number" name="ruc2" id="ruc2">, inscrita en la partida electrónica N° <input type="number" name="partida" id="partida"> del Registrode Personas Jurídicas de <input type="text" name="registro2" id="registro2">, con domicilio en <input type="text" name="domicilio2" id="domicilio2">, identificado con D.N.I. N° <input type="number" name="dni2" id="dni2">              , con poderes inscritos en el asiento <input type="text" name="asiento2" id="asiento2"> de la referida partida electrónica, a quien en lo sucesivo se denominará <strong>LA LOCADORA</strong>; en los términos contenidos en las cláusulas siguientes:
-                                    .</p>
+
+                            <h5 class="m-t-0 m-b-30" style="font: 20px/1.8 arial, helvetica, sans-serif;  "> 2019,  AÑO DE LA LUCHA CONTRA LA CORRUPCIÓN E IMPUNIDAD </h5>
                             </center>
+                            
+                            <div align="right" style="margin-right: 150px">
+                            <strong><p class="m-b-30 col-12">Asunto: Contrato de Tour</p></strong>
+                            </div>
+
+                            <div align="left" style="margin-left: 150px">
+                            <strong><h5  class="m-b-30 col-12">A QUIEN CORRESPONDA:</h5></strong>
+                            </div>
+                            <BR></BR>
+                            <div>
+                            <center>
+                            <p style="text-align: justify, font: 14px/1.8 arial, helvetica, sans-serif;" class="m-b-0 col-10">
+                            El que suscribe, Encargado(a) de la Agencia <input type="text" style="border:none;border-bottom:1px solid #000;line-height:0.5em;">. Hace constar que el Tour <input type="text" style="border:none;border-bottom:1px solid #000;line-height:0.5em;">, con Clave <input type="text" style="border:none;border-bottom:1px solid #000;line-height:0.5em;">; concluyó sus actividades en la empresa <input type="text" style="border:none;border-bottom:1px solid #000;line-height:0.5em;">, de la ciudad de  <input type="text" style="border:none;border-bottom:1px solid #000;line-height:0.5em;">; con un costo de <input type="text" style="border:none;border-bottom:1px solid #000;line-height:0.5em;">.</p>
                             <br>
+                            <p>
+                            A petición del interesado, se expide el presente documento en la ciudad de Arequipa, Arequipa. A los 24 dias del mes de Diciembre de 2019.
+                            </p>
+                            </center>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            
+                            <div class="row">
+                            
+                                <div class="col-6">
+                                <center>
+                                <h5>EMPRESA:</h5>
+                                <BR></BR>
+                                <P>______________________________________________</P>
+                                <p class="m-b-0 col-10">Nombre del Encargado</p>
+                                <p class="m-b-0 col-10">Encargado del Departamento</p>
+                                </center>
+                                </div>
+
+                                <div class="col-6">
+                                <center>
+                                <h5>CLIENTE:</h5>
+                                <BR></BR>
+                                <P>______________________________________________</P>
+                                <p class="m-b-0 col-10">Nombre de Agencia </p>
+                                <p class="m-b-0 col-10">Encargado de Agencia </p>
+                                </center>
+                                </div>
+
+                            </div>
+                            <BR></BR>
+                            <BR></BR>
+
                             <div class='form-group row text-center m-t-10'>
                                 <div class='col-md-4 offset-md-4'>
                                     <button class='btn btn-md btn-block btn-primary waves-effect waves-light' type='submit'>Generar Contrato</button>
                                 </div>
                             </div>
+
                         </div>
                     </form>
 
@@ -91,7 +138,7 @@
                         <input hidden="YES" name="tipo" value="descargar">
                         <div class='form-group row text-center m-t-10'>
                                 <div class='col-md-4'>
-                                    <button class='btn btn-md btn-block btn-primary waves-effect waves-light' type='submit'>Descargar</button>
+                                    <button class='btn btn-md btn-block btn-primary waves-effect waves-light' type='submit'>Descargar Plantilla</button>
                                 </div>
                             </div>
                     </form>

@@ -55,7 +55,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card-box">
-                        <h4 class="header-title m-t-0 m-b-30">Cotizador de servicios</h4>
+                        <!--<h4 class="header-title m-t-0 m-b-30">Cotizador de servicios</h4>-->
 
                         <ul class="nav nav-pills navtab-bg nav-justified">
                             <li class="nav-item">
@@ -73,11 +73,13 @@
                                 <i class="fa fa-bus"></i> <span>Tours</span>
                                 </a>
                             </li>
+                            <!--
                             <li class="nav-item">
                                 <a href="#Alimentacion" data-toggle="tab" aria-expanded="false" class="nav-link">
                                 <i class="mdi mdi-food"></i> <span>Alimentacion</span>
                                 </a>
                             </li>
+                            -->
                             <li class="nav-item">
                                 <a href="#ServicioAdicional" data-toggle="tab" aria-expanded="false" class="nav-link">
                                 <i class="mdi mdi-library-plus"></i> <span>Servicios Adicionales</span>
@@ -202,7 +204,7 @@
                             
                             <!-- ===== TAB HOSPEDAJE ===== -->
                             <div class="tab-pane fade" id="Hospedaje">
-                                <form name="f">
+                                <form name="hospedajeForm" method="POST" action="Comercial-reserva.php">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -260,7 +262,7 @@
                                         <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Personas</label>
-                                            <input class="form-control" type="number" name="num2" value="0" onchange="cal()" onkeyup="cal()">
+                                            <input class="form-control" type="number" name="num2" id="persona_hostal" value="0" onchange="cal()" onkeyup="cal()">
                                         </div>
                                         </div>
 
@@ -274,7 +276,7 @@
                                         <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Total costo</label>
-                                            <input class="form-control" type="" name="sum" value="0" readonly="readonly">
+                                            <input class="form-control" type="" name="sum" id="sum" value="0" readonly="readonly">
                                         </div>
                                         </div>
 
@@ -284,7 +286,8 @@
                                 </div>
                                     <div class="hidden-print m-t-30 m-b-30">
                                         <div class="text-right">
-                                            <a href="Comercial-reserva.php" class="btn btn-primary waves-effect waves-light"><i class="fa fa-shopping-cart m-r-5"></i> Transacción</a>
+                                            <!--<a href="Comercial-reserva.php" class="btn btn-primary waves-effect waves-light"><i class="fa fa-shopping-cart m-r-5"></i> Transacción</a>-->
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light"><i class="fa fa-shopping-cart m-r-5"></i> Transacción</button> 
                                         </div>
                                     </div>
                                 </form>
@@ -381,8 +384,8 @@
                                 </div>
                                 </form>
                             </div>
-                            
-                            <div class="tab-pane fade" id="Alimentacion"> <!--Tab Alimentacion-->
+                            <!--Tab Alimentacion
+                            <div class="tab-pane fade" id="Alimentacion">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -429,6 +432,7 @@
                                     </div>
                                 </div>
                             </div>
+                            -->
 
                             <!-- ====  TAB Servicio Adiconal ==== -->
                             <div class="tab-pane fade" id="ServicioAdicional"> <!--Tab Servicio Adicional-->
@@ -469,48 +473,62 @@
                                 </div>
                             </div>
 
+                            <!-- ====  TAB Comidas ==== -->
                             <div class="tab-pane fade" id="Comidas"> <!--Tab Comidas-->
+                                <form name="comidasForm" action="" >
                                 <div class="row">
+                                    
                                     <div class="col-md-6">
                                         <div class="form-group">
                                         <label>Tipo de comida</label>
-                                            <select name="tipo_comidas" id="tipo_comidas" class="form-control">
-                                                <option value="Desayuno">Desayuno</option>
-                                                <option value="Almuerzo">Almuerzo</option>
-                                                <option value="Cena">Cena</option>
-                                            </select>
+                                        <select name="tipo_comidas" id="tipo_comidas" class="form-control">
+                                            <option value="Desayuno">Desayuno</option>
+                                            <option value="Almuerzo">Almuerzo</option>
+                                            <option value="Cena">Cena</option>
+                                        </select>
                                         </div>
 
-                                        <div class="row">
-                                            <div class="col-md-6">    
-                                                <div class="form-group">
-                                                    <label>Cantidad</label>
-                                                    <input class="form-control" type="text">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group" id="precioComidas" name="precioComidas">
-                                                    
-                                                </div>
-                                            </div>
+                                        <div class="form-group">
+                                        <label>Días de viaje</label>
+                                        <select name="diasComidas" id="diasComidas" onchange="cal()" onkeyup="cal()" class="form-control">
+                                            <?php for ($x = 1; $x <= 31; $x++) {
+                                                echo "<option value='$x'>$x Día</option>";
+                                            }?>
+                                        </select>
                                         </div>
-
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="form-group" name="platos" id="platos">
+                                        <div class="form-group">
+                                        <label>Platos</label>
+                                        <select id='carta_comidas' name='carta_comidas' id='carta_comidas' class='form-control'>
+                                        </select>
                                         </div>
 
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">    
                                             <div class="form-group">
-                                                <label>Total costo</label>
-                                                <input class="form-control" type="text" readonly="" value="">
+                                            <label>Cantidad</label>
+                                            <input class="form-control" type="number" name="cantidadComidas" id="cantidadComidas" value="0" onchange="cal()" onkeyup="cal()">
+                                            </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                            <div class="form-group" id="precioComidas" name="precioComidas">
+                                            </div>
+                                            </div>
+                                            
+                                            <div class="col-md-4">
+                                            <div class="form-group">
+                                            <label>Total costo</label>
+                                            <input class="form-control" type="text" readonly="" value="" id="total_comidas" name="total_comidas">
                                             </div>
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
+                                </form>
                             </div>
 
                         </div>
@@ -635,6 +653,7 @@ $(function(){
         });
         $('#carta_comidas').change(function(){
             recargarComidasPrecio();
+            //alert($('#carta_comidas').val());
         });
     });
 </script>
@@ -721,17 +740,17 @@ $(function(){
             url :"Controllers/CotizarComidas.php",
             data:"tipo_comidas=" + tipo_comidas,
             success:function(r){
-                $('#platos').html(r);
+                $('#carta_comidas').html(r);
             }
         });
     };
     function recargarComidasPrecio(){
-        var carta_comidas = $('#carta_comidas').val();
+        var cartaComidas = $('#carta_comidas').val();
         //alert(carta_comidas);
         $.ajax({
             type:"POST",
             url :"Controllers/CotizarComidasPrecio.php",
-            data:"carta_comidas=" + carta_comidas,
+            data:"carta_comidas=" + cartaComidas,
             success:function(r){
                 $('#precioComidas').html(r);
             }
@@ -742,26 +761,34 @@ $(function(){
 
     function cal() {
         try {
-            var a = parseInt(document.f.num1.value),
-                b = parseInt(document.f.num2.value),
-                c = parseInt(document.f.num3.value);
+            var a = parseInt(document.hospedajeForm.num1.value),
+                b = parseInt(document.hospedajeForm.num2.value),
+                c = parseInt(document.hospedajeForm.num3.value);
 
             var cantidadTransporte = parseInt(document.transporte.cantidadTransporte.value),
                 prec_transporte = parseInt(document.transporte.prec_transporte.value);
+            
+            var cantidadComidas = parseInt(document.comidasForm.cantidadComidas.value),
+                precio_comidas = parseInt(document.comidasForm.precio_comidas.value),
+                diasComidas = parseInt(document.comidasForm.diasComidas.value);
 
             //var dias_tour = parseInt(document.tourform.dias_tour.value),
                 //valorTour = parseInt(document.tourform.valorTour.value);
             
             //Hoteles
-            document.f.sum.value = b * (document.f.unidad.value = c * a),
-            document.f.unidad.value = c * a;
+            document.hospedajeForm.sum.value = b * (document.hospedajeForm.unidad.value = c * a),
+            document.hospedajeForm.unidad.value = c * a;
             
             //Transporte
             document.transporte.totalTransporte.value = cantidadTransporte * prec_transporte;
 
             //Tour
             //document.tourform.diasCostoTour.value = dias_tour * valorTour;
-            //document.f.unidad.value = c * a;
+            //document.tourform.unidad.value = c * a;
+
+            //Comidas
+            document.comidasForm.total_comidas.value = (cantidadComidas * precio_comidas) * diasComidas;
+            
         } catch (e) {
             alert(e);
         }

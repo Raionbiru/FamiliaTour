@@ -79,7 +79,7 @@ desconectar($xc);
                                                 <!-- FORMULARIO DE EMPRESA -->
                                                 <!-- ===================== -->
 
-                                                <form class="form-horizontal" method="POST" action="registro-grabar.php">
+                                                <form class="form-horizontal" method="POST" action="registro-grabar.php" enctype="multipart/form-data">
 
                                                     <input hidden="YES" name="accion" value="crear">
                                                     <input hidden="YES" name="tipo" value="persona">
@@ -161,7 +161,7 @@ desconectar($xc);
                                                     <div class="form-group row m-b-20">
                                                     <div class="col-12">
                                                     <label for="emailaddress">Adjuntar CV</label>
-                                                    <input class="form-control" type="file" id="" name="archivo">
+                                                    <input class="form-control" type="file" id="archivoCV" name="archivoCV" accept="application/pdf">
                                                     </div>
                                                     </div>
 
@@ -171,7 +171,7 @@ desconectar($xc);
                                                     <div class="checkbox checkbox-success">
                                                     <input id="remember" type="checkbox" checked="">
                                                     <label for="remember">
-                                                        Acepto <a href="#">Terminos y Condiciones</a>
+                                                        Acepto <a href="Doc/Terminos y Condiciones.pdf">Terminos y Condiciones</a>
                                                     </label>
                                                     </div>
                                                     </div>
@@ -275,7 +275,7 @@ desconectar($xc);
                                                     <div class="checkbox checkbox-success">
                                                         <input id="remember" type="checkbox" checked="">
                                                         <label for="remember">
-                                                            Acepto <a href="index.php">Terminos y Condiciones</a>
+                                                            Acepto <a href="Doc/Terminos y Condiciones.pdf">Terminos y Condiciones</a>
                                                         </label>
                                                     </div>
                                                     </div>

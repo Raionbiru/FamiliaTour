@@ -1,13 +1,5 @@
 <?php require_once("Operaciones-header.php");
       require_once("funciones.php");
-
-//Código de cliente
-//N contrato
-//Nombre de cliente
-//Empresa
-
-
-
 ?>
 <!-- ============================================================== -->
 <!-- Start right Content here -->

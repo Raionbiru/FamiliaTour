@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <?php session_start();
+<?php session_start();
         if (!isset($_SESSION["nom_per"] ) ){
             header("Location:index.php");
         }
@@ -9,7 +7,9 @@
         $xid = leerParam("id","");
         $xtipo = leerParam("tipo","");
 
-    ?>
+?>
+<!DOCTYPE html>
+<html>
     <head>
         <meta charset="utf-8" />
         <title>Familia</title>

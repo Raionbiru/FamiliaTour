@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html>
 <?php session_start();
     if (!isset($_SESSION["nom_per"] ) ){
         header("Location:index.php");
     }
-    require_once("funciones.php");?>
+    require_once("funciones.php");
+?>
+<!DOCTYPE html>
+<html>
     <head>
         <meta charset="utf-8" />
         <title>Familia</title>

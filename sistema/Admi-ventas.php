@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 <?php session_start();
     if (!isset($_SESSION["nom_per"] ) ){
         header("Location:index.php");
@@ -7,12 +5,6 @@
     
     require_once("funciones.php");
     $xc = conectar();
-    //Código de contrato    (Contrato)
-    //Fecha de venta        (Venta)
-    //Nombre                (Nombre de venta)
-    //Producto              (Nombre de producto/tour)
-    //Monto                 (Precio de producto/tour)
-
     //SQL con producto
     /*$sql = "SELECT c.cod_contr,v.fec_vet,v.nom_vet, p.nom_produc, p.prec_produc 
             FROM venta v
@@ -32,6 +24,8 @@
     $res = mysqli_query($xc,$sql);
     desconectar($xc);
 ?>
+<!DOCTYPE html>
+<html>
     <head>
         <meta charset="utf-8" />
         <title>Familia</title>

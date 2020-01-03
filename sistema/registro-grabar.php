@@ -4,6 +4,9 @@ $xaccion=leerParam("accion","");
 $xtipo=leerParam("tipo","");
 $xid_sector=leerParam("id_sector","");
 
+/*==============================*/
+/*============EMPRESA===========*/
+/*==============================*/
 if ($xtipo == "persona") {
     if ($xaccion=="crear") {
 
@@ -11,24 +14,46 @@ if ($xtipo == "persona") {
         $xape_per=leerParam("ape_per","");
         $xdirec_per=leerParam("direc_per","");
         $xemail_per_per=leerParam("email_per_per","");
-        //$xemail_corp_per=leerParam("email_corp_per","");
         $xcel_per_per=leerParam("cel_per_per","");
-        //$xcel_corp_per=leerParam("cel_corp_per","");
-        //$xnac_per=leerParam("nac_per","");
         $xdni_per=leerParam("dni_per","");
         $xcargo_per=leerParam("cargo_per","");
-        //$xlog_per=leerParam("log_per","");
         $xpass_per=leerParam("pass_per","");
-        //$xestado_per=leerParam("estado_per","");
-        
         $xid_area=leerParam("id_area","");
-    
-        //echo $xnom_per, $xape_per, $xcel_per_per, $xdni_per, $xdirec_per, $xid_area, $xcargo_per, $xemail_per_per, $xpass_per;
 
         $xc = conectar();
         $sql = "INSERT INTO persona (nom_per,ape_per,direc_per,email_per_per,cel_per_per,dni_per,cargo_per,pass_per,estado_per,id_area,notificacion_per,log_per) VALUES ('$xnom_per','$xape_per','$xdirec_per','$xemail_per_per','$xcel_per_per','$xdni_per','$xcargo_per','$xpass_per','0','$xid_area','0','$xemail_per_per')";
     
         mysqli_query($xc,$sql);
+        $id_insert = mysqli_insert_id($xc);
+        if ($_FILES["archivoCV"]["error"] > 0) {
+            echo"Error al cargar el archivo";
+        }else {
+            $permitidos = array("application/pdf");
+            $limite_kb = 450;
+            if (in_array($_FILES["archivoCV"]["type"], $permitidos) && $_FILES["archivoCV"]["size"] <= $limite_kb * 1024) {
+
+                $ruta = 'Doc/CV/'.$id_insert.'/';
+                $archivo = $ruta.$_FILES["archivoCV"]["name"];
+
+                if (!file_exists($ruta)) {
+                    mkdir($ruta);
+                }
+                if (!file_exists($archivo)) {
+                    $resultado = @move_uploaded_file($_FILES["archivoCV"]["tmp_name"],$archivo);
+                    if ($resultado) {
+                        echo "Archivo guardado.";
+                        
+                    }else{
+                        echo "Error al guardar el archivo.";
+                    }
+                }else {
+                    echo "Archivo ya existe.";
+                }
+            }else{
+                echo "Archivo no permitido o excede el tamaño.";
+            }
+        }
+        
         desconectar($xc);
 
         ini_set( 'display_errors', 1 );
@@ -39,9 +64,8 @@ if ($xtipo == "persona") {
         $message = "Se esta evaluando la solicitud de su cuenta para que pueda acceder Empresa, Señor: $xnom_per, $xape_per";
         $headers = "From:" . $from;
         mail($to,$subject,$message, $headers);
-        //echo "Se envio un correo.";
 
-        header("Location: prueba.php?email=$xemail_per_per");
+        //header("Location: prueba.php?email=$xemail_per_per");
     
     }elseif ($xaccion=="editar") {
         $xid_per= leerParam("id_per","");

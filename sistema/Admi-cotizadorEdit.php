@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <?php session_start();
+<?php session_start();
         if (!isset($_SESSION["nom_per"] ) ){
             header("Location:index.php");
         }
@@ -27,10 +25,10 @@
         $resServicio = mysqli_query($xc,$sqlServicio);
         $filaServicio=mysqli_fetch_array($resServicio);
 
-
         desconectar($xc);
-
-    ?>
+?>
+<!DOCTYPE html>
+<html>
     <head>
         <meta charset="utf-8" />
         <title>Familia</title>

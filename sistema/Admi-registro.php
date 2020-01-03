@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 <?php session_start();
     if (!isset($_SESSION["nom_per"] ) ){
         header("Location:index.php");
@@ -12,6 +10,8 @@
     $res = mysqli_query($xc,$sql);
     desconectar($xc);
 ?>
+<!DOCTYPE html>
+<html>
     <head>
         <meta charset="utf-8" />
         <title>Familia</title>
@@ -77,9 +77,10 @@
                                 <th data-sort-ignore="true" class="min-width"></th>
                                 <th data-sort-initial="true" data-toggle="true">Nombre</th>
                                 <th>Apellido</th>
-                                <th data-hide="phone">Cargo</th>
-                                <th data-hide="phone, tablet">Area</th>
-                                <th data-hide="phone, tablet">Estado</th>
+                                <th>Cargo</th>
+                                <th>Area</th>
+                                <th>Curriculum Vitae</th>
+                                <th>Estado</th>
                             </tr>
                             </thead>
                             <!-- Añadir y Buscar  -->
@@ -98,7 +99,8 @@
                                 </div>
                             </div>-->
                             <tbody>
-                            <?PHP while($fila=mysqli_fetch_array($res)){
+                            <?PHP 
+                                while($fila=mysqli_fetch_array($res)){
                                     $xid_per = $fila["id_per"];
                                     $xnom_per = $fila["nom_per"];
                                     $xape_per = $fila["ape_per"];
@@ -135,16 +137,40 @@
                                             <td>$xnom_per</td>
                                             <td>$xape_per</td>
                                             <td>$xcargo_per</td>
-                                            <td>$xnom_area</td>
+                                            <td>$xnom_area</td>";
                                             
-                                            <td>";
+                                            $path = "Doc/CV/".$xid_per;
+                                            if(file_exists($path)){
+                                                $directorio = opendir($path);
+                                                while ($archivo = readdir($directorio)){
+                                                    if(!is_dir($archivo)){
+                                                        echo "
+                                                        <td>
+                                                            <a href='".$path."/".$archivo."' title='Ver Archivo Adjunto'>
+                                                                <span class='label label-table label-success'>$archivo</span>
+                                                            </a>
+                                                        </td>
+                                                        ";
+                                                    }
+                                                }
+                                            }else{
+                                                echo "
+                                                <td>
+                                                    <span class='label label-table label-danger'>No cuenta con CV</span>
+                                                </td>
+                                                ";
+                                            }
+                                            
+                                            echo "<td>";
                                                 if ($xestado_per == 0){
                                                     echo"<span class='label label-table label-warning'>Pendiente</span>";
                                                 }
                                                 elseif($xestado_per == 1){
                                                     echo"<span class='label label-table label-success'>Activado</span>";
                                                 }
-                                            echo "</td>
+                                            echo "</td>";
+
+                                            echo"
                                             </tr>
                                             
                                         ";

@@ -18,14 +18,19 @@
         <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
 
         <script src="assets/js/modernizr.min.js"></script>
-
+        <script src="https://checkout.culqi.com/js/v3"></script>
     </head>
 
-
     <?php
-    require_once("Comercial-nav.php");?>
+    require_once("Comercial-nav.php");
+    require_once("funciones.php");
 
-
+    /* ==== Hostal ==== */
+    $xhotelesNombre2 = leerParam("hotelesNombre2","");
+    $xpersona_hostal = leerParam("persona_hostal","");
+    $xcosto_unitario = leerParam("num1","");
+    $xtotal_hostal = leerParam("sum","");
+    ?>
 
             <!-- ============================================================== -->
             <!-- Start right Content here -->
@@ -125,15 +130,14 @@
                                                     <tr>
                                                         <td>1</td>
                                                         <td>
-                                                            <b>Laptop</b> <br/>
-                                                            Brand Model VGN-TXN27N/B
-                                                            11.1" Notebook PC
+                                                            <b>Hospedaje</b> <br/>
+                                                            <?PHP echo $xhotelesNombre2; ?>
                                                         </td>
-                                                        <td>1</td>
-                                                        <td>$1799</td>
-                                                        <td class="text-right">$1799</td>
+                                                        <td> <?PHP echo $xpersona_hostal;?> </td>
+                                                        <td> <?PHP echo $xcosto_unitario;?> </td>
+                                                        <td class="text-right"> <?PHP echo $xtotal_hostal;?> </td>
                                                     </tr>
-                                                    <tr>
+                                                    <!--<tr>
                                                         <td>2</td>
                                                         <td>
                                                             <b>Warranty</b> <br/>
@@ -153,7 +157,7 @@
                                                         <td>2</td>
                                                         <td>$412</td>
                                                         <td class="text-right">$824</td>
-                                                    </tr>
+                                                    </tr>-->
 
                                                     </tbody>
                                                 </table>
@@ -174,19 +178,27 @@
                                         </div>
                                         <div class="col-6">
                                             <div class="float-right">
-                                                <p><b>Sub-total:</b> $4120.00</p>
-                                                <p><b>IVA (12.5):</b> $515</p>
-                                                <h3>$4635.00 USD</h3>
+                                                <p><b>Sub-total:</b> <?PHP echo "S/.".$xtotal_hostal.".00";?></p>
+                                                <p><b>IVA (12.5):</b> S/.0.00</p>
+                                                <h3><?PHP echo "S/.".$xtotal_hostal.".00";?></h3>
                                             </div>
                                             <div class="clearfix"></div>
                                         </div>
                                     </div>
-
+                                    <?PHP $numeroConCeros = str_pad($xtotal_hostal, 5, "0", STR_PAD_RIGHT);
+                                            for($i=0;$i<1;$i++) {
+                                                echo uniqid(), PHP_EOL;
+                                            }?>
                                     <div class="hidden-print m-t-30 m-b-30">
                                         <div class="text-right">
                                             <a href="javascript:window.print()" class="btn btn-primary waves-effect waves-light"><i class="fa fa-print m-r-5"></i> Imprimir</a>
                                             <a href="#" class="btn btn-custom waves-effect waves-light">Reservar</a>
+
+
+
+
                                             <a href="#" class="btn btn-info waves-effect waves-light">Pagar</a>
+                                            <input type="button" id="buyButton" value="COMPRAR" data-producto="Prueba Tour" data-precio="<?PHP echo $numeroConCeros;?>">
                                         </div>
                                     </div>
                                 </div>
@@ -202,7 +214,7 @@
                 </div> <!-- content -->
 
                 <footer class="footer text-right">
-                    2017 © Adminox. - Coderthemes.com
+                    2019 © Familia
                 </footer>
 
             </div>
@@ -229,6 +241,82 @@
         <!-- App js -->
         <script src="assets/js/jquery.core.js"></script>
         <script src="assets/js/jquery.app.js"></script>
+
+        <!-- Culqi -->
+        
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+
+        <script>
+            Culqi.publicKey = 'pk_test_gOsS7bN8Qomn75BT';
+
+            var producto = "";
+            var precio = "";
+            $('#buyButton').on('click', function(e) {
+                // Abre el formulario con la configuración en Culqi.settings
+                producto = $(this).attr('data-producto');
+                precio = $(this).attr('data-precio');
+                
+                Culqi.settings({
+                    title: producto,
+                    currency: 'PEN',
+                    description: producto,
+                    amount: precio
+                });
+                Culqi.open();
+                e.preventDefault();
+            });
+
+            function culqi() {
+                if (Culqi.token) { // ¡Objeto Token creado exitosamente!
+                    var token = Culqi.token.id;
+                    var email = Culqi.token.email;
+                    var data = {producto:producto, precio:precio, token:token, email:email};
+                    var url = "proceso.php";
+
+                    $.post(url, data, function(res){
+                        alert(res);
+                    });
+                } else { // ¡Hubo algún problema!
+                    // Mostramos JSON de objeto error en consola
+                    console.log(Culqi.error);
+                    alert(Culqi.error.user_message);
+                }
+            };
+
+        </script> 
+
+       <!-- <script>
+            Culqi.publicKey = 'pk_test_gOsS7bN8Qomn75BT';
+
+            Culqi.settings({
+                title: 'Culqi Store',
+                currency: 'PEN',
+                description: 'Polo/remera Culqi lover',
+                amount: 3500
+            });
+
+            $('#buyButton').on('click', function(e) {
+                // Abre el formulario con la configuración en Culqi.settings
+                Culqi.open();
+                e.preventDefault();
+            });
+
+            function culqi() {
+                if (Culqi.token) { // ¡Objeto Token creado exitosamente!
+                    var token = Culqi.token.id;
+                    alert('Se ha creado un token:' + token);
+                    //En esta linea de codigo debemos enviar el "Culqi.token.id"
+                    //hacia tu servidor con Ajax
+                } else { // ¡Hubo algún problema!
+                    // Mostramos JSON de objeto error en consola
+                    console.log(Culqi.error);
+                    alert(Culqi.error.user_message);
+                }
+            };
+
+
+        </script>-->
+
 
     </body>
 </html>

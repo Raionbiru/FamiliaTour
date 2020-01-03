@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <?php session_start();
+<?php session_start();
         if (!isset($_SESSION["nom_per"] ) ){
             header("Location:index.php");
         }
         require_once("funciones.php");
         $xc = conectar();
 
-        $sqlPersona = "SELECT p.nom_per, p.ape_per, p.id_per, a.nom_area, a.id_area FROM persona p INNER JOIN area a ON p.id_area = a.id_area";
+        $sqlPersona = "SELECT p.nom_per, p.ape_per, p.id_per, p.estado_per,a.nom_area, a.id_area FROM persona p INNER JOIN area a ON p.id_area = a.id_area";
         $resPersona = mysqli_query($xc,$sqlPersona);
         
         //$filaPersona = mysqli_fetch_array($resPersona);
         desconectar($xc);
     ?>
+<!DOCTYPE html>
+<html>
     <head>
         <meta charset="utf-8" />
         <title>Familia</title>
@@ -69,7 +69,7 @@
 
                         <div class="row">
                             <div class="col-6">
-                                <h4 class="m-t-0 header-title"><b>Hospedaje </b></h4>
+                                <h4 class="m-t-0 header-title"><b>Agregar Personal</b></h4>
                                 <p class="text-muted m-b-30 font-14"></p>
                             </div>
                         </div><!-- end row -->
@@ -87,35 +87,41 @@
                                         <div class="col-10">
                                         <select class="form-control" name="id_per">
                                             <option value="" selected>------------------------</option> 
-                                            <?php while ($filaPersona=mysqli_fetch_array($resPersona)){
+                                            <?php 
+                                            while ($filaPersona=mysqli_fetch_array($resPersona)){
                                                 $xid_per = $filaPersona["id_per"];
                                                 $xape_per = $filaPersona["ape_per"];
                                                 $xnom_per = $filaPersona["nom_per"];
-                                                
-                                                echo "<option value='$xid_per'>$xape_per $xnom_per</option>";
-                                            } ?>
-                                        </select>
+                                                $xestado_per = $filaPersona["estado_per"];
+                                                $xid_area = $filaPersona["id_area"];
+                                                if ($xestado_per == 1) {
+                                                    echo "<option value='$xid_per'>$xape_per $xnom_per</option>";
+                                                }
+                                            } 
+                                        ECHO "</select>";
+                                        ?>
+
                                         </div>
                                         </div>
 
                                         <div class="form-group row">
                                         <label class="col-2 col-form-label">Horas</label>
                                         <div class="col-10">
-                                            <input type="text" required=""  name="hor_tra_jor " id="hor_tra_jor " class="form-control">
+                                            <input type="text" required=""  name="hor_tra_jor " id="hor_tra_jor " class="form-control" placeholder="Horas de trabajo">
                                         </div>
                                         </div>
                                         
                                         <div class="form-group row">
-                                        <label class="col-2 col-form-label">Viaticos</label>
+                                        <label class="col-2 col-form-label">Viáticos</label>
                                         <div class="col-10">
-                                            <input type="text"  name="viat_jor " id="viat_jor " class="form-control" maxlength="12" required="">
+                                            <input type="text"  name="viat_jor " id="viat_jor " class="form-control" maxlength="12"  placeholder="Viáticos de la persona">
                                         </div>
                                         </div>
 
                                         <div class="form-group row">
                                         <label class="col-2 col-form-label">Sueldo</label>
                                         <div class="col-10">
-                                            <input type="number"  name="sueldo_jor " id="sueldo_jor " class="form-control" maxlength="12" required="">
+                                            <input type="number"  name="sueldo_jor " id="sueldo_jor " class="form-control" maxlength="12" required="" >
                                         </div>
                                         </div>
 

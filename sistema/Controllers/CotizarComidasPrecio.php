@@ -8,7 +8,7 @@
         $res = mysqli_query($xc,$sql);
         $fila = mysqli_fetch_array($res);
         $html = "<label>Costo por unidad</label>
-        <input class='form-control' type='text' value='$fila[0]' readonly='readonly'>";
+        <input class='form-control' type='text' value='$fila[0]' readonly='readonly' name='precio_comidas' id='precio_comidas' onchange='cal()' onkeyup='cal()' >";
 
         echo $html;
         desconectar($xc);

@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <?php session_start();
+<?php session_start();
         if (!isset($_SESSION["nom_per"] ) ){
             header("Location:index.php");
-        }         
+        }
         
         require_once("funciones.php");
         $xc = conectar();
@@ -11,7 +9,7 @@
         $sql = "SELECT * FROM hostal";
         $res = mysqli_query($xc,$sql);
 
-        $sqlTransporte = "SELECT * FROM transporte";
+        $sqlTransporte = "SELECT * FROM transporte LIMIT 5";
         $resTransporte = mysqli_query($xc,$sqlTransporte);
 
         $sqlComidas = "SELECT * FROM comidas";
@@ -22,7 +20,9 @@
 
 
         desconectar($xc);
-    ?>
+?>
+<!DOCTYPE html>
+<html>
     <head>
         <meta charset="utf-8" />
         <title>Familia</title>

@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <?php session_start();
+<?php session_start();
         if (!isset($_SESSION["nom_per"] ) ){
             header("Location:index.php");
         }         
@@ -15,6 +13,8 @@
         $res = mysqli_query($xc,$sql);
         desconectar($xc);
     ?>
+<!DOCTYPE html>
+<html>
     <head>
         <meta charset="utf-8" />
         <title>Familia</title>

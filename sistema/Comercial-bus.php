@@ -7,8 +7,6 @@
     $resBus = mysqli_query($xc,$sqlBus);
 
     desconectar($xc);
-
-
 ?>
 <!-- ============================================================== -->
 <!-- Start right Content here -->

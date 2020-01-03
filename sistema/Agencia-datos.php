@@ -1,17 +1,15 @@
+<?php require_once("funciones.php");
+    $xc = conectar();
+    
+    $sql = "SELECT *
+            FROM cliente
+            Where id_cliente = 1";
+    
+    $res = mysqli_query($xc,$sql);
+    desconectar($xc);
+?>
 <!DOCTYPE html>
 <html lang="en">
-
-<?php 
-            require_once("funciones.php");
-            $xc = conectar();
-            
-            $sql = "SELECT *
-                    FROM cliente
-                    Where id_cliente = 1";
-            
-            $res = mysqli_query($xc,$sql);
-            desconectar($xc);
-            ?>
     <head>
         <meta charset="utf-8" />
         <title>Familia</title>
