@@ -1,4 +1,5 @@
-<?php require_once("funciones.php");
+<?php require_once("Agencia-sesion.php");
+require_once("funciones.php");
     $xc = conectar();
 
     //Transporte Consultas

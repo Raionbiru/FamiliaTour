@@ -1,9 +1,9 @@
-<?php 
+<?php require_once("Agencia-sesion.php");
 require_once("funciones.php");
 $xc = conectar();
 
 
-$sql = "SELECT t.nom_tour, t.descp_tour, t.prec_tour
+$sql = "SELECT t.nom_tour, t.descp_tour, t.prec_tour, t.id_tour
         FROM tour t";
 
 $sql2 = "SELECT count(*)
@@ -139,7 +139,6 @@ desconectar($xc);
             </div>
             <!-- Top Bar End -->
 
-
             <!-- ========== Left Sidebar Start ========== -->
             <div class="left side-menu">
                 <div class="slimscroll-menu" id="remove-scroll">
@@ -219,35 +218,36 @@ desconectar($xc);
                     <!--    
                     <button onclick="window.location.href='Comercial-inserttour.php'" type="button" class="btn btn-sm btn-primary btn-rounded w-md waves-effect waves-light pull-right">Agregar Tours</button>-->
                         <h4 class="header-title m-b-30"><?PHP
-  // Obteniendo la fecha actual del sistema con PHP
-  $fechaActual = date('d-m-Y');
-   
-  echo $fechaActual;
+                        // Obteniendo la fecha actual del sistema con PHP
+                        $fechaActual = date('d-m-Y');
+                        
+                        echo $fechaActual;
 
-  while($fila=mysqli_fetch_array($res2)){
-    $xnom_tour = $fila[0];
+                        while($fila=mysqli_fetch_array($res2)){
+                            $xnom_tour = $fila[0];
 
-    echo " - Tours $xnom_tour";
-}
-?></h4>
+                            echo " - Tours $xnom_tour";
+                        }
+                        ?></h4>
 
                         <div class="row">
                         <?PHP  while($fila=mysqli_fetch_array($res)){
                                     $xnom_tour = $fila["nom_tour"];
                                     $xdescp_tour = $fila["descp_tour"];
                                     $xprec_tour = $fila["prec_tour"];
+                                    $xid_tour = $fila["id_tour"];
 
                                     echo "
                                         <div class='col-sm-4 col-lg-3 col-xs-12'>
-                                        <div class='card m-b-20'>
-                                            <img class='card-img-top img-fluid' src='assets/images/small/img-1.jpg' alt='Card image cap'>
-                                            <div class='card-block'>
-                                                <h4 class='card-title'>$xnom_tour</h4>
-                                                <p class='card-text'>$xdescp_tour</p>
-                                                <a href='Agencia-reserva.php' class='btn btn-primary'>Reservar</a>
+                                            <div class='card m-b-20'>
+                                                <img class='card-img-top img-fluid' src='assets/images/small/img-1.jpg' alt='Card image cap'>
+                                                <div class='card-block'>
+                                                    <h4 class='card-title'>$xnom_tour</h4>
+                                                    <p class='card-text'>$xdescp_tour</p>
+                                                    <a href='Agencia-reserva.php?tour=$xid_tour' class='btn btn-primary'>Reservar</a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
                                     ";
                                 }
                         ?>

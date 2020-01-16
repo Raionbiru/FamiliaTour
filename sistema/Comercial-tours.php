@@ -58,7 +58,7 @@ desconectar($xc);
                                             <img class='card-img-top img-fluid' src='assets/images/small/img-1.jpg' alt='Tour'>
                                             <div class='card-block'>
                                                 <h4 class='card-title'>$xnom_tour</h4>
-                                                <p class='card-text'>$xdescp_tour</p>
+                                                <p class='card-text'>".utf8_encode($xdescp_tour)."</p>
                                                 <a href='Comercial-tourEdit.php?id=$xid_tour' class='btn btn-info btn-bordered'>Actualizar</a>
                                                 <a href='Comercial-tourGrabar.php?id=$xid_tour&accion=eliminar' class='btn btn-danger btn-bordered'>Eliminar</a>
                                             </div>

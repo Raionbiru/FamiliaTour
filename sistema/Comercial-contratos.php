@@ -1,7 +1,11 @@
 <?php session_start();
-    if (!isset($_SESSION["nom_per"] ) ){
+    if (!isset($_SESSION["rol"])){
         header("Location:index.php");
-    }         
+    }else {
+        if ($_SESSION["rol"] != 1) {
+            header("Location:index.php");
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -88,7 +92,7 @@
                             <div>
                             <center>
                             <p style="text-align: justify, font: 14px/1.8 arial, helvetica, sans-serif;" class="m-b-0 col-10">
-                            El que suscribe, Encargado(a) de la Agencia <input type="text" style="border:none;border-bottom:1px solid #000;line-height:0.5em;">. Hace constar que el Tour <input type="text" style="border:none;border-bottom:1px solid #000;line-height:0.5em;">, con Clave <input type="text" style="border:none;border-bottom:1px solid #000;line-height:0.5em;">; concluyó sus actividades en la empresa <input type="text" style="border:none;border-bottom:1px solid #000;line-height:0.5em;">, de la ciudad de  <input type="text" style="border:none;border-bottom:1px solid #000;line-height:0.5em;">; con un costo de <input type="text" style="border:none;border-bottom:1px solid #000;line-height:0.5em;">.</p>
+                            El que suscribe, Encargado(a) de la Agencia <input type="text" style="border:none;border-bottom:1px solid #000;line-height:0.5em;" name="campo1" id="campo1" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">. Hace constar que el Tour <input type="text" style="border:none;border-bottom:1px solid #000;line-height:0.5em;" name="campo2" id="campo2" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">, con Clave <input type="text" style="border:none;border-bottom:1px solid #000;line-height:0.5em;" name="campo3" id="campo3" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">; concluyó sus actividades en la empresa <input type="text" style="border:none;border-bottom:1px solid #000;line-height:0.5em;" name="campo4" id="campo4" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">, de la ciudad de  <input type="text" style="border:none;border-bottom:1px solid #000;line-height:0.5em;" name="campo5" id="campo5" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">; con un costo de <input type="text" style="border:none;border-bottom:1px solid #000;line-height:0.5em;" name="campo6" id="campo6" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">.</p>
                             <br>
                             <p>
                             A petición del interesado, se expide el presente documento en la ciudad de Arequipa, Arequipa. A los 24 dias del mes de Diciembre de 2019.

@@ -1,6 +1,6 @@
 <?php require_once("Operaciones-header.php");
       require_once("funciones.php");
-a
+
         $xc = conectar();
 
         $sql = "SELECT * FROM hostal";

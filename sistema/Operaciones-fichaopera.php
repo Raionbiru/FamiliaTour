@@ -24,7 +24,7 @@
             </div>
         <!-- end row -->
 
-        
+       <!-- 
         <div class="row">
             <div class="col-md-12">
                 <div class="card-box">
@@ -74,8 +74,9 @@
                 </div>
 
             </div>
-        </div>
+        </div> -->
         <!--- end row -->
+        <?PHP require_once("page.php");?>
 
     </div> <!-- content -->
 

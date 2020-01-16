@@ -30,8 +30,8 @@
                     </div>
                 </div>
             </div>
-        <!-- end row -->
-
+            <!-- end row -->
+<!--
             <div class="row">
                 <div class="col-12">
                     <div class="card-box">
@@ -87,7 +87,10 @@
                     </div>
                 </div>
             </div>
-        <!-- end row -->
+                -->
+            <!-- end row -->
+
+            <?PHP require_once("page.php");?>
 
     </div> <!-- content -->
 

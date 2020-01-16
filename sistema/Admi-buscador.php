@@ -1,7 +1,4 @@
-<?php session_start();
-        if (!isset($_SESSION["nom_per"] ) ){
-            header("Location:index.php");
-        }         
+<?php require_once("Admi-sesion.php");         
         require_once("funciones.php");
         $xfec_ini=leerParam("fec_ini","");
         $xfec_fin=leerParam("fec_fin","");

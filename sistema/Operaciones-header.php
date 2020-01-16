@@ -1,7 +1,11 @@
 <?php session_start();
-    if (!isset($_SESSION["nom_per"] ) ){
+    if (!isset($_SESSION["rol"])){
         header("Location:index.php");
-    }         
+    }else {
+        if ($_SESSION["rol"] != 2) {
+            header("Location:index.php");
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>

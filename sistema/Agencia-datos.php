@@ -1,4 +1,5 @@
-<?php require_once("funciones.php");
+<?php require_once("Agencia-sesion.php");
+ require_once("funciones.php");
     $xc = conectar();
     
     $sql = "SELECT *
@@ -48,19 +49,6 @@
                 <div class="content">
                     <div class="container-fluid">
 
-                        <?php
-
-                        while($fila=mysqli_fetch_array($res)){
-                            $xnom_cliente = $fila["nom_cliente"];
-                            $xape_cliente = $fila["ape_cliente"];
-                            $xemail_cliente = $fila["email_cliente"];
-                            $xcel_cliente = $fila["cel_cliente"];
-                            $xempr_cliente = $fila["empr_cliente"];
-                            $xruc_empr_cliente = $fila["ruc_empr_cliente"];
-                            $xweb_empr_cliente = $fila["web_empr_cliente"];
-                            $xcod_cliente = $fila["cod_cliente"];
-
-                        echo "
                             <div class='row'>
                                 <div class='col-12'>
                                     <div class='page-title-box'>
@@ -89,9 +77,9 @@
                                             <div class='col-sm-6'>
                                                 <span class='pull-left m-r-15'><img src='assets/images/users/avatar-1.jpg' alt='' class='thumb-lg rounded-circle'></span>
                                                 <div class='media-body'>
-                                                    <h4 class='m-t-5 m-b-5 font-18 ellipsis'>$xnom_cliente</h4>
-                                                    <p class='font-13'> $xcod_cliente </p>
-                                                    <p class='text-muted m-b-0'><small>$xempr_cliente - $xruc_empr_cliente</small></p>
+                                                    <h4 class='m-t-5 m-b-5 font-18 ellipsis'><?PHP echo $_SESSION['nomCliente']." ".$_SESSION['apeCliente'];?></h4>
+                                                    <p class='font-13'> <?PHP echo $_SESSION['emailCliente']; ?> </p>
+                                                    <p class='text-muted m-b-0'><small> <?PHP echo $_SESSION['emprCliente']; ?> - $xruc_empr_cliente</small></p>
                                                 </div>
                                             </div>
                                             <div class='col-sm-6'>
@@ -116,13 +104,13 @@
                                         <h4 class='header-title mt-0 m-b-20'>INFORMACIÓN PERSONAL</h4>
                                         <div class='panel-body'>
                                             <p class='text-muted font-13'>
-                                                Hola, Yo soy $xnom_cliente $xape_cliente que reside en este hermoso mundo. Creo sitios web y aplicaciones móviles con un excelente diseño de UX y UI. He trabajado con grandes empresas como Nokia, Google y Yahoo.
+                                                Hola, Yo soy <?PHP echo $_SESSION['nomCliente']." ".$_SESSION['apeCliente'];?> que reside en este hermoso mundo. Creo sitios web y aplicaciones móviles con un excelente diseño de UX y UI. He trabajado con grandes empresas como Nokia, Google y Yahoo.
                                             </p>
 
                                             <hr/>
 
                                             <div class='text-left'>
-                                                <p class='text-muted font-13'><strong>Nombre Completo :</strong> <span class='m-l-15'>$xnom_cliente $xape_cliente</span></p>
+                                                <p class='text-muted font-13'><strong>Nombre Completo :</strong> <span class='m-l-15'><?PHP echo $_SESSION['nomCliente']." ".$_SESSION['apeCliente'];?></span></p>
 
                                                 <p class='text-muted font-13'><strong>Celular :</strong><span class='m-l-15'>(+51) $xcel_cliente</span></p>
 
@@ -137,9 +125,6 @@
 
                             </div>
                             <!-- end row -->
-                            ";
-                        }
-                        ?>
                     </div> <!-- container -->
 
                 </div> <!-- content -->

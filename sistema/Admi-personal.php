@@ -1,8 +1,4 @@
-<?php session_start();
-        if (!isset($_SESSION["nom_per"] ) ){
-            header("Location:index.php");
-        }         
-        
+<?php require_once("Admi-sesion.php");
         require_once("funciones.php");
         $xc = conectar();
         $sql = "SELECT j.id_jor, p.nom_per,p.ape_per, j.hor_tra_jor, a.nom_area, j.viat_jor,j.sueldo_jor,j.pago_variado_jor

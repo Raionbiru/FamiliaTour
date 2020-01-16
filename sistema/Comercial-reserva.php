@@ -185,17 +185,11 @@
                                             <div class="clearfix"></div>
                                         </div>
                                     </div>
-                                    <?PHP $numeroConCeros = str_pad($xtotal_hostal, 5, "0", STR_PAD_RIGHT);
-                                            for($i=0;$i<1;$i++) {
-                                                echo uniqid(), PHP_EOL;
-                                            }?>
+                                   
                                     <div class="hidden-print m-t-30 m-b-30">
                                         <div class="text-right">
                                             <a href="javascript:window.print()" class="btn btn-primary waves-effect waves-light"><i class="fa fa-print m-r-5"></i> Imprimir</a>
-                                            <a href="#" class="btn btn-custom waves-effect waves-light">Reservar</a>
-
-
-
+                                            <a href="Comercial-reservaEmail?email=johnn.condori@tecsup.edu.pe" class="btn btn-custom waves-effect waves-light">Reservar</a>
 
                                             <a href="#" class="btn btn-info waves-effect waves-light">Pagar</a>
                                             <input type="button" id="buyButton" value="COMPRAR" data-producto="Prueba Tour" data-precio="<?PHP echo $numeroConCeros;?>">
@@ -207,7 +201,6 @@
 
                         </div>
                         <!-- end row -->
-
 
                     </div> <!-- container -->
 

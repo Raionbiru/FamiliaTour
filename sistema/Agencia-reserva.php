@@ -1,12 +1,5 @@
-<?php require_once("funciones.php");
-$xc = conectar();
-
-$sql = "SELECT *
-        FROM cliente
-        Where id_cliente = 1";
-
-$res = mysqli_query($xc,$sql);
-desconectar($xc);
+<?php require_once("Agencia-sesion.php");
+require_once("funciones.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +40,27 @@ desconectar($xc);
 
             <?PHP 
             require_once("Agencia-header.php");
+
+            $xid_tour=leerParam("tour","");
+            $xc = conectar();
+            $sql = "SELECT
+                        p.id_prog,
+                        p.fec_prog,
+                        p.hora_prog,
+                        b.placa_bus,
+                        b.cap_bus,
+                        t.nom_tour
+                    FROM
+                        programacion p
+                    INNER JOIN bus b ON
+                        p.id_bus = b.id_bus
+                    INNER JOIN tour t ON
+                        p.id_tour = t.id_tour
+                    WHERE
+                        p.id_tour = '$xid_tour'";
+            $res = mysqli_query($xc,$sql);
+            desconectar($xc);
+            
             ?>
             <!-- ============================================================== -->
             <!-- Start right Content here -->
@@ -74,6 +88,44 @@ desconectar($xc);
                         <!-- end row -->
 
                         <div class="row">
+
+                            <?PHP while($fila=mysqli_fetch_array($res)){
+                                        $xnom_tour = $fila["nom_tour"];
+                                        $xcap_bus = $fila["cap_bus"];
+                                        $xplaca_bus = $fila["placa_bus"];
+                                        $xhora_prog = $fila["hora_prog"];
+                                        $xfec_prog = $fila["fec_prog"];
+
+                                            echo "
+                                                <div class='col-md-4'>
+                                                <div class='text-center card-box'>
+                                                    <div class='clearfix'></div>
+                                                    <div class='member-card'>
+                                                        <div class='thumb-xl member-thumb m-b-10 mx-auto'>
+                                                            <img src='https://cdn.londonandpartners.com/asset/hop-on-hop-off-bus-tour-24-or-48-hour-ticket-631fec6ecdee1c2f174a2165f27beb0a.jpg' class='rounded-circle img-thumbnail' alt='profile-image'>
+                                                            <i class='mdi mdi-star-circle member-star text-success' title='verified user'></i>
+                                                        </div>
+                
+                                                        <div class=''>
+                                                            <h4 class='m-b-5'>$xnom_tour</h4>
+                                                            <p class='text-muted'>Capacidad $xcap_bus asientos <span> | </span> <span> <a href='#asiento-modal' data-animation='fadein' data-plugin='custommodal' data-overlaySpeed='200' data-overlayColor='#36404a' class='text-pink'>seleccionar asientos</a> </span></p>
+                                                        </div>
+                
+                                                        <p class='text-muted font-13'>
+                                                            Asientos Disponibles: 15 Asientos
+                                                            <br>
+                                                            Hora de Salida: $xhora_prog
+                                                            Fecha de Salida: $xfec_prog
+                                                        </p>
+                                                        
+                                                        <button type='button' href='#custom-modal' class='btn btn-primary m-t-20 btn-rounded btn-bordered waves-effect w-md waves-light' data-animation='fadein' data-plugin='custommodal' data-overlaySpeed='200' data-overlayColor='#36404a'><i class='md md-add'></i>Reservar</button>
+                                                    </div>
+                                                </div>
+                                                </div> <!-- end col -->
+                                            ";
+                                    }
+                                ?>
+                            
                             <div class="col-md-4">
                                 <div class="text-center card-box">
                                     <div class="clearfix"></div>
@@ -94,72 +146,11 @@ desconectar($xc);
                                             Hora de Salida: 10:00
                                         </p>
                                         
-
                                         <button type="button" href="#custom-modal" class="btn btn-primary m-t-20 btn-rounded btn-bordered waves-effect w-md waves-light" data-animation="fadein" data-plugin="custommodal" data-overlaySpeed="200" data-overlayColor="#36404a"><i class="md md-add"></i>Reservar</button>
-
                                     </div>
-
                                 </div>
-
                             </div> <!-- end col -->
 
-                            <div class="col-md-4">
-                                <div class="text-center card-box">
-                                    <div class="clearfix"></div>
-                                    <div class="member-card">
-                                        <div class="thumb-xl member-thumb m-b-10 mx-auto">
-                                            <img src="https://cdn.londonandpartners.com/asset/hop-on-hop-off-bus-tour-24-or-48-hour-ticket-631fec6ecdee1c2f174a2165f27beb0a.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
-                                            <i class="mdi mdi-star-circle member-star text-success" title="verified user"></i>
-                                        </div>
-
-                                        <div class="">
-                                            <h4 class="m-b-5">Tour B</h4>
-                                            <p class="text-muted">Capacidad 35 asientos <span> | </span> <span> <a href="#asiento-modal" data-animation="fadein" data-plugin="custommodal" data-overlaySpeed="200" data-overlayColor="#36404a" class="text-pink">seleccionar asientos</a> </span></p>
-                                        </div>
-
-                                        <p class="text-muted font-13">
-                                            Asientos Disponibles: 15 Asientos
-                                            <br>
-                                            Hora de Salida: 16:30
-                                        </p>
-                                        
-
-                                        <button type="button" href="#custom-modal" class="btn btn-primary m-t-20 btn-rounded btn-bordered waves-effect w-md waves-light" data-animation="fadein" data-plugin="custommodal" data-overlaySpeed="200" data-overlayColor="#36404a"><i class="md md-add"></i>Reservar</button>
-
-                                    </div>
-
-                                </div>
-
-                            </div> <!-- end col -->
-
-                            <div class="col-md-4">
-                                <div class="text-center card-box">
-                                    <div class="clearfix"></div>
-                                    <div class="member-card">
-                                        <div class="thumb-xl member-thumb m-b-10 mx-auto">
-                                            <img src="https://cdn.londonandpartners.com/asset/hop-on-hop-off-bus-tour-24-or-48-hour-ticket-631fec6ecdee1c2f174a2165f27beb0a.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
-                                            <i class="mdi mdi-star-circle member-star text-success" title="verified user"></i>
-                                        </div>
-
-                                        <div class="">
-                                            <h4 class="m-b-5">Tour C</h4>
-                                            <p class="text-muted">Capacidad 35 asientos <span> | </span> <span> <a href="#asiento-modal" data-animation="fadein" data-plugin="custommodal" data-overlaySpeed="200" data-overlayColor="#36404a" class="text-pink">seleccionar asientos</a> </span></p>
-                                        </div>
-
-                                        <p class="text-muted font-13">
-                                            Asientos Disponibles: 30 Asientos
-                                            <br>
-                                            Hora de Salida: 18:30
-                                        </p>
-                                        
-
-                                        <button type="button" href="#custom-modal" class="btn btn-primary m-t-20 btn-rounded btn-bordered waves-effect w-md waves-light" data-animation="fadein" data-plugin="custommodal" data-overlaySpeed="200" data-overlayColor="#36404a"><i class="md md-add"></i>Reservar</button>
-
-                                    </div>
-
-                                </div>
-
-                            </div> <!-- end col -->
                         </div>
                         <!-- end row -->
 

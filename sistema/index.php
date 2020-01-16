@@ -1,4 +1,23 @@
-<?php require_once("funciones.php");?>
+<?php session_start();
+    if (isset($_SESSION["rol"])){
+        switch ($_SESSION["rol"]) {
+            case 1:
+                header("Location: Comercial.php");
+                break;
+            case 2:
+                header("Location: Operaciones.php");
+                break;
+            case 3:
+                header("Location: Admi.php");
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+    }
+
+require_once("funciones.php");?>
 <!DOCTYPE html>
 <html>
     <head>

@@ -1,7 +1,4 @@
-﻿<?php session_start();
-    if (!isset($_SESSION["nom_per"] ) ){
-        header("Location:index.php");
-    }         
+﻿<?php require_once("Comercial-sesion.php");        
 ?>
 <!DOCTYPE html>
 <html>
@@ -71,33 +68,41 @@
             </div>
             <!-- end row -->
 
-            <?php 
-            echo"
+            <!-- AGREGAR PROGRAMACION-->
             <div class='row'>
                 <div class='col-sm-12'>
                     <div class='card-box'>
-                        <form class='row justify-content-center' method='post' action='Comercial-programa.php'>
-                        <label class='col-1 col-form-label'>Desde: </label>
-                        <div class='col-3'>
-                            <div class='input-group'>
-                                <input type='date'  name='fec_ini' id='fec_ini' class='form-control'>
+                    <button onclick="window.location.href='Comercial-programaAdd.php'" type="button" class="btn btn-sm btn-primary btn-rounded w-md waves-effect waves-light pull-right">Agregar Programación</button>
+                    <h4 class="m-b-30 m-t-0 header-title"><b>Programación del día</b></h4>
+
+                    </div>
+                </div>
+            </div> <!-- end row -->
+    
+            <div class='row'>
+                <div class='col-sm-12'>
+                    <div class='card-box'>
+                        <div class='row justify-content-center'>
+                            <label class='col-1 col-form-label'>Desde: </label>
+                            <div class='col-3'>
+                                <div class='input-group'>
+                                    <input type='date'  name='fec_ini' id='fec_ini' class='form-control'>
+                                </div>
+                            </div>
+                            <label class='col-1 col-form-label'>Hasta: </label>
+                            <div class='col-4'>
+                                <div class='input-group'>
+                                    <input type='date' name='fec_fin' id='fec_fin' class='form-control'>
+                                    <button class='btn waves-effect waves-light btn-primary' type='submit' id="btPrueba" name="btPrueba"> Buscar</button>
+                                </div>
                             </div>
                         </div>
-                        <label class='col-1 col-form-label'>Hasta: </label>
-                        <div class='col-4'>
-                            <div class='input-group'>
-                                <input type='date' name='fec_fin' id='fec_fin' class='form-control'>
-                                <button class='btn waves-effect waves-light btn-primary' type='submit'> Buscar</button>
-                            </div>
-                        </div>
-                        </form>
                         <br/>
 
-                        <h4 class='m-t-0 header-title'><b>SEMANA DEL </b> $xfec_ini <b>AL</b>   $xfec_fin</b></h4>
-                        <p class='text-muted font-14'>
-                        </p>
+                        <h4 class='m-t-0 header-title'><b>SEMANA DEL </b> _______ <b>AL</b> _______</b></h4>
+                        <p class='text-muted font-14'></p>
 
-                        <table class='tablesaw table m-b-0' data-tablesaw-mode='swipe' id='table-2555   '>
+                        <table class='tablesaw table m-b-0' data-tablesaw-mode='swipe' id='table-2555'>
                             <thead>
                             <tr>
                                 <th class='title' scope='col' data-tablesaw-sortable-col data-tablesaw-priority='persist'>Día y Fecha</th>
@@ -105,135 +110,122 @@
                                 <th scope='col' data-tablesaw-sortable-col data-tablesaw-priority='2'>Placa Bus</th>
                             </tr>
                             </thead>
-                            <tbody>";
+                            <tbody id="resPRueba" name="resPRueba">
 
-                            while($fila=mysqli_fetch_array($resProgramacion)){
-                                        $xfec_prog = $fila["fec_prog"];
-                                        $xhora_prog = $fila["hora_prog"];
-                                        $xplaca_bus = $fila["placa_bus"];
-
-                                        echo " 
-                                    <tr>
-                                        <td>$xfec_prog</td>
-                                        <td>$xhora_prog</td>
-                                        <td>$xplaca_bus</td>
-                                    </tr>";
-                                };
-                    
-            echo "                           
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
+                </div>
+            </div>
+            
+            <!-- PENDIENTE
+            <div class='row'>
+                <div class='col-sm-8'>
+                    <div class='card-box'>
+                        <table class='tablesaw table m-b-0' data-tablesaw-mode='swipe' id='table-2555   '>
+                            <thead>
+                            <tr>
+                                <th class='title' scope='col' data-tablesaw-sortable-col data-tablesaw-priority='persist'># Cliente</th>
+                                <th scope='col' data-tablesaw-sortable-col data-tablesaw-sortable-default-col data-tablesaw-priority='3'>Nombre Cliente</th>
+                                <th scope='col' data-tablesaw-sortable-col data-tablesaw-priority='2'>Tipo</th>
+                                <th scope='col' data-tablesaw-sortable-col data-tablesaw-priority='2'>Funcion</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Avatar</td>
+                                <td>2009</td>
+                                <td>83%</td>
+                                <td>1997</td>
+                            </tr>
+                            <tr>
+                                <td>Titanic</td>
+                                <td>1997</td>
+                                <td>88%</td>
+                                <td>2009</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
-                    <div class='row'>
-                        <div class='col-sm-8'>
-                            <div class='card-box'>
-                                <table class='tablesaw table m-b-0' data-tablesaw-mode='swipe' id='table-2555   '>
-                                    <thead>
-                                    <tr>
-                                        <th class='title' scope='col' data-tablesaw-sortable-col data-tablesaw-priority='persist'># Cliente</th>
-                                        <th scope='col' data-tablesaw-sortable-col data-tablesaw-sortable-default-col data-tablesaw-priority='3'>Nombre Cliente</th>
-                                        <th scope='col' data-tablesaw-sortable-col data-tablesaw-priority='2'>Tipo</th>
-                                        <th scope='col' data-tablesaw-sortable-col data-tablesaw-priority='2'>Funcion</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Avatar</td>
-                                        <td>2009</td>
-                                        <td>83%</td>
-                                        <td>1997</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Titanic</td>
-                                        <td>1997</td>
-                                        <td>88%</td>
-                                        <td>2009</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                <div class='col-sm-4'>
+                    <div class='card-box'>
+                        <h4 class='m-t-0 header-title'><b> Estado </b></h4>
+                        <table class='tablesaw table m-b-0' data-tablesaw-mode='swipe' id='table-2555'>
+                            <thead>
+                            <tr>
+                                <th class='title' scope='col' data-tablesaw-sortable-col data-tablesaw-priority='persist'>Visita</th>
+                                <th scope='col' data-tablesaw-sortable-col data-tablesaw-sortable-default-col data-tablesaw-priority='3'>Persona</th>
+                                <th scope='col' data-tablesaw-sortable-col data-tablesaw-priority='2'>Contrato</th>
+                                <th scope='col' data-tablesaw-sortable-col data-tablesaw-priority='2'>Estado</th>
+                            </tr>
+                            </thead>
+                            <tbody>
 
-                        <div class='col-sm-4'>
-                            <div class='card-box'>
-                                <h4 class='m-t-0 header-title'><b> Estado </b></h4>
-                                <table class='tablesaw table m-b-0' data-tablesaw-mode='swipe' id='table-2555'>
-                                    <thead>
-                                    <tr>
-                                        <th class='title' scope='col' data-tablesaw-sortable-col data-tablesaw-priority='persist'>Visita</th>
-                                        <th scope='col' data-tablesaw-sortable-col data-tablesaw-sortable-default-col data-tablesaw-priority='3'>Persona</th>
-                                        <th scope='col' data-tablesaw-sortable-col data-tablesaw-priority='2'>Contrato</th>
-                                        <th scope='col' data-tablesaw-sortable-col data-tablesaw-priority='2'>Estado</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
+                            <tr>
+                                <td>
+                                    <div class='checkbox checkbox-primary checkbox-single'>
+                                    <input type='checkbox' id='singleCheckbox2' value='option2' checked>
+                                    <label></label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class='checkbox checkbox-primary checkbox-single'>
+                                    <input type='checkbox' id='singleCheckbox2' value='option2' checked>
+                                    <label></label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class='checkbox checkbox-primary checkbox-single'>
+                                    <input type='checkbox' id='singleCheckbox2' value='option2' checked>
+                                    <label></label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class='checkbox checkbox-primary checkbox-single'>
+                                    <input type='checkbox' id='singleCheckbox2' value='option2' checked>
+                                    <label></label>
+                                    </div>
+                                </td>
+                            </tr>
 
-                                    <tr>
-                                        <td>
-                                            <div class='checkbox checkbox-primary checkbox-single'>
-                                            <input type='checkbox' id='singleCheckbox2' value='option2' checked>
-                                            <label></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class='checkbox checkbox-primary checkbox-single'>
-                                            <input type='checkbox' id='singleCheckbox2' value='option2' checked>
-                                            <label></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class='checkbox checkbox-primary checkbox-single'>
-                                            <input type='checkbox' id='singleCheckbox2' value='option2' checked>
-                                            <label></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class='checkbox checkbox-primary checkbox-single'>
-                                            <input type='checkbox' id='singleCheckbox2' value='option2' checked>
-                                            <label></label>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class='checkbox checkbox-primary checkbox-single'>
-                                            <input type='checkbox' id='singleCheckbox2' value='option2' checked>
-                                            <label></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class='checkbox checkbox-primary checkbox-single'>
-                                            <input type='checkbox' id='singleCheckbox2' value='option2' checked>
-                                            <label></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class='checkbox checkbox-primary checkbox-single'>
-                                            <input type='checkbox' id='singleCheckbox2' value='option2' checked>
-                                            <label></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class='checkbox checkbox-primary checkbox-single'>
-                                            <input type='checkbox' id='singleCheckbox2' value='option2' checked>
-                                            <label></label>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div> <!-- end row -->";
-            ?>
+                            <tr>
+                                <td>
+                                    <div class='checkbox checkbox-primary checkbox-single'>
+                                    <input type='checkbox' id='singleCheckbox2' value='option2' checked>
+                                    <label></label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class='checkbox checkbox-primary checkbox-single'>
+                                    <input type='checkbox' id='singleCheckbox2' value='option2' checked>
+                                    <label></label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class='checkbox checkbox-primary checkbox-single'>
+                                    <input type='checkbox' id='singleCheckbox2' value='option2' checked>
+                                    <label></label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class='checkbox checkbox-primary checkbox-single'>
+                                    <input type='checkbox' id='singleCheckbox2' value='option2' checked>
+                                    <label></label>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div> --><!-- end row -->
 
         </div> <!-- container -->
 
     </div> <!-- content -->
+
 
     <div class="content">
         <div class="container-fluid">
@@ -242,7 +234,7 @@
 
                     <div class="card-box">
                         <div class="row">
-<!--
+                           <!--
                             <div class="col-md-3">
                                 <a href="#" data-toggle="modal" data-target="#add-category" class="btn btn-lg btn-primary btn-block waves-effect m-t-20 waves-light">
                                     <i class="fa fa-plus"></i> Create New
@@ -342,57 +334,9 @@
 
     </div> <!-- content -->
 
-
-
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <form action="">
-                        <div class="form-group">
-                        <label for="">Uno</label>
-                        <input type="text" id="nm">
-                        </div>
-                        <div class="form-group">
-                        <label for="dd">Dos</label>
-                        <input type="text" id="dd">
-                        </div>
-                        <div class="form-group">
-                        <label for="dt">Tres</label>
-                        <input type="text" id="dt">
-                        </div>
-
-                        <button type="submit" onclick="alternativo()" class="btn btn-primary">Prueba</button>
-                    </form>
-                </div><!-- end col-12 -->
-
-                <div class="col-lg-12">
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th width="40">ID</th>
-                                <th>Uno</th>
-                                <th>Dos</th>
-                                <th>Tres</th>
-                                <th width="80">Accion</th>
-                            </tr>
-                        </thead>
-                        <tbody  onload="verdata()">
-                        </tbody>
-                    </table>
-                </div><!-- end col-12 -->
-
-            </div> <!-- end row -->
-
-        </div> <!-- container -->
-
-    </div> <!-- content -->
-
-
     <footer class="footer text-right">
         2019 © INSIZIO
     </footer>
-
 </div>
 <!-- ============================================================== -->
 <!-- End Right content here -->
@@ -420,5 +364,27 @@
         <script src="assets/js/jquery.core.js"></script>
         <script src="assets/js/jquery.app.js"></script>
 
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#btPrueba").click( function() {
+                    buscarFecha();
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            //Funciones de Hotel
+            function buscarFecha(){
+                var fec_ini = $('#fec_ini').val();
+                var fec_fin = $('#fec_fin').val();
+                $.ajax({
+                    type:"POST",
+                    url :"Controllers/BuscarFecha.php",
+                    data:"fec_ini="+fec_ini + "&fec_fin="+fec_fin,
+                    success:function(r){
+                        $('#resPRueba').html(r);
+                    }
+                });
+            };
+        </script>
     </body>
 </html>

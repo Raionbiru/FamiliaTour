@@ -33,16 +33,28 @@ if ( $xcanPersona > 0 ) {
         switch ($xid_area) {
             case '1':
                 header("Location: Comercial.php");
+                session_start();
+                $_SESSION["nomComercial"]=$filaPersonaConsulta["nom_per"];
+                $_SESSION["apeComercial"]=$filaPersonaConsulta["ape_per"];
+                $_SESSION["rol"]=$xid_area;
                 desconectar($xc);
                 break;
             
             case '2':
                 header("Location: Operaciones.php");
+                session_start();
+                $_SESSION["nomOperaciones"]=$filaPersonaConsulta["nom_per"];
+                $_SESSION["apeOperaciones"]=$filaPersonaConsulta["ape_per"];
+                $_SESSION["rol"]=$xid_area;
                 desconectar($xc);
                 break;
             
             case '3':
                 header("Location: Admi.php");
+                session_start();
+                $_SESSION["nomAdministrador"]=$filaPersonaConsulta["nom_per"];
+                $_SESSION["apeAdministrador"]=$filaPersonaConsulta["ape_per"];
+                $_SESSION["rol"]=$xid_area;
                 desconectar($xc);
                 break;
             
@@ -69,6 +81,13 @@ if ( $xcanPersona > 0 ) {
         desconectar($xc);	
     }else{
         header("Location: Agencia.php");
+        session_start();
+                $_SESSION["nomCliente"]=$filaClienteConsulta["nom_cliente"];
+                $_SESSION["apeCliente"]=$filaClienteConsulta["ape_cliente"];
+                $_SESSION["emailCliente"]=$filaClienteConsulta["email_cliente"];
+                $_SESSION["emprCliente"]=$filaClienteConsulta["empr_cliente"];
+                $_SESSION["estadoCliente"]=$xestadoCliente;
+                $_SESSION["idCliente"]=$filaClienteConsulta["id_cliente"];
         desconectar($xc);
     }
     

@@ -1,65 +1,22 @@
-<?php /*require_once("funciones.php");
+<?php require_once("funciones.php");
 
 $xaccion=leerParam("accion","");
-$xid=leerParam("id","");
-
-$xusuario=leerParam("usuario","");
-$xrespuesta=leerParam("respuesta","");
-
-echo $xusuario   $xrespuesta;
-
-if ($xusuario == "Johnn") {
-    $xc = conectar();
-    $sql = "INSERT INTO test (uno_test) VALUES ('$xrespuesta')";
-    mysqli_query($xc,$sql);
-    desconectar($xc);
-}
 
 if ($xaccion=="crear") {
 
-    $xnom_tour=leerParam("nom_tour","");
-    $xprec_tour=leerParam("prec_tour","");
-    $xdescp_tour=leerParam("descp_tour","");
+    $xfec_prog=leerParam("fec_prog","");
+    $xhora_prog=leerParam("hora_prog","");
+    $xid_tour=leerParam("id_tour","");
+    $xid_bus=leerParam("id_bus","");
 
     $xc = conectar();
-    $sql = "INSERT INTO tour (nom_tour,prec_tour,descp_tour) VALUES ('$xnom_tour','$xprec_tour','$xdescp_tour')";
+    $sql = "INSERT INTO programacion (fec_prog, hora_prog, id_tour, id_bus ) VALUES ('$xfec_prog','$xhora_prog','$xid_tour', '$xid_bus')";
     mysqli_query($xc,$sql);
 
-    $id_insert = mysqli_insert_id($xc);
-    if ($_FILES["archivo"]["error"] > 0) {
-        echo"Error al cargar el archivo";
-    }else {
-        $permitidos = array("image/gif", "image/png", "image/jpg");
-        $limite_kb = 200;
-        if (in_array($_FILES["archivo"]["type"], $permitidos) && $_FILES["archivo"]["size"] <= $limite_kb * 1024) {
-            $ruta = 'assets/images/'.$id_insert.'/';
-            $archivo = $ruta.$_FILES["archivo"]["name"];
-
-            if (!file_exists($ruta)) {
-                mkdir($ruta);
-            }
-
-            if (!file_exists($archivo)) {
-                $resultado = @move_uploaded_file($_FILES["archivo"]["tmp_name"],$archivo);
-
-                if ($resultado) {
-                    echo "Archivo guardado.";
-                }else{
-                    echo "Error al guardar el archivo.";
-                }
-            }else {
-                echo "Archivo ya existe.";
-            }
-        }else{
-            echo "Archivo no permitido o excede el tamaño.";
-        }
-    }
-
     desconectar($xc);
-    header("Location: Comercial-tours.php");
+    header("Location: Comercial-programa.php");
 
 }elseif ($xaccion=="editar") {
-
     $xnom_tour=leerParam("nom_tour","");
     $xprec_tour=leerParam("prec_tour","");
     $xdescp_tour=leerParam("descp_tour","");
@@ -78,9 +35,9 @@ if ($xaccion=="crear") {
     desconectar($xc);
     header("Location: Comercial-tours.php");
 
-}*/
+}
 
-
+/*
 require_once("funciones.php");
 
 $page = leerParam("p","");
@@ -119,5 +76,5 @@ if ($page == "add") {
             <?php
     }
     desconectar($xc);
-}
+}*/
 ?>

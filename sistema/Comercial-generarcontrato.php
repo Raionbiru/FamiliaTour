@@ -2,19 +2,31 @@
 
 require("funciones.php");
 
-$ruc = leerParam("ruc","");
-$electronica = leerParam("electronica","");
-$registro = leerParam("registro","");
-$domicilio = leerParam("domicilio","");
-$gerente = leerParam("gerente","");
-$dni = leerParam("dni","");
-$asiento = leerParam("asiento","");
-$ruc2 = leerParam("ruc2","");
-$partida = leerParam("partida","");
-$registro2 = leerParam("registro2","");
-$domicilio2 = leerParam("domicilio2","");
-$dni2 = leerParam("dni2","");
-$asiento2 = leerParam("asiento2","");
+$campo1 = leerParam("campo1","");
+$campo2 = leerParam("campo2","");
+$campo3 = leerParam("campo3","");
+$campo4 = leerParam("campo4","");
+$campo5 = leerParam("campo5","");
+$campo6 = leerParam("campo6","");
+
+if(empty($campo1)) {
+    $campo1 = "_____________";
+}
+if(empty($campo2)) {
+    $campo2 = "_____________";
+}
+if(empty($campo3)) {
+    $campo3 = "_____________";
+}
+if(empty($campo4)) {
+    $campo4 = "_____________";
+}
+if(empty($campo5)) {
+    $campo5 = "_____________";
+}
+if(empty($campo6)) {
+    $campo6 = "_____________";
+}
 
 $tipo = leerParam("tipo","");
 
@@ -151,8 +163,9 @@ if ($tipo=="pdf") {
         $pdf->Ln(20);
         
         $pdf->SetFont('Arial','',11);
+
         //$pdf->MultiCell(177,6, utf8_decode('El que suscribe, Encargado(a) del Departamento de Titulación del CECyTE. Hace constar que el (a) C. '.utf8_decode($fila['nombre']).', con Clave ').utf8_decode($fila['clave_emp']). utf8_decode('; concluyó sus actividades en la empresa ').utf8_decode($fila['empresa'].', de la ciudad de  '.$fila['ciudad']). utf8_decode('; con un salario base de ').utf8_decode($fila['salario_base']) ,0,'J');
-        $pdf->MultiCell(177,6, utf8_decode('El que suscribe, Encargado(a) de la Agencia '.utf8_decode('_____________').'. Hace constar que el Tour '.utf8_decode('_____________').', con Clave ').utf8_decode('_____________'). utf8_decode('; concluyó sus actividades en la empresa ').utf8_decode('_____________'.', de la ciudad de  '.'_____________'). utf8_decode('; con un costo de ').utf8_decode('_____________.') ,0,'J');
+        $pdf->MultiCell(177,6, utf8_decode('El que suscribe, Encargado(a) de la Agencia '.utf8_decode($campo1).'. Hace constar que el Tour '.utf8_decode($campo2).', con Clave ').utf8_decode($campo3). utf8_decode('; concluyó sus actividades en la empresa ').utf8_decode($campo4.', de la ciudad de  '.$campo5). utf8_decode('; con un costo de ').utf8_decode($campo6.'.') ,0,'J');
         
         $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
         $pdf->Ln(8);
@@ -328,7 +341,7 @@ if ($tipo=="pdf") {
         
         $pdf->SetFont('Arial','',11);
         //$pdf->MultiCell(177,6, utf8_decode('El que suscribe, Encargado(a) del Departamento de Titulación del CECyTE. Hace constar que el (a) C. '.utf8_decode($fila['nombre']).', con Clave ').utf8_decode($fila['clave_emp']). utf8_decode('; concluyó sus actividades en la empresa ').utf8_decode($fila['empresa'].', de la ciudad de  '.$fila['ciudad']). utf8_decode('; con un salario base de ').utf8_decode($fila['salario_base']) ,0,'J');
-        $pdf->MultiCell(177,6, utf8_decode('El que suscribe, Encargado(a) de la Agencia '.utf8_decode('_____________').'. Hace constar que el Tour '.utf8_decode('_____________').', con Clave ').utf8_decode('_____________'). utf8_decode('; concluyó sus actividades en la empresa ').utf8_decode('_____________'.', de la ciudad de  '.'_____________'). utf8_decode('; con un costo de ').utf8_decode('_____________.') ,0,'J');
+        $pdf->MultiCell(177,6, utf8_decode('El que suscribe, Encargado(a) de la Agencia '.utf8_decode($campo1).'. Hace constar que el Tour '.utf8_decode($campo2).', con Clave ').utf8_decode($campo3). utf8_decode('; concluyó sus actividades en la empresa ').utf8_decode($campo4.', de la ciudad de  '.$campo5). utf8_decode('; con un costo de ').utf8_decode($campo6.'.') ,0,'J');
         
         $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
         $pdf->Ln(8);

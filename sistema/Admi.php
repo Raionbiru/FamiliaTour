@@ -1,7 +1,4 @@
-<?php session_start();
-    if (!isset($_SESSION["nom_per"] ) ){
-        header("Location:index.php");
-    }
+<?php require_once("Admi-sesion.php");
     require_once("funciones.php");
 ?>
 <!DOCTYPE html>
@@ -53,6 +50,111 @@
                         <div class="clearfix"></div>
                     </div>
                 </div>
+            </div>
+            <!-- end row -->
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card-box">
+                        <div class="text-center">
+                            <h3 class="m-b-30 m-t-20">Familia Viajera Tour</h3>
+                            <p>
+                            Como parte de nuestro esfuerzo cotidiano de transparencia y comunicación constante con nuestras comunidades, les damos la bienvenida a nuestro portal, el cual permite conocer aspectos importantes de nuestra empresa y su desempeño, pero principalmente, significa un canal abierto para recibir comentarios y sugerencias que enriquezcan nuestra diaria labor.
+                            </p>
+                        </div>
+
+                        <div class="m-t-50 p-t-10">
+                            <h4 class="text-uppercase font-18">¿qué desea hacer?</h4>
+                            <div class="border m-b-30"></div>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="about-features-box text-center">
+                                        <a href="Admi-pago-mensual.php">
+                                            <div class="feature-icon bg-primary">
+                                                <i class="dripicons-checklist"></i>
+                                            </div>
+                                            <h4 class="font-18">Pagos Mensuales</h4>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <div class="about-features-box text-center">
+                                        <a href="Admi-accesousuario.php">
+                                            <div class="feature-icon bg-info">
+                                                <i class="dripicons-user-id"></i>
+                                            </div>
+                                            <h4 class="font-18">Acceso Agencia</h4>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <div class="about-features-box text-center">
+                                        <a href="Admi-registro.php">
+                                            <div class="feature-icon bg-purple">
+                                                <i class="dripicons-user-group"></i>
+                                            </div>
+                                            <h4 class="font-18">Acceso Personal</h4>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <div class="about-features-box text-center">
+                                        <a href="Admi-cotizador.php">
+                                            <div class="feature-icon bg-purple">
+                                                <i class="dripicons-view-apps"></i>
+                                            </div>
+                                            <h4 class="font-18">Cotizador</h4>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- end row -->
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="about-features-box text-center">
+                                        <a href="Admi-proveedores.php">
+                                            <div class="feature-icon bg-custom">
+                                                <i class="dripicons-graph-pie"></i>
+                                            </div>
+                                            <h4 class="font-18">Proveedores</h4>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="about-features-box text-center">
+                                        <a href="Admi-ventas.php">
+                                            <div class="feature-icon bg-muted">
+                                                <i class="dripicons-jewel"></i>
+                                            </div>
+                                            <h4 class="font-18">Resumen de ventas</h4>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="about-features-box text-center">
+                                        <a href="Admi-personal.php">
+                                            <div class="feature-icon bg-success">
+                                                <i class="dripicons-pamphlet"></i>
+                                            </div>
+                                            <h4 class="font-18">Personal</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end row -->
+                        </div>
+                        <!-- end services -->
+
+                    </div> <!-- end p-20 -->
+                </div> <!-- end col -->
             </div>
             <!-- end row -->
 
