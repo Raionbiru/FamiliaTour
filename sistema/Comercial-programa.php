@@ -23,6 +23,27 @@
         <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
 
         <script src="assets/js/modernizr.min.js"></script>
+        <style>
+            
+            .pulse-button {  
+                animation-name: pulse_animation;
+                animation-duration: 5000ms;
+                transform-origin:70% 70%;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+
+            @keyframes pulse_animation {
+                0% { transform: scale(1); }
+                30% { transform: scale(1); }
+                40% { transform: scale(1.08); }
+                50% { transform: scale(1); }
+                60% { transform: scale(1); }
+                70% { transform: scale(1.05); }
+                80% { transform: scale(1); }
+                100% { transform: scale(1); }
+            }
+        </style>
 
     </head>
 
@@ -72,7 +93,7 @@
             <div class='row'>
                 <div class='col-sm-12'>
                     <div class='card-box'>
-                    <button onclick="window.location.href='Comercial-programaAdd.php'" type="button" class="btn btn-sm btn-primary btn-rounded w-md waves-effect waves-light pull-right">Agregar Programación</button>
+                    <button onclick="window.location.href='Comercial-programaAdd.php'" type="button" class="btn btn-sm btn-primary btn-rounded w-md waves-effect waves-light pull-right pulse-button">Agregar Programación</button>
                     <h4 class="m-b-30 m-t-0 header-title"><b>Programación del día</b></h4>
 
                     </div>
@@ -226,53 +247,53 @@
 
     </div> <!-- content -->
 
-
+<!-- CALENDARIO
     <div class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
 
                     <div class="card-box">
-                        <div class="row">
-                           <!--
-                            <div class="col-md-3">
-                                <a href="#" data-toggle="modal" data-target="#add-category" class="btn btn-lg btn-primary btn-block waves-effect m-t-20 waves-light">
-                                    <i class="fa fa-plus"></i> Create New
-                                </a>
-                                <div id="external-events" class="m-t-20">
-                                    <br>
-                                    <p class="text-muted">Drag and drop your event or click in the calendar</p>
-                                    <div class="external-event bg-success" data-class="bg-success">
-                                        <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>New Theme Release
+                        <div class="row"> -->
+                            <!--
+                                <div class="col-md-3">
+                                    <a href="#" data-toggle="modal" data-target="#add-category" class="btn btn-lg btn-primary btn-block waves-effect m-t-20 waves-light">
+                                        <i class="fa fa-plus"></i> Create New
+                                    </a>
+                                    <div id="external-events" class="m-t-20">
+                                        <br>
+                                        <p class="text-muted">Drag and drop your event or click in the calendar</p>
+                                        <div class="external-event bg-success" data-class="bg-success">
+                                            <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>New Theme Release
+                                        </div>
+                                        <div class="external-event bg-info" data-class="bg-info">
+                                            <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>My Event
+                                        </div>
+                                        <div class="external-event bg-warning" data-class="bg-warning">
+                                            <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>Meet manager
+                                        </div>
+                                        <div class="external-event bg-purple" data-class="bg-purple">
+                                            <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>Create New theme
+                                        </div>
                                     </div>
-                                    <div class="external-event bg-info" data-class="bg-info">
-                                        <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>My Event
-                                    </div>
-                                    <div class="external-event bg-warning" data-class="bg-warning">
-                                        <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>Meet manager
-                                    </div>
-                                    <div class="external-event bg-purple" data-class="bg-purple">
-                                        <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>Create New theme
-                                    </div>
-                                </div>
 
 
-                                <div class="checkbox checkbox-primary m-t-30">
-                                    <input type="checkbox" id="drop-remove">
-                                    <label for="drop-remove">
-                                        Remove after drop
-                                    </label>
-                                </div>
-                            </div> 
+                                    <div class="checkbox checkbox-primary m-t-30">
+                                        <input type="checkbox" id="drop-remove">
+                                        <label for="drop-remove">
+                                            Remove after drop
+                                        </label>
+                                    </div>
+                                </div> 
 -->
-                            <div class="col-md-9">
+                            <!--<div class="col-md-9">
                                 <div id="calendar"></div>
-                            </div> <!-- end col -->
-                        </div>  <!-- end row -->
-                    </div>
+                            </div>--> <!-- end col -->
+                       <!-- </div> -->  <!-- end row -->
+                    <!--</div>-->
 
                     <!-- BEGIN MODAL -->
-                    <div class="modal fade none-border" id="event-modal" tabindex="-1">
+                    <!--<div class="modal fade none-border" id="event-modal" tabindex="-1">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -287,10 +308,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
                     <!-- Modal Add Category -->
-                    <div class="modal fade none-border" id="add-category" tabindex="-1">
+                    <!--<div class="modal fade none-border" id="add-category" tabindex="-1">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -324,15 +345,15 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                     <!-- END MODAL -->
-                </div>
+                <!--</div>-->
                 <!-- end col-12 -->
-            </div> <!-- end row -->
+            <!--</div>--> <!-- end row -->
 
-        </div> <!-- container -->
+        <!--</div>--> <!-- container -->
 
-    </div> <!-- content -->
+    <!--</div>--> <!-- content -->
 
     <footer class="footer text-right">
         2019 © INSIZIO

@@ -75,7 +75,7 @@
                         <li class="list-inline-item dropdown notification-list">
                             <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                                aria-haspopup="false" aria-expanded="false">
-                                <img src="assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+                                <img src="assets/images/users/usuario.png" alt="user" class="rounded-circle">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                                 <!-- item-->
@@ -132,20 +132,21 @@
                         <!-- Left Menu Start -->
                         <ul class="metismenu" id="side-menu">
                             <li class="menu-title">Comercial</li>
+                            <!--
                             <li>
                                 <a href="Comercial-CRM.php"><i class="fi-briefcase"></i> <span> CRM </span></a>
                             </li>
-
+                            -->
                             <li>
                                 <a href="Comercial-cotizador.php"><i class="fi-bar-graph-2"></i><span> Cotizador </span></a>
                             </li>
 
                             <li>
-                                <a href="Comercial-programa.php"><i class="fi-mail"></i><span> Programas </span></a>
+                                <a href="Comercial-programa.php"><i class="icon-puzzle"></i><span> Programas </span></a>
                             </li>
 
                             <li>
-                                <a href="Comercial-contratos.php"><i class="fi-paper"></i><span> Contratos </span></a>
+                                <a href="Comercial-contratos.php"><i class="icon-paper-clip "></i><span> Contratos </span></a>
                             </li>
                             
                             <!--
@@ -158,11 +159,15 @@
                             </li>-->
 
                             <li>
-                                <a href="Comercial-tours.php"><i class="fi-disc"></i><span> Tours </span></a>
+                                <a href="Comercial-tours.php"><i class=" icon-tag "></i><span> Tours </span></a>
                             </li>
                             
                             <li>
-                                <a href="Comercial-bus.php"><i class="fi-paper"></i><span> Buses </span></a>
+                                <a href="Comercial-bus.php"><i class="mdi mdi-bus "></i><span> Buses </span></a>
+                            </li>
+
+                            <li>
+                                <a href="Comercial-bus.php"><i class="dripicons-search "></i><span> Buscar reservas </span></a>
                             </li>
 
                         </ul>

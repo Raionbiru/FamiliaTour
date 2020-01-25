@@ -1,9 +1,21 @@
 <?php require_once("funciones.php");
 
-
 $xemail=leerParam("email","");
+$xid=leerParam("id","");
+
 
 $codigo = uniqid();
+
+if (isset($xid)) {
+    $xc = conectar();
+    $sql = "UPDATE cliente SET cod_cliente='$codigo' WHERE id_cliente='$xid'";
+    mysqli_query($xc,$sql);
+    desconectar($xc);
+    header("Location: prueba.php?email=$xemail");
+
+}
+    
+
 
     ini_set( 'display_errors', 1 );
     error_reporting( E_ALL );

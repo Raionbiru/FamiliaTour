@@ -75,7 +75,7 @@
                                     <div class='profile-user-box'>
                                         <div class='row'>
                                             <div class='col-sm-6'>
-                                                <span class='pull-left m-r-15'><img src='assets/images/users/avatar-1.jpg' alt='' class='thumb-lg rounded-circle'></span>
+                                                <span class='pull-left m-r-15'><img src='assets/images/users/usuario.png' alt='' class='thumb-lg rounded-circle'></span>
                                                 <div class='media-body'>
                                                     <h4 class='m-t-5 m-b-5 font-18 ellipsis'><?PHP echo $_SESSION['nomCliente']." ".$_SESSION['apeCliente'];?></h4>
                                                     <p class='font-13'> <?PHP echo $_SESSION['emailCliente']; ?> </p>

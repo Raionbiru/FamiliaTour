@@ -80,7 +80,7 @@
                         <li class="list-inline-item dropdown notification-list">
                             <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                                aria-haspopup="false" aria-expanded="false">
-                                <img src="assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+                                <img src="assets/images/users/usuario.png" alt="user" class="rounded-circle">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                                 <!-- item-->
@@ -138,21 +138,22 @@
                         <ul class="metismenu" id="side-menu">
                             <li class="menu-title">Operaciones</li>
                             <li>
-                                <a href="Operaciones-listaproveedores.php"><i class="fi-target"></i> <span> Lista Proveedores </span></a>
+                                <a href="Operaciones-listaproveedores.php"><i class="mdi mdi-wunderlist"></i> <span> Lista Proveedores </span></a>
                             </li>
 
                             <li>
-                                <a href="Operaciones-cotizador.php"><i class="fi-briefcase"></i> <span> Cotizador </span></a>
+                                <a href="Operaciones-cotizador.php"><i class="mdi mdi-rename-box"></i> <span> Cotizador </span></a>
                             </li>
-
+                            <!-- PESTAÑA ADMINISTRAR CARPETAS
                             <li>
                                 <a href="Operaciones-administrarcarpeta.php"><i class="fi-bar-graph-2"></i><span> Adm. Carpetas </span></a>
                             </li>
-
+                            -->
+                            <!-- PESTAÑA FICHAS OPERA 
                             <li>
                                 <a href="Operaciones-fichaopera.php"><i class="fi-mail"></i><span> Fichas Opera </span></a>
                             </li>
-
+                            -->
                         </ul>
 
                     </div>
