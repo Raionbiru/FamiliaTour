@@ -114,7 +114,7 @@
 
                                             echo "
                                                 <tr class='gradeX'>
-                                                    <td>$xnom_transporte</td>    
+                                                    <td>".utf8_encode($xnom_transporte)."</td>    
                                                     <td>$xtipo_transporte </td>
                                                     <td>$xdes_transporte</td>
                                                     <td>$xprec_transporte</td>

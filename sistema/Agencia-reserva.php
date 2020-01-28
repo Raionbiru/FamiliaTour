@@ -40,8 +40,8 @@ require_once("funciones.php");
 
             <?PHP 
             require_once("Agencia-header.php");
-
             $xid_tour=leerParam("tour","");
+            
             $xc = conectar();
             $sql = "SELECT
                         p.id_prog,
@@ -59,6 +59,12 @@ require_once("funciones.php");
                     WHERE
                         p.id_tour = '$xid_tour'";
             $res = mysqli_query($xc,$sql);
+            $xest = 1;
+            $row_cnt = mysqli_num_rows($res);
+
+            if ($row_cnt == 0) {
+                $xest = 0;
+            }
             desconectar($xc);
             
             ?>
@@ -88,6 +94,26 @@ require_once("funciones.php");
                         <!-- end row -->
 
                         <div class="row">
+
+                        <?PHP 
+                                if ($xest == 0) {
+                                    echo "
+                                    <div class='col' style='width:20px; display: flex; justify-content: center; align-items: center;'>
+                                        <div class='text-center card-box'>
+                                            <div class='clearfix'></div>
+                                            <div class='member-card'>
+                                                <div class=''>
+                                                    <h4 class='m-b-5'>Reserva no encontrada</h4>
+                                                    <br>
+                                                    <p class='text-muted'>El tour que selecciono no cuenta con programación<span>  </span> <!--<span> <a href='Agencia-tours.php' data-animation='fadein' data-plugin='custommodal' data-overlaySpeed='200' data-overlayColor='#36404a' class='text-pink'>Seleccione otro Tour</a> </span></p>--></p>
+                                                    <span> <a href='Agencia-tours.php' data-overlayColor='#36404a' class='text-pink'>Seleccione otro Tour</a> </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!-- end col -->";
+                                }
+                            ?>
 
                             <?PHP while($fila=mysqli_fetch_array($res)){
                                         $xnom_tour = $fila["nom_tour"];
@@ -125,32 +151,6 @@ require_once("funciones.php");
                                             ";
                                     }
                                 ?>
-                            
-                            <div class="col-md-4">
-                                <div class="text-center card-box">
-                                    <div class="clearfix"></div>
-                                    <div class="member-card">
-                                        <div class="thumb-xl member-thumb m-b-10 mx-auto">
-                                            <img src="https://cdn.londonandpartners.com/asset/hop-on-hop-off-bus-tour-24-or-48-hour-ticket-631fec6ecdee1c2f174a2165f27beb0a.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
-                                            <i class="mdi mdi-star-circle member-star text-success" title="verified user"></i>
-                                        </div>
-
-                                        <div class="">
-                                            <h4 class="m-b-5">Tour A</h4>
-                                            <p class="text-muted">Capacidad 35 asientos <span> | </span> <span> <a href="#asiento-modal" data-animation="fadein" data-plugin="custommodal" data-overlaySpeed="200" data-overlayColor="#36404a" class="text-pink">seleccionar asientos</a> </span></p>
-                                        </div>
-
-                                        <p class="text-muted font-13">
-                                            Asientos Disponibles: 15 Asientos
-                                            <br>
-                                            Hora de Salida: 10:00
-                                        </p>
-                                        
-                                        <button type="button" href="#custom-modal" class="btn btn-primary m-t-20 btn-rounded btn-bordered waves-effect w-md waves-light" data-animation="fadein" data-plugin="custommodal" data-overlaySpeed="200" data-overlayColor="#36404a"><i class="md md-add"></i>Reservar</button>
-                                    </div>
-                                </div>
-                            </div> <!-- end col -->
-
                         </div>
                         <!-- end row -->
 

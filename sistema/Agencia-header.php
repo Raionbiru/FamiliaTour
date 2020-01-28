@@ -44,12 +44,12 @@
             <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                 <!-- item-->
                 <div class="dropdown-item noti-title">
-                    <h5 class="text-overflow"><small>Hola ! John</small> </h5>
+                    <h5 class="text-overflow"><small>Hola ! <?PHP echo $_SESSION['nomCliente'];?></small> </h5>
                 </div>
 
                 <!-- item-->
                 <a href="Agencia-datos.php" class="dropdown-item notify-item">
-                    <i class="zmdi zmdi-account-circle"></i> <span>Profile</span>
+                    <i class="zmdi zmdi-account-circle"></i> <span>Perfíl</span>
                 </a>
 
                 <!-- item-->
@@ -103,13 +103,13 @@
             <li>
                 <a href="Agencia-tours.php"><i class="fi-briefcase"></i> <span> Tours Arequipa </span></a>
             </li>
-
+            <!--
             <li>
                 <a href="Mantenmiento.php"><i class="fi-bar-graph-2"></i><span> Historial </span></a>
             </li>
-
+            -->
             <li>
-                <a href="Agencia-reserva.php"><i class="fi-mail"></i><span> Reserva </span></a>
+                <a href="Agencia-reserva.php?est=1"><i class="fi-mail"></i><span> Reserva </span></a>
             </li>
 
             <li>

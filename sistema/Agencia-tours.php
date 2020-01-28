@@ -155,11 +155,11 @@ desconectar($xc);
                             <li>
                                 <a href="Agencia-tours.php"><i class="fi-briefcase"></i> <span> Tours Arequipa </span></a>
                             </li>
-
+                            <!--
                             <li>
                                 <a href="Mantenmiento.php"><i class="fi-bar-graph-2"></i><span> Historial </span></a>
                             </li>
-
+                            -->
                             <li>
                                 <a href="Agencia-reserva.php"><i class="fi-mail"></i><span> Reserva </span></a>
                             </li>
@@ -243,7 +243,7 @@ desconectar($xc);
                                                 <img class='card-img-top img-fluid' src='assets/images/small/img-1.jpg' alt='Card image cap'>
                                                 <div class='card-block'>
                                                     <h4 class='card-title'>$xnom_tour</h4>
-                                                    <p class='card-text'>$xdescp_tour</p>
+                                                    <p class='card-text'>".utf8_encode($xdescp_tour)."</p>
                                                     <a href='Agencia-reserva.php?tour=$xid_tour' class='btn btn-primary'>Reservar</a>
                                                 </div>
                                             </div>

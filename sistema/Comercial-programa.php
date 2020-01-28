@@ -1,4 +1,18 @@
-﻿<?php require_once("Comercial-sesion.php");        
+﻿<?php require_once("Comercial-sesion.php");
+    require_once("funciones.php");
+    $xc = conectar();
+
+    $xfec_ini=leerParam("fec_ini","");
+    $xfec_fin=leerParam("fec_fin","");
+
+    $sqlProgramacion = "SELECT * FROM programacion p
+                        INNER JOIN bus b ON p.id_bus = b.id_bus
+                        WHERE fec_prog >= '$xfec_ini' AND fec_prog <= '$xfec_fin'";
+    $resProgramacion = mysqli_query($xc,$sqlProgramacion);
+
+    
+    $semana = 
+    desconectar($xc);
 ?>
 <!DOCTYPE html>
 <html>
@@ -47,23 +61,7 @@
 
     </head>
 
-<?php require_once("Comercial-nav.php");
-
-    require_once("funciones.php");
-    $xc = conectar();
-
-    $xfec_ini=leerParam("fec_ini","");
-    $xfec_fin=leerParam("fec_fin","");
-
-    $sqlProgramacion = "SELECT * FROM programacion p
-                        INNER JOIN bus b ON p.id_bus = b.id_bus
-                        WHERE fec_prog >= '$xfec_ini' AND fec_prog <= '$xfec_fin'";
-    $resProgramacion = mysqli_query($xc,$sqlProgramacion);
-
-    
-    $semana = 
-    desconectar($xc);
-?>
+<?php require_once("Comercial-nav.php");?>
 <!-- ============================================================== -->
 <!-- Start right Content here -->
 <!-- ============================================================== -->

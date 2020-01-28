@@ -79,7 +79,7 @@
                                                 <div class='media-body'>
                                                     <h4 class='m-t-5 m-b-5 font-18 ellipsis'><?PHP echo $_SESSION['nomCliente']." ".$_SESSION['apeCliente'];?></h4>
                                                     <p class='font-13'> <?PHP echo $_SESSION['emailCliente']; ?> </p>
-                                                    <p class='text-muted m-b-0'><small> <?PHP echo $_SESSION['emprCliente']; ?> - $xruc_empr_cliente</small></p>
+                                                    <p class='text-muted m-b-0'><small> <?PHP echo $_SESSION['emprCliente']; ?></small></p>
                                                 </div>
                                             </div>
                                             <div class='col-sm-6'>
@@ -112,9 +112,9 @@
                                             <div class='text-left'>
                                                 <p class='text-muted font-13'><strong>Nombre Completo :</strong> <span class='m-l-15'><?PHP echo $_SESSION['nomCliente']." ".$_SESSION['apeCliente'];?></span></p>
 
-                                                <p class='text-muted font-13'><strong>Celular :</strong><span class='m-l-15'>(+51) $xcel_cliente</span></p>
+                                                <p class='text-muted font-13'><strong>Celular :</strong><span class='m-l-15'>(+51) <?PHP echo $_SESSION['celCliente']; ?></span></p>
 
-                                                <p class='text-muted font-13'><strong>Email :</strong> <span class='m-l-15'>$xemail_cliente</span></p>
+                                                <p class='text-muted font-13'><strong>Email :</strong> <span class='m-l-15'><?PHP echo $_SESSION['emailCliente'];?></span></p>
 
                                             </div>
                                         </div>

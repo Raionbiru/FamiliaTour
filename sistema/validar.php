@@ -86,6 +86,7 @@ if ( $xcanPersona > 0 ) {
                 $_SESSION["apeCliente"]=$filaClienteConsulta["ape_cliente"];
                 $_SESSION["emailCliente"]=$filaClienteConsulta["email_cliente"];
                 $_SESSION["emprCliente"]=$filaClienteConsulta["empr_cliente"];
+                $_SESSION["celCliente"]=$filaClienteConsulta["cel_cliente"];
                 $_SESSION["estadoCliente"]=$xestadoCliente;
                 $_SESSION["idCliente"]=$filaClienteConsulta["id_cliente"];
         desconectar($xc);

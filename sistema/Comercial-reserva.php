@@ -192,7 +192,7 @@
                                             <a href="Comercial-reservaEmail.php?email=johnn.condori@tecsup.edu.pe" class="btn btn-custom waves-effect waves-light">Reservar</a>
 
                                             <a href="#" class="btn btn-info waves-effect waves-light">Pagar</a>
-                                            <input type="button" id="buyButton" value="COMPRAR" data-producto="Prueba Tour" data-precio="<?PHP echo $numeroConCeros;?>">
+                                            <input type="button" id="buyButton" value="COMPRAR" data-producto="Prueba Tour" data-precio="<?PHP echo $precio = $xtotal_hostal * 100;?>">
                                         </div>
                                     </div>
                                 </div>

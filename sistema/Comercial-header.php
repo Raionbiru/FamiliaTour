@@ -132,11 +132,11 @@
                         <!-- Left Menu Start -->
                         <ul class="metismenu" id="side-menu">
                             <li class="menu-title">Comercial</li>
-                            <!--
+                            
                             <li>
                                 <a href="Comercial-CRM.php"><i class="fi-briefcase"></i> <span> CRM </span></a>
                             </li>
-                            -->
+                        
                             <li>
                                 <a href="Comercial-cotizador.php"><i class="fi-bar-graph-2"></i><span> Cotizador </span></a>
                             </li>

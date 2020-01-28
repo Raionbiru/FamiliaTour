@@ -92,7 +92,7 @@ desconectar($xc);
                                                                         <input type="file" id="archivo" name="archivo" class="btn-secondary" accept="image/*" />
                                                                     
                                                                     </div>
-                                                                    <a href="#" class="btn btn-danger fileupload-exists"><i class="fa fa-trash"></i> Remove</a>
+                                                                    <a href="#" class="btn btn-danger fileupload-exists"><i class="fa fa-trash"></i> Quitar</a>
                                                                 </div>
 
 
